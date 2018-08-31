@@ -1,0 +1,73 @@
+<!--pages/enterprise/enterprise.wxml-->
+<view class="search__top">
+    <input placeholder="请输入企业名称" placeholder-class="phcolor" class="search__input"  bindconfirm="setSearchStorage" name="teamSearchKeyWords" />
+    <view class="search__icon search__active" style="width:40rpx;">
+      <icon type="search" size="16" color="#888" style="float:left;margin-left:20rpx;"></icon>
+    </view>
+  <!--view bindtap="searchSubmit" class="searchData">搜索</view-->
+</view>
+<view class='enterprise'>
+  <view class='enterprise-li'>
+  <view class='enterprise-li-info'>
+    <view class='enterprise-li-logo'>
+      <image src='http://images.6-china.com/logo/2/475/624/58dada9d5f4a.jpg' mode="widthFix"></image>
+    </view>
+    <view class='enterprise-li-text'>
+      <view class='enterprise-li-name'>广州链家供应链有限公司<image src='/img/vip.png' mode="widthFix"></image></view>
+      <view class='enterprise-li-tel'>
+        <image src='/img/name2.png' mode="widthFix" class='name'></image>陈经理
+        <view class='tel'><image src='/img/phone2.png' mode="widthFix" class='tel-ico'></image>15019452689</view></view>
+     </view>
+     <view class='clear'></view>
+     </view>
+     <view class='enterprise-li-addres'><image src='/img/addres-ico.png' mode="widthFix"></image>广州市白云区太和镇谢家庄村第八经济合作社自编1号首层共17栋广州锦邦货运市场A3区3313号</view>
+     </view>
+
+     <view class='enterprise-li'>
+  <view class='enterprise-li-info'>
+    <view class='enterprise-li-logo'>
+      <image src='http://images.6-china.com/logo/2/475/624/58dada9d5f4a.jpg' mode="widthFix"></image>
+    </view>
+    <view class='enterprise-li-text'>
+      <view class='enterprise-li-name'>深圳市隆邦物流有限公司<image src='/img/vip.png' mode="widthFix"></image></view>
+      <view class='enterprise-li-tel'>
+        <image src='/img/name2.png' mode="widthFix" class='name'></image>陈经理
+        <view class='tel'><image src='/img/phone2.png' mode="widthFix" class='tel-ico'></image>15019452689</view></view>
+     </view>
+     <view class='clear'></view>
+     </view>
+     <view class='enterprise-li-addres'><image src='/img/addres-ico.png' mode="widthFix"></image>深圳龙岗区丹平北路金鹏物流园A区6栋</view>
+     </view>
+
+     <view class='enterprise-li'>
+  <view class='enterprise-li-info'>
+    <view class='enterprise-li-logo'>
+      <image src='http://images.6-china.com/logo/2/475/624/58dada9d5f4a.jpg' mode="widthFix"></image>
+    </view>
+    <view class='enterprise-li-text'>
+      <view class='enterprise-li-name'>深圳市速晗物流有限公司<image src='/img/vip.png' mode="widthFix"></image></view>
+      <view class='enterprise-li-tel'>
+        <image src='/img/name2.png' mode="widthFix" class='name'></image>陈经理
+        <view class='tel'><image src='/img/phone2.png' mode="widthFix" class='tel-ico'></image>15019452689</view></view>
+     </view>
+     <view class='clear'></view>
+     </view>
+     <view class='enterprise-li-addres'><image src='/img/addres-ico.png' mode="widthFix"></image>深圳龙岗区布吉镇丹竹头金鹏物流园B区</view>
+     </view>
+
+     <view class='enterprise-li'>
+  <view class='enterprise-li-info'>
+    <view class='enterprise-li-logo'>
+      <image src='http://images.6-china.com/logo/2/475/624/58dada9d5f4a.jpg' mode="widthFix"></image>
+    </view>
+    <view class='enterprise-li-text'>
+      <view class='enterprise-li-name'>深圳市南广通物流有限公司<image src='/img/vip.png' mode="widthFix"></image></view>
+      <view class='enterprise-li-tel'>
+        <image src='/img/name2.png' mode="widthFix" class='name'></image>陈经理
+        <view class='tel'><image src='/img/phone2.png' mode="widthFix" class='tel-ico'></image>15019452689</view></view>
+     </view>
+     <view class='clear'></view>
+     </view>
+     <view class='enterprise-li-addres'><image src='/img/addres-ico.png' mode="widthFix"></image>深圳市龙岗区南湾街道丹平北路金鹏物流园A区7栋10号201</view>
+     </view>
+</view>

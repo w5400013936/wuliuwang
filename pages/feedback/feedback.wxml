@@ -1,0 +1,48 @@
+<!--pages/feedback/feedback.wxml-->
+<form bindsubmit='tiJiaoSubmit'>
+  <view class='mt24'>
+    <view class='list bgwhite'>
+      <view class='list-li'>
+        <view class='list-li-text'>主题</view>
+        <view class='list-li-input'>
+          <input class='input-text' placeholder="请输入主题" name="zhuTi"/>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='list-li'>
+        <view class='list-li-text'>公司</view>
+        <view class='list-li-input'>
+          <input class='input-text' placeholder="请输入公司名称" name="company"/>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='list-li'>
+        <view class='list-li-text'>姓名</view>
+        <view class='list-li-input'>
+          <input class='input-text' placeholder="请输入姓名" name="name"/>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='list-li'>
+        <view class='list-li-text'>电话</view>
+        <view class='list-li-input'>
+          <input class='input-text' type='number' placeholder="请输入联系电话" name="phone"/>
+        </view>
+        <view class='clear'></view>
+      </view>
+
+      <view class='list-li'>
+        <view class='list-li-text'>内容</view>
+        <view class='list-li-input'>
+          <textarea placeholder="请输入反馈内容" name="content"></textarea>
+          <!-- <input class='input-text' placeholder="请输入反馈内容" /> -->
+        </view>
+        <view class='clear'></view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" form-type='submit'>提交</button>
+</form>

@@ -1,0 +1,44 @@
+<!--pages/companyInfos/line/line.wxml-->
+<!-- <view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toLineDetail' data-bean='{{item}}'>
+    <view class='info-top'>
+      <view class='address flex'>
+        <view>{{item.provin}}-{{item.city}}</view>
+        <image class='top-img' src='/img/right.png'></image>
+        <view>{{item.toProvin}}-{{item.toCity}}</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        {{item.linkMan}}
+      </view>
+      <view catchtap='call' data-phone='{{item.mobile}}'>
+        <image class='ico' src='/img/phone.png'></image>
+        {{item.phone}}
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<view class='recommond-box'>
+  <view class='recommond-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toLineDetail' data-bean='{{item}}'>
+    <view class='address'>
+      <view class='add'>广东 广州市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>天津 市辖区</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>运输时效：2天</view>
+        <view class='r-info'>发车频率：2次/天</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>配货方式：整车配货</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png' catchtap='callLine' data-phone=''></image>
+  </view>
+</view>

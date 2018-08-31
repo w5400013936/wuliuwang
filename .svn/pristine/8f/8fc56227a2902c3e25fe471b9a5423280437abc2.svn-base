@@ -1,0 +1,89 @@
+/* pages/companyInfos/line-search/line-search.wxss */
+view{ box-sizing: border-box; }
+.ico{width: 40rpx;height: 40rpx;margin-right: 10rpx;vertical-align: top;}
+.line-search{
+  background-color: #fff;
+  padding: 15rpx 25rpx 35rpx;
+  margin-bottom: 30rpx;
+}
+.line-add{
+  margin-bottom: 45rpx;
+}
+.line-add .line-start, .line-add .line-end{
+  flex: 1;
+  border-bottom: 1rpx solid #ddd;
+}
+.line-add .line-end{
+  text-align: right;
+}
+.line-add .line-top{
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  line-height: 40rpx;
+}
+.line-add .line-con{
+  font-size: 42rpx;
+  margin-bottom:15rpx;
+}
+.line-img{
+  width: 60rpx;
+  height: 25rpx;
+  margin: 0 40rpx;
+}
+.line-btn{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 32rpx;
+  color: #fff;
+  background-color: #68c5cd;
+  border-radius: 60rpx;
+}
+.recommond-box{
+  padding: 0 10rpx;
+  background-color: #fff;
+  /* margin-bottom: 30rpx; */
+}
+.recommond-title{
+  font-size: 36rpx;
+  padding: 25rpx 0;
+  height: 80rpx;
+}
+.recommond-title .rt{
+  padding-left: 15rpx;
+  border-left: 6rpx solid #68c5cd;
+  line-height: 32rpx;
+}
+.recommond-item{
+  position: relative;
+  border-top: 1rpx solid #ddd;
+}
+.recommond-item .address{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  padding: 30rpx 0 25rpx 0;
+}
+.recommond-item .address .add-img{
+  width: 50rpx;
+  height: 30rpx;
+  margin: 0 20rpx;
+  vertical-align: bottom;
+}
+.recommond-item .r-con{
+  font-size: 28rpx;
+  color: #999;
+  padding-bottom: 30rpx;
+}
+.recommond-item .r-con .r-info{
+  float: left;
+  width: 300rpx;
+  margin-bottom: 10rpx;
+}
+.recommond-item  .r-img{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 40rpx;
+  bottom: 60rpx;
+}

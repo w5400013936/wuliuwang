@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+<view class='main'>
+  <view class='logo-box'>
+    <image class='logo-img' src='/img/logo.png'></image>
+  </view>
+  <form bindsubmit="login">
+    <view class='login-box'>
+      <view class='login-acount'>
+        <view class='login-acount-left'>
+          <input class='login-input' placeholder='用户名' name="userName"></input>
+        </view>
+      </view>
+      <view class='login-password'>
+        <view class='login-password-left'>
+          <input class='login-input' placeholder='密码' password='{{!showPsw}}' name="password"></input>
+        </view>
+        <view class='login-password-right'>
+          <image class='login-ico' src="{{showPsw?'/img/mima_kejian.png':'/img/eye.png'}}" bindtap='keJianTap'></image>
+        </view>
+      </view>
+    </view>
+    <button type="submit" class='submit-btn {{on?"on":""}}' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" formType="submit">登录</button>
+  </form>
+
+  <view class='unlogin'>
+    <view class='forgetPassword' bindtap='wangJiMiMaTap'>忘记密码？</view>
+    <view class='register' bindtap='zhuCeTap'>新用户注册</view>
+  </view>
+
+  <view class='copyright'>
+    <view class='name'>厦门天心软件有限公司</view>
+    <view class='website'>www.6-china.com</view>
+  </view>
+</view>

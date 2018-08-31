@@ -1,0 +1,36 @@
+<!--pages/companyInfos/concactUs/contactUS.wxml-->
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>公司名称</view>
+    <view class='details-li-info'>{{contact.companyName}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>{{contact.linkMan}}   {{contact.department}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司地址</view>
+    <view class='details-li-info'>{{contact.address}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>邮政编码</view>
+    <view class='details-li-info'>{{contact.postCode}}</view>
+  </view>
+  <view class='details-li' bindtap='callTel'>
+    <view class='details-li-text'>公司电话</view>
+    <view class='details-li-info'>{{contact.tel}}</view>
+  </view>
+  <view class='details-li' bindtap='callMobile'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info'>{{contact.mobile}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>传真</view>
+    <view class='details-li-info'>{{contact.fax}}</view>
+  </view>
+  
+  <view class='details-li'>
+    <view class='details-li-text'>网站地址</view>
+    <view class='details-li-info'>{{contact.webSite}}</view>
+  </view>
+</view>

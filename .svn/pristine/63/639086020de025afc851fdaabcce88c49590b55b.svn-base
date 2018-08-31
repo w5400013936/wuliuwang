@@ -1,0 +1,16 @@
+<!--component/toast/toast.wxml-->
+<block wx:if='{{show}}'>
+  <view class='toast-box'>
+    <view wx:if="{{ title }}" class="toast-title">{{ title }}</view>
+    <view class='toast-content'>
+      <view wx:if="{{ message }}" class='toast-message'>{{ message }}</view>
+      <view wx:if='{{ numberList }}' class='toast-numberList'>
+        <view wx:for='{{numberList}}' wx:key="{{index}}" class='toast-number' bindtap='call' data-index='{{index}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='toast-btn' bindtap='handleHideToast'>
+      {{ button }}
+    </view>
+  </view>
+  <view class='toast-shadow'></view>
+</block>

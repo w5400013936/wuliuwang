@@ -1,0 +1,66 @@
+<!--pages/companyInfos/introduce/introduce.wxml-->
+<swiper class='banner-swiper' indicator-dots="{{true}}"  indicator-color="#999" indicator-active-color="#68c5cd" autoplay="{{true}}" interval="{{3000}}">
+  <swiper-item>
+    <image class='banner-img' src='/img/banner/banner-1.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='banner-img' src='/img/banner/banner-2.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='banner-img' src='/img/banner/banner-3.jpg'></image>
+  </swiper-item>
+</swiper>
+
+<view class='details-list'>
+  <view class='details-li-title'>公司简介</view>
+  <view class='details-li'>
+      <view class='details-li-desc'>
+        鲁桂广源物流有限公司规模较大的物流运输企业，鲁桂广源物流有限公司是一家专业从事货物运输的专业货运公司。公司拥有多辆各种型号的车型，可承接全国各地整车运输，长期以来公司在实践与探索中建立，健全了一套完整的物流管理体系。公司以先进的管理经验、新兴的运输理念，以及运用不同于货运代理的专线储运业务为基础、大大减少了运输的中间环节，降低了管理成本合理的收费优势，为客户提供了满意的服务。在今后的发展道路中，本公司在诚信互利的基础上与各界新老客户携手合作，共同发展，服务全国！全力以赴，热情服务，是公司全体员工的原则。真诚的信誉，实在的服务，永久赢得各界客户的好评，只要您给我们一份信任，还您百分百满意。
+      </view>
+  </view>
+
+  <view class='details-li-title'>公司信息</view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司名称</view>
+    <view class='details-li-info'>鲁桂广源物流有限公司 </view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>企业性质</view>
+    <view class='details-li-info'>私营</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>经营模式</view>
+    <view class='details-li-info'>其他</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>法人代表</view>
+    <view class='details-li-info'>陈经理</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>员工人数</view>
+    <view class='details-li-info'>11 - 50 人</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>成立年份</view>
+    <view class='details-li-info'>2015年</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>年营业额</view>
+    <view class='details-li-info'>人民币 250 万元/年 - 500万元/年</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>主营产品</view>
+    <view class='details-li-info'>道路运输</view>
+  </view>
+</view>
+
+<contact 
+  linkman="陈经理"
+  address="广西省南宁市西乡塘区大学西路198号内A栋8号楼"
+  telphone="0591-88888888"
+  phone="13377182582"
+  fax="0591-88888888"
+  email="1491791538@qq.com"
+  website="http://lugui.6-china.com"
+  >
+</contact>

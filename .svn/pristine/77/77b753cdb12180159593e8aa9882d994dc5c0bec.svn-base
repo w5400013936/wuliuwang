@@ -1,0 +1,156 @@
+<!--pages/userInfo/userInfo.wxml-->
+<form bindsubmit='tiJiao'>
+
+  <view class='list bgwhite'>
+    <view class='list-li'>
+      <view class='list-li-text'>账号：</view>
+      <view class='list-li-input'>
+        <input class='input-text999999' placeholder="sdk123" value="{{userInfo1.uName}}" disabled="false" />
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>公司名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text999999' placeholder="请输入公司名称" value='{{userInfo1.companyName}}' disabled="false" name="companyName"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>真实姓名：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入真实姓名" value='{{profile.trueName}}' name="trueName"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li' bindtap='genderSelect'>
+      <view class='list-li-text'>
+        <text>*</text>性别：</view>
+      <!-- <picker bindchange="genderChange" value="{{genderIndex}}" range="{{genderArray}}"> -->
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择性别" value='{{sex}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <!-- </picker> -->
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>部门名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入部门名称" value='{{profile.department}}' name="department"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>职位名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入职位名称" value='{{profile.jobTitle}}' name="jobTitle"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li' bindtap='identitySelect'>
+      <view class='list-li-text'>
+        <text>*</text>业务身份：</view>
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请输入业务身份" value='{{businessRole}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联系人：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="多个请用半角逗号隔开，最多允许3个" value='{{profile.linkMan}}' name="linkMan"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联系电话：</view>
+      <view class='list-li-input'>
+        <input class='input-text999999' type='tel' placeholder="多个请用半角逗号隔开，最多允许3个" value='{{userInfo1.mobile}}' disabled='{{userInfo1.mobile?true:false}}' name="mobile"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>详细地址：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入地址" value='{{profile.address}}' name="address"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>电子邮箱：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入电子邮箱" value='{{userInfo1.email}}' name="email"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    <view class='list-li'>
+      <view class='list-li-text'>网址：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入网址" value='{{profile.webSite}}' name="webSite"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>联系QQ：</view>
+      <view class='list-li-input'>
+        <input class='input-text' type="number" placeholder="请输入QQ号码" value='{{profile.qq}}' name="qq"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>MSN：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入MSN" value='{{profile.msn}}' name="msn"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>400电话：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="如：400-000-0000" value='{{profile.fourZero}}' name="fourZero"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>固定电话：</view>
+      <view class='list-li-input'>
+        <input class='phone-start-input' placeholder="输入区号" value='{{profile.phone_Area}}' disabled='{{profile.phone_Area?true:false}}' name="phone_Area"/>
+        <input class='input-line' disabled='{{true}}' placeholder='-'></input>
+        <input class='phone-end-input' placeholder="输入固定电话" value='{{profile.phone_Number}}' disabled='{{profile.phone_Number?true:false}}' name="phone_Number"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>传真：</view>
+      <view class='list-li-input'>
+        <input class='fax-start-input' placeholder='输入区号' value='{{profile.fax_Area}}' disabled='{{profile.fax_Area?true:false}}' name="fax_Area"></input>
+        <input class='input-line' disabled='{{true}}' placeholder='-'></input>
+        <input class='fax-end-input' placeholder='输入传真号码' value='{{profile.fax_Number}}' disabled='{{profile.fax_Number?true:false}}' name="fax_Number"></input>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>邮政编码：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入邮政编码" value='{{profile.postCode}}' name="postCode"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" formType="submit">提交</button>
+</form>

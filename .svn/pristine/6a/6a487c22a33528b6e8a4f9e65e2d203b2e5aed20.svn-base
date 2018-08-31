@@ -1,0 +1,9 @@
+/* pages/no-data/no-data.wxss */
+.no-data{
+  text-align: center;
+  padding-top: 50%;
+}
+.no-data image{
+  width: 177rpx;
+  height: 177rpx;
+}

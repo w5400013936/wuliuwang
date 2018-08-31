@@ -1,0 +1,18 @@
+/* pages/performance/performance.wxss */
+.cell{
+  height: 158rpx;
+  padding-left: 24rpx;
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+}
+.cell-left{
+  font-size: 33rpx;
+  color: #666666;
+}
+.cell-left image{
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 38rpx;
+  vertical-align: middle;
+}

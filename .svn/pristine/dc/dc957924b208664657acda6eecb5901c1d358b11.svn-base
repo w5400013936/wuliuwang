@@ -1,0 +1,87 @@
+<!--pages/add-line/add-line.wxml-->
+<view class='height27'></view>
+<view class='bgwhite select-address '>
+  <view class='cell'>
+    <view class='cell-left'>
+      <image src='/img/f-address.png'  class='cell-ico' mode="aspectFill"></image>
+      <!-- <input class='cell-input'  maxlength="10" placeholder="请选择出发地" disabled='{{true}}'/> -->
+      <areaPicker class="cell-input" placeholder="请选择出发地"></areaPicker>
+    </view>
+    <view class='cell-right'>
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class='cell'>
+    <view class='cell-left'>
+      <image src='/img/t-address.png'  class='cell-ico' mode="aspectFill"></image>
+      <!-- <input class='cell-input'  maxlength="10" placeholder="请选择到达地" disabled='{{true}}'/> -->
+      <areaPicker class="cell-input" placeholder="请选择到达地"></areaPicker>
+    </view>
+    <view class='cell-right'>
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+  </view>
+</view>
+<view class='height27'></view>
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>货物名称：</view>
+    <view class='list-li-input'><input class='input-text' placeholder="请输入货物名称" /></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li' bindtap='transportTypeSelect'>
+    <view class='list-li-text'>运输类型：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder="请选择运输类型"  value='{{transportType}}'/></view>
+    <view class='ico arrow-down'><image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li' bindtap='goodTypeSelect'>
+    <view class='list-li-text'>货物类型：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder="请选择货物类型"  value='{{goodType}}'/></view>
+    <view class='ico arrow-down'><image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>重量：</view>
+    <view class='list-li-input'><input class='input-text' placeholder="请输入货物重量"  value=''/></view>
+    <view class='ico arrow-down' bindtap='weightSelect'>{{weight}}<image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>总体积：</view>
+    <view class='list-li-input'><input class='input-text'  placeholder="请输入总体积"  value=''/></view>
+    <view class='ico'>立方</view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>运价（期望）：</view>
+    <view class='list-li-input'><input class='input-text' placeholder="0或不填，自动为面议"  value=''/></view>
+    <view class='ico'>元</view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <picker mode='date' start="{{startDate}}" end='{{endDate}}' value='2018-01-01' bindchange='expiryDateChange'>
+      <view class='list-li-text'><text>*</text>信息有效期：</view>
+      <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder="请选择有效期" value='{{expiryDate}}'/></view>
+      <view class='ico arrow-down'><image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>联系人：</view>
+    <view class='list-li-input'><input class='input-text'placeholder="请输入您的姓名"  value='张晓明'/></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>联系电话：</view>
+    <view class='list-li-input'><input class='input-text'placeholder="请输入您的联系电话"  value='15160089053'/></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text textarea'>说明</view>
+    <textarea bindblur="bindTextAreaBlur"placeholder="请输入说明" />
+    <view class='clear'></view>
+  </view>
+</view>
+<button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary">提交 </button>

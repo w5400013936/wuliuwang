@@ -1,0 +1,36 @@
+<!--pages/company/company.wxml-->
+<view class='search-box'>
+  <view class='search-form'>
+    <input type='text' placeholder='好企业搜出来' value='{{qiYe}}' bindinput='qiYeInput' confirm-type='search' bindconfirm='search'></input>
+    <icon type="search" size="16"></icon>
+  </view>
+  <view class='clear'></view>
+</view>
+
+<view class='cell' wx:for="{{rows}}" wx:key="{{index}}" bindtap='company' data-id='{{item.ID}}'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='{{item.mendian?item.imgDir+item.mendian:"/img/logo.png"}}'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>{{item.companyName}}</view>
+        <image class='cell-right-img' src='{{item.isMember?"/img/vip.png":""}}'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>{{item.file.trueName}}</text>
+        </view>
+        <view class='dib' catchtap='call' data-index='{{index}}'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>{{item.phone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>{{item.file.address}}</view>
+  </view>
+</view>

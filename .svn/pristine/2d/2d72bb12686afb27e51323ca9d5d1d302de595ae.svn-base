@@ -1,0 +1,21 @@
+<!--pages/companyInfos/company-img/company-img.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>公司车辆</view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>公司车辆</view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>公司车辆</view>
+    </view>
+  </view>
+</view>

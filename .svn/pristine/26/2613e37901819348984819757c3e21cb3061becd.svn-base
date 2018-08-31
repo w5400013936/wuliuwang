@@ -1,0 +1,140 @@
+<!--pages/network-manage/network-manage.wxml-->
+<view class='header'>
+  <view class='checkbox' bindtap='changeSelect'>
+    <image src='{{select?"/img/selected.png":"/img/unselected.png"}}'></image>
+    全选
+  </view>
+  <view class='pageNav'>
+    <view>上一页</view>
+    <view>1</view>
+    <view>下一页</view>
+  </view>
+  <view class='operation'>
+    <block wx:if="{{userInfo1.isMember}}">
+      <view class='operation-refresh'>网点刷新</view>
+    </block>
+    <view class='operation-del'>删除</view>
+  </view>
+</view>
+
+<scroll-view class='main' scroll-y="{{true}}">
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='0' style='{{listStyle[0]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-title'>深圳市宝安区快达环宇联运物流有限公司</view>
+      <view class='list-content'>
+        <view class='list-address'>广东-深圳-宝安区</view>
+        <view>深圳市龙华新区观澜街道黎光工</view>
+      </view>
+      <view class='list-manager'>张先生：13600000000</view>
+      <view class='list-time'>刷新时间 2018-15-18 16:00</view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+  
+</scroll-view>
+
+<button class='bottom-btn'>添加网点</button>

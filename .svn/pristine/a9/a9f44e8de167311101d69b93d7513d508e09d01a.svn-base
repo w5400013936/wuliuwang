@@ -1,0 +1,30 @@
+<!--pages/menber-services/menber-services.wxml-->
+<view class='title'>购买会员服务</view>
+<view class='buy-service'>
+  <view class='buy-service-box on'>
+    <view class='buy-service-price'>1900元</view>
+    <view class='buy-service-time'>1年</view>
+  </view>
+  <view class='buy-service-box'>
+    <view class='buy-service-price'>1900元</view>
+    <view class='buy-service-time'>1年</view>
+  </view>
+  <view class='buy-service-box'>
+    <view class='buy-service-price'>1900元</view>
+    <view class='buy-service-time'>1年</view>
+  </view>
+</view>
+<view class='title'>请选择支付方式</view>
+<view class='pay-cell-list'>
+  <view wx:for='{{payList}}' class='pay-cell' bindtap='paySelect' data-index="{{index}}" data-select='{{item.select}}' wx:key="{{index}}">
+    <view class='pay-cell-left'>
+      <image src='{{item.url}}'></image>
+      {{item.name}}
+    </view>
+    <view class='pay-cell-right'>
+      <image src='{{item.select?"/img/select.png":""}}'></image>
+    </view>
+  </view>
+</view>
+
+<view class='bottom-box'>提交</view>

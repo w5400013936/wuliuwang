@@ -1,0 +1,19 @@
+<!--pages/service/service.wxml-->
+<view class='panel bgwhite'>
+  <view class='panel-left'>售后服务：</view>
+  <view class='panel-right'>
+    <view class='panel-cell'>15280252113</view>
+    <view class='panel-cell'>0592-3799502</view>
+  </view>
+</view>
+<view class='panel bgwhite'>
+  <view class='panel-left'>服务热线：</view>
+  <view class='panel-right'>
+    <view class='panel-cell'>0592-3799502</view>
+    <view class='panel-cell'>0592-3698000</view>
+  </view>
+</view>
+<view class='cell bgwhite'>
+  <view class='cell-left'>客服QQ：</view>
+  <view class='cell-right'>2906282805</view>
+</view>

@@ -1,0 +1,291 @@
+// pages/add-line/add-line.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    transportTimeList: ['小时', '天', '天多'],
+    transportTime: '小时',
+    deliverList: ['零担配货', '整车配货'],
+    deliver: '整车配货',
+    invoice: true,
+    oneWay: true,
+    userInfo1: "",
+    ID: 0,
+    bean: new Object(),
+    price: "",
+  },
+  goAreaSelect: function() {
+    wx.navigateTo({
+      url: '/pages/area-select/area-select?proid=' + this.data.bean.toProvin + "&sid=" + this.data.bean.toCitys,
+    })
+  },
+  chooseTransportTime: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.transportTimeList,
+      success: function(e) {
+        switch (e.tapIndex) {
+          case 0:
+            that.data.bean.tranUnit = "hour"
+            break
+          case 1:
+            that.data.bean.tranUnit = "day"
+            break
+          case 2:
+            that.data.bean.tranUnit = "days"
+            break
+        }
+        console.log(that.data.bean.tranUnit)
+        that.setData({
+          transportTime: that.data.transportTimeList[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    var that = this
+    that.setData({
+      userInfo1: JSON.parse(options.bean),
+    })
+    if (options.id) {
+      that.setData({
+        ID: options.id
+      })
+      that.request()
+    } else {
+      that.data.bean.toCitys = ""
+      that.data.bean.toProvin = 0
+      that.data.bean.provin = 0
+      that.data.bean.city = 0
+      that.data.bean.netID = 0
+      that.data.bean.tranUnit = "hour"
+      that.data.bean.meth = 2
+      that.data.bean.oriPriceQ = 0
+      that.data.bean.oriPriceZ = 0
+      that.data.bean.oriUnit = "kg"
+      var line = new Object()
+      line.tipPriceQ = 0
+      line.tipPriceZ = 0
+      line.xyPriceQ = 0
+      line.xyPriceZ = 0
+      line.tipUnit = "kg"
+      line.xyUnit = "kg"
+      line.isGetMoney = false
+      line.isBack = false
+      that.data.bean.line = line
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    if (getApp().shuaXin.yunShuJiaGe) {
+      this.data.bean = getApp().shuaXin.yunShuJiaGe
+      this.yunShuJiaGe()
+      getApp().shuaXin.yunShuJiaGe = ""
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 选地址回调
+   */
+  chooseAddress(e) {
+    var that = this
+    console.log("回调", e)
+    that.data.bean.provin = e.detail.proID
+    that.data.bean.city = e.detail.cityID
+    that.data.bean.netID = e.detail.netID
+  },
+
+  chooseDistribution: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.deliverList,
+      success: function(e) {
+        that.data.bean.meth = e.tapIndex + 1
+        that.setData({
+          deliver: that.data.deliverList[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 是否代收货款
+   */
+  invoiceChange: function() {
+    var that = this
+    that.data.bean.line.isGetMoney = !that.data.bean.line.isGetMoney
+    that.setData({
+      bean: that.data.bean
+    })
+  },
+  /**
+   * 单程/往返
+   */
+  oneWayChange: function() {
+    var that = this
+    that.data.bean.line.isBack = !that.data.bean.line.isBack
+    that.setData({
+      bean: that.data.bean
+    })
+  },
+  goTransportPrice: function() {
+    wx.navigateTo({
+      url: '/pages/transport-price/transport-price?bean=' + JSON.stringify(this.data.bean),
+    })
+  },
+  /**
+   * 专线请求
+   */
+  request() {
+    var that = this
+    wx.showLoading({
+      title: '加载中……',
+      mask: true
+    })
+    that.setData({
+      enable: false
+    })
+    var json = new Object()
+    var mod = "gist"
+    json.ID = that.data.ID
+    wx.request({
+      url: getApp().appData.host + "vaild_one", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": JSON.stringify(json),
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          var transportTime = "小时"
+          switch (res.data.data.tranUnit) {
+            case "hour":
+              transportTime = "小时"
+              break
+            case "day":
+              transportTime = "天"
+              break
+            case "days":
+              transportTime = "天多"
+              break
+          }
+
+          that.setData({
+            transportTime: transportTime,
+            deliver: that.data.deliverList[res.data.data.meth - 1],
+            bean: res.data.data,
+            isfail: false,
+            enable: true
+          })
+          that.yunShuJiaGe()
+          wx.hideLoading()
+        } else { //请求失败
+          that.setData({
+            isfail: true,
+          })
+        }
+      },
+      fail: function(res) {
+        that.setData({
+          isfail: true,
+        })
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+  /**
+   * 运输价格
+   */
+  yunShuJiaGe() {
+    var that = this
+    that.setData({
+      price: ""
+    })
+    if (that.data.bean.oriPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.oriPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.tipPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.tipPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.xyPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.xyPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+  },
+  faBu(e) {
+    var that = this
+    var rate = e.detial.value.rate
+    var plv = e.detail.value.plv
+    var mark = e.detail.value.mark
+    if (that.data.bean.netID == 0) {
+      wx.showToast({
+        title: '请选择出发地',
+      })
+      return
+    }
+    // if () {
+
+    // }
+  }
+})

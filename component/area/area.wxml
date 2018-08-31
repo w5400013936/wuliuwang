@@ -1,0 +1,7 @@
+<!--component/area/area.wxml-->
+<!-- <view class='area-box'> -->
+<picker mode="multiSelector" bindtap="areaTap" bindchange="areaChange" bindcolumnchange="areaColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+  <input class='area-input' disabled='{{true}}' placeholder='{{placeholder}}' value='{{diZhi}}'>
+  </input>
+</picker>
+<!-- </view> -->

@@ -1,0 +1,9 @@
+<!--pages/companyInfos/company-img/company-img.wxml-->
+<view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='shouImg' data-img='{{item.imgFile}}'>
+    <view class='info-top flex'>
+      <image class='device-img' src='{{item.imgFile}}'></image>
+      <view class='desc'>{{item.imgName}}</view>
+    </view>
+  </view>
+</view>

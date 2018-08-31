@@ -1,0 +1,13 @@
+<!--component/uploadBox/uploadBox.wxml-->
+<block wx:if='{{show}}'>
+  <view class='upload-box'>
+    <view class='upload-title'>上传图片</view>
+    <image class='upload-img' src='/img/upload.png'></image>
+    <input type='text' class='upload-input' placeholder='请输入图片名称'></input>
+    <view class='btn-box'>
+      <button class='cancel-btn' bindtap='handleUploadHide'>取消</button>
+      <button class='submit-btn' bindtap="handleUploadHide">上传</button>
+    </view>
+  </view>
+  <view class='upload-shadow'></view>
+</block>

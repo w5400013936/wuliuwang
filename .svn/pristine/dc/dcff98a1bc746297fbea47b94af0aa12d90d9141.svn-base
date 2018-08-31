@@ -1,0 +1,182 @@
+<!--pages/my/my.wxml-->
+<view class='header'>
+  <view class='my-bg'>
+    <image src='/img/my-bg.png' mode="widthFix"></image>
+  </view>
+  <view class='header-box'>
+    <view class='search-box'>
+      <view class='search-form'>
+        <input type='text' placeholder='好企业搜出来' placeholder-class="phcolor"></input>
+        <icon type="search" size="16" color="#fff"></icon>
+      </view>
+      <navigator url='/pages/feedback-list/feedback-list'>
+        <view class='feedback-ico'>
+          <image src='/img/f-icon.png' mode="widthFix"></image>
+        </view>
+      </navigator>
+
+      <view class='clear'></view>
+    </view>
+
+    <block wx:if="{{userInfo}}">
+      <view class='my-info'>
+        <view class='info'>
+          <view class='thumb' bindtap='chooseHeadTap'>
+            <image src='{{profile.photoUrl}}' mode="widthFix"></image>
+          </view>
+          <view class='text'>
+            <view class='name'>{{userInfo.uName}}</view>
+            <view class='c'>{{userInfo.companyName}}</view>
+            <block wx:if="{{userInfo.validate}}">
+              <view class='v'>{{userInfo.isMember?"已认证":"已审核"}}</view>
+            </block>
+            <block wx:else>
+              <view class='v'>待审核</view>
+            </block>
+          </view>
+        </view>
+        <navigator url='/pages/setting/setting'>
+          <view class='set-up'>设置</view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='default-box'>
+        <view class='register-btn'>
+          <navigator url='/pages/register/register'>
+            <view class='fr'>注册</view>
+          </navigator>
+        </view>
+        <view class='login-btn'>
+          <navigator url='/pages/login/login'>
+            <view class='fl'>登录</view>
+          </navigator>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>
+<view class='header-footer'>
+
+  <view class='span3' bindtap='wangDianTap'>
+    <view class='t'>网点管理</view>
+    <view class='n'>{{tongJi?tongJi.netpoint:0}}</view>
+  </view>
+
+  <view class='span3' bindtap='zhuanXianTap'>
+    <view class='t'>专线管理</view>
+    <view class='n'>{{tongJi?tongJi.wuliu:0}}</view>
+  </view>
+
+
+  <view class='span3' bindtap='huoYuanTap'>
+    <view class='t'>货源管理</view>
+    <view class='n'>{{tongJi?tongJi.goods:0}}</view>
+  </view>
+
+  <view class="clear"></view>
+</view>
+<view class='my-list'>
+  <!-- <navigator url='/pages/menber-services/menber-services'> -->
+  <view class='my-list-li'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico1.png'></image>
+      我的会员服务
+    </view>
+
+    <view class='list-li-right' wx:if="{{userInfo.isMember}}">
+      {{menberTime}}到期
+      <!-- <image src='/img/arrow-right.png'></image> -->
+    </view>
+  </view>
+  <!-- </navigator> -->
+  <view class='my-list-li' bindtap='userInfoTap'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico2.png'></image>
+      用户信息
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+  <view class='my-list-li' bindtap='companyTap'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico3.png'></image>
+      企业信息
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+  <view class='my-list-li' bindtap='qiYeBiaoZhiTap'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico4.png'></image>
+      企业标志
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+</view>
+
+<view class='my-list'>
+
+  <view class='my-list-li' bindtap='tuPianTap' data-type='1'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico5.png'></image>
+      企业图片
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+
+  <view class='my-list-li' bindtap='tuPianTap' data-type='2'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico6.png'></image>
+      荣誉证书
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+  <view class='my-list-li' bindtap='tuPianTap' data-type='3'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico7.png'></image>
+      业绩案例
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class='my-list'>
+  <navigator url='/pages/service/service'>
+    <view class='my-list-li'>
+      <view class='list-li-left'>
+        <image class='ico' src='/img/m-ico8.png'></image>
+        客服服务
+      </view>
+      <view class='list-li-right'>
+        <image src='/img/arrow-right.png'></image>
+      </view>
+    </view>
+  </navigator>
+  <view class='my-list-li' bindtap='handleConsult'>
+    <view class='list-li-left'>
+      <image class='ico' src='/img/m-ico9.png'></image>
+      问题咨询
+    </view>
+    <view class='list-li-right'>
+      <image src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+</view>
+
+<toast show='{{toastShow}}' title='问题咨询' message='您可以拨打以下客服电话咨询' numberList='{{numberList}}' button='取消'></toast>

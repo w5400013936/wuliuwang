@@ -1,0 +1,4 @@
+<!--component/cityPicker/cityPicker.wxml-->
+<picker  mode="multiSelector" value="{{multiIndex}}" range="{{multiArray}}" bindchange="bindMultiPickerChange"  bindcolumnchange="bindMultiPickerColumnChange">
+  <slot></slot>
+</picker>

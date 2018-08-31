@@ -1,0 +1,103 @@
+// component/area/area.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    multiArray: {
+      type: Array,
+      value: [['福建省', '广东省'], ['福州市', '厦门市', '莆田市', '泉州市', '漳州市'], ['鼓楼区', '闽侯县']]
+    },
+    multiIndex: {
+      type: Array,
+      value: [0, 0, 0]
+    },
+    placeholder: {
+      type: String,
+      value: '请选择地址'
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    areaTap:function(){
+      console.log(this.data.multiIndex)
+    },
+    areaChange: function (e) {  // 地区选择
+      console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.setData({
+        multiIndex: e.detail.value
+      })
+    },
+
+    areaColumnChange: function (e) { // 地区每列选择
+      console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+      var data = {
+        multiArray: this.data.multiArray,
+        multiIndex: this.data.multiIndex
+      };
+      data.multiIndex[e.detail.column] = e.detail.value;
+      switch (e.detail.column) {
+        case 0:
+          switch (data.multiIndex[0]) {
+            case 0:
+              data.multiArray[1] = ['福州市', '厦门市', '莆田市', '泉州市', '漳州市'];
+              data.multiArray[2] = ['鼓楼区', '闽侯县'];
+              break;
+            case 1:
+              data.multiArray[1] = ['广州市', '深圳市'];
+              data.multiArray[2] = ['番禺区', '南沙区'];
+              break;
+          }
+          data.multiIndex[1] = 0;
+          data.multiIndex[2] = 0;
+          break;
+        case 1:
+          switch (data.multiIndex[0]) {
+            case 0:
+              switch (data.multiIndex[1]) {
+                case 0:
+                  data.multiArray[2] = ['鼓楼区', '闽侯县'];
+                  break;
+                case 1:
+                  data.multiArray[2] = ['思明区', '湖里区'];
+                  break;
+                case 2:
+                  data.multiArray[2] = ['荔城区', '仙游县'];
+                  break;
+                case 3:
+                  data.multiArray[2] = ['鲤城区'];
+                  break;
+                case 4:
+                  data.multiArray[2] = ['芗城区', '龙文区'];
+                  break;
+              }
+              break;
+            case 1:
+              switch (data.multiIndex[1]) {
+                case 0:
+                  data.multiArray[2] = ['番禺区', '南沙区'];
+                  break;
+                case 1:
+                  data.multiArray[2] = ['宝安区', '福田区'];
+                  break;
+              }
+              break;
+          }
+          data.multiIndex[2] = 0;
+          console.log(data.multiIndex);
+          break;
+      }
+      this.setData(data);
+    },
+  }
+})

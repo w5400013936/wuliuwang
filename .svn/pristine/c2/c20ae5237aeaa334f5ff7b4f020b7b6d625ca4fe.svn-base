@@ -1,0 +1,286 @@
+// pages/index/index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrls: [
+      'https://api.6-china.com/images/zhuye_banner01.jpg',
+      'https://api.6-china.com/images/zhuye_banner02.jpg',
+      'https://api.6-china.com/images/zhuye_banner03.jpg'
+    ],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    swiperCurrent: 0,
+    userInfo: "",
+    profile: "",
+  },
+  changeIndicatorDots: function(e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function(e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function(e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+  swiperChange: function(e) {
+    this.setData({
+      swiperCurrent: e.detail.current
+    })
+  },
+  goSource: function() {
+    wx.reLaunch({
+      url: '/pages/source/source',
+    })
+  },
+  goLine: function() {
+    wx.reLaunch({
+      url: '/pages/line/line',
+    })
+  },
+  goAddSource: function() {
+    if (!getApp().appData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+    this.getUserInfo(1)
+  },
+  goAddNetwork: function() {
+    if (!getApp().appData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+    this.getUserInfo(2)
+  },
+  goAddLine: function() {
+    if (!getApp().appData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+    this.getUserInfo(3)
+  },
+  goLineManage: function() {
+    if (!getApp().appData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+    this.getUserInfo(4)
+  },
+  goCompany: function() {
+    wx.navigateTo({
+      url: '/pages/company/company',
+    })
+  },
+  goUserInfo: function() {
+    if (!getApp().appData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+    this.getUserInfo(5)
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+    return {
+      title: "中易通物流网",
+    }
+  },
+  /**
+   * 获取用户信息
+   */
+  getUserInfo(typeX) {
+    var that = this
+    wx.showLoading({
+      title: '加载中……',
+      mask: true
+    })
+    var json = new Object()
+    var mod = "userinfo"
+    wx.request({
+      url: getApp().appData.host + "vaild_one", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": "",
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          that.setData({
+            isfail: false,
+          })
+          that.setData({
+            userInfo: res.data.data,
+          })
+          if (typeX == 3) {
+            wx.navigateTo({
+              url: '/pages/add-line/add-line?bean=' + JSON.stringify(that.data.userInfo),
+            })
+            return
+          }
+          if (typeX == 4) {
+            wx.navigateTo({
+              url: '/pages/line-manage/line-manage?bean=' + JSON.stringify(that.data.userInfo),
+            })
+          }
+          that.profile(typeX)
+        } else { //请求失败
+          that.setData({
+            isfail: true,
+          })
+
+        }
+      },
+      fail: function(res) {
+        that.setData({
+          isfail: true,
+        })
+
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+  /**
+   * 个人信息
+   */
+  profile(typeX) {
+    var that = this
+    var json = new Object()
+    var mod = "profile"
+    wx.request({
+      url: getApp().appData.host + "vaild_one", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": "",
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          that.setData({
+            isfail: false,
+          })
+          that.setData({
+            profile: res.data.data
+          })
+          switch (typeX) {
+            case 1:
+              wx.navigateTo({
+                url: '/pages/add-source/add-source?bean=' + JSON.stringify(that.data.profile) + "&bean1=" + JSON.stringify(that.data.userInfo),
+              })
+              break
+            case 2:
+              wx.navigateTo({
+                url: '/pages/add-network/add-network?bean=' + JSON.stringify(that.data.profile) + "&bean1=" + JSON.stringify(that.data.userInfo),
+              })
+              break
+            case 5:
+              wx.navigateTo({
+                url: '/pages/userInfo/userInfo?bean=' + JSON.stringify(that.data.profile) + "&bean1=" + JSON.stringify(that.data.userInfo),
+              })
+              break
+          }
+          wx.hideLoading()
+        } else { //请求失败
+          that.setData({
+            isfail: true,
+          })
+        }
+      },
+      fail: function(res) {
+        that.setData({
+          isfail: true,
+        })
+
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+})

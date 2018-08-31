@@ -1,0 +1,82 @@
+/* pages/companyInfos/order/order.wxss */
+view{ box-sizing: border-box; }
+.icon{width: 40rpx;height: 40rpx;margin-right: 10rpx;vertical-align: top;}
+.line-search{
+  background-color: #fff;
+  padding: 15rpx 25rpx 35rpx;
+  margin-bottom: 30rpx;
+}
+.line-add .line-start, .line-add .line-end{
+  flex: 1;
+  border-bottom: 1rpx solid #ddd;
+}
+.line-add .line-end{
+  text-align: right;
+}
+.line-add .line-top{
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  line-height: 40rpx;
+}
+.line-add .line-con{
+  font-size: 42rpx;
+  margin-bottom:15rpx;
+}
+.line-img{
+  width: 60rpx;
+  height: 25rpx;
+  margin: 0 40rpx;
+}
+.province{
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.order-box{
+  padding: 0 10rpx;
+  background-color: #fff;
+  padding-bottom: 50rpx;
+  margin-bottom: 30rpx;
+}
+.order-title{
+  font-size: 36rpx;
+  padding: 25rpx 0;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.order-title .rt{
+  padding-left: 15rpx;
+  border-left: 6rpx solid #68c5cd;
+  line-height: 32rpx;
+}
+.select-address{ border-bottom: solid 1px #ddd; padding: 0 26rpx;border-top: solid 1px #ddd;}
+.select-li{ border-top: solid 1px #ddd; padding: 25rpx 0; line-height: 44rpx; position: relative;}
+.select-li:first-child{ border-top: none;}
+.select-li .ico-img{ height: 44rpx; width: 44rpx; float: left;}
+.ico{ position: absolute; right: 0; top: 32rpx;}
+.ico image{ width: 22rpx; height: 22rpx;}
+.input-text{ width:632rpx;  font-size: 26rpx; line-height: 44rpx; float: left;}
+.list{ padding: 0 26rpx 30rpx;border-top: solid 1px #ddd;}
+.list-li{ position: relative; border-bottom: solid 1px #ddd; line-height: 90rpx;}
+.list-li-text{ font-size: 28rpx; color: #333; float: left; padding-left: 20rpx;}
+.list-li-text text{ color:#ff0000; position: absolute; left: 0px;}
+.list-li-input{ padding: 20rpx 0;line-height:30rpx; width:60%; float: left; margin-left:5rpx;}
+.list-li-input input{ line-height:30rpx;display: inline-block; width: 100%;}
+.list-li .ico{top:0rpx; font-size: 26rpx; color: #666; width: auto;}
+.ico image{width: 22rpx;height: 22rpx;}
+.submit-btn{ margin-top: 50rpx; width: 667rpx; line-height: 90rpx; text-align: center; background: #68c5cd; color: #fff; font-size: 30rpx;border-radius: 0;}
+
+.check-box{
+  display: inline-block;
+  font-size: 28rpx;
+  line-height:50rpx;
+  margin-right: 40rpx;
+}
+.check-box image {
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+}
+

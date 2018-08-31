@@ -1,0 +1,75 @@
+/* pages/menber-services/menber-services.wxss */
+view{
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  height: 83rpx;
+  color: #666666;
+  font-size: 25rpx;
+  padding: 0 26rpx;
+  line-height: 83rpx;
+}
+.buy-service{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 26rpx;
+  padding-bottom: 36rpx;
+  background-color: #fff;
+}
+.buy-service-box{
+  width: 220rpx;
+  height: 122rpx;
+  text-align: center;
+  border: 1rpx solid #69c5cd;
+  padding: 20rpx 0;
+}
+.buy-service-box.on{
+  border: 1rpx solid #f00;
+}
+.buy-service-box.on .buy-service-price,.buy-service-box.on .buy-service-time{
+  color: #f00;
+}
+.buy-service-price{
+  font-size: 33rpx;
+  color: #69c5cd;
+  margin-bottom: 7rpx;
+}
+
+.buy-service-time{
+  font-size: 25rpx;
+  color: #999999;
+}
+.pay-cell-list{
+  width: 100%;
+  background-color: #fff;
+  padding-left: 26rpx;
+}
+.pay-cell{
+  width: 100%;
+  height: 89rpx;
+  padding-right: 42rpx;
+  padding-left: 16rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #dddddd;
+}
+.pay-cell-list>.pay-cell:last-child{
+  border: none;
+}
+.pay-cell-left{
+  flex: 1;
+  font-size: 33rpx;
+  color: #666666;
+}
+.pay-cell-left image{
+  width: 59rpx;
+  height: 59rpx;
+  margin-right: 23rpx;
+  vertical-align: middle;
+}
+.pay-cell-right image{
+  width: 39rpx;
+  height: 39rpx;
+}

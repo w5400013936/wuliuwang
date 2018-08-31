@@ -1,0 +1,54 @@
+<!--pages/companyInfos/introduce/introduce.wxml-->
+<block wx:if="{{!isfail}}">
+  <swiper class='banner-swiper' indicator-dots="{{true}}" indicator-color="#999" indicator-active-color="#68c5cd" autoplay="{{true}}" interval="{{3000}}">
+    <swiper-item wx:for="{{company.CompanyProfile.img}}" wx:key="{{index}}">
+      <image class='banner-img' src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class='details-list'>
+    <view class='details-li-title'>公司简介</view>
+    <view class='details-li'>
+      <view class='details-li-desc'>
+        {{company.CompanyProfile.info}}
+      </view>
+    </view>
+
+    <view class='details-li-title'>公司信息</view>
+    <view class='details-li'>
+      <view class='details-li-text'>公司名称</view>
+      <view class='details-li-info'>{{company.companyInformation.companyName}} </view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>企业性质</view>
+      <view class='details-li-info'>{{company.companyInformation.businessNature}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>经营模式</view>
+      <view class='details-li-info'>{{company.companyInformation.businessType}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>法人代表</view>
+      <view class='details-li-info'>{{company.companyInformation.legalPerson}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>员工人数</view>
+      <view class='details-li-info'>{{company.companyInformation.employNum}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>成立年份</view>
+      <view class='details-li-info'>{{company.companyInformation.establishment}}年</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>年营业额</view>
+      <view class='details-li-info'>{{company.companyInformation.turnOver}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>主营产品</view>
+      <view class='details-li-info'>{{company.companyInformation.mainProducts}}</view>
+    </view>
+  </view>
+
+  <contact linkman="{{contact.linkMan}}" address="{{contact.address}}" telphone="{{contact.tel}}" phone="{{contact.phone}}" fax="{{contact.fax}}" email="{{contact.email}}" website="{{contact.webSite}}">
+  </contact>
+</block>

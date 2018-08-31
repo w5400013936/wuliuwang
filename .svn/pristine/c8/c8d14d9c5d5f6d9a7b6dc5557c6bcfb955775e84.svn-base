@@ -1,0 +1,459 @@
+// pages/add-line/add-line.js
+var WxNotificationCenter = require("../../WxNotificationCenter/WxNotificationCenter.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    transportTimeList: ['小时', '天', '天多'],
+    transportTime: '小时',
+    deliverList: ['零担配货', '整车配货'],
+    deliver: '整车配货',
+    invoice: true,
+    oneWay: true,
+    userInfo1: "",
+    ID: 0,
+    bean: new Object(),
+    price: "",
+  },
+  goAreaSelect: function() {
+    wx.navigateTo({
+      url: '/pages/area-select/area-select?proid=' + this.data.bean.toProvin + "&sid=" + this.data.bean.toCitys,
+    })
+  },
+  chooseTransportTime: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.transportTimeList,
+      success: function(e) {
+        switch (e.tapIndex) {
+          case 0:
+            that.data.bean.tranUnit = "hour"
+            break
+          case 1:
+            that.data.bean.tranUnit = "day"
+            break
+          case 2:
+            that.data.bean.tranUnit = "days"
+            break
+        }
+        console.log(that.data.bean.tranUnit)
+        that.setData({
+          transportTime: that.data.transportTimeList[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    var that = this
+    that.setData({
+      userInfo1: JSON.parse(options.bean),
+    })
+    if (options.id) {
+      that.setData({
+        ID: options.id
+      })
+      that.request()
+    } else {
+      that.data.bean.ID = 0
+      that.data.bean.toCitys = ""
+      that.data.bean.toProvin = 0
+      that.data.bean.provin = 0
+      that.data.bean.city = 0
+      that.data.bean.netID = 0
+      that.data.bean.tranUnit = "hour"
+      that.data.bean.meth = 2
+      that.data.bean.oriPriceQ = 0
+      that.data.bean.oriPriceZ = 0
+      that.data.bean.oriUnit = "kg"
+      var line = new Object()
+      line.tipPriceQ = 0
+      line.tipPriceZ = 0
+      line.xyPriceQ = 0
+      line.xyPriceZ = 0
+      line.tipUnit = "kg"
+      line.xyUnit = "kg"
+      line.isGetMoney = false
+      line.isBack = false
+      that.data.bean.line = line
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    var that = this
+    if (getApp().shuaXin.yunShuJiaGe) {
+      that.data.bean = getApp().shuaXin.yunShuJiaGe
+      that.yunShuJiaGe()
+      getApp().shuaXin.yunShuJiaGe = ""
+    }
+    if (getApp().shuaXin.toProvin) {
+      that.data.bean.toProvin = getApp().shuaXin.toProvin
+      getApp().shuaXin.toProvin = ""
+    }
+    if (getApp().shuaXin.toCitys) {
+      that.data.bean.toCitys = getApp().shuaXin.toCitys
+      getApp().shuaXin.toCitys = ""
+    }
+    if (getApp().shuaXin.proName) {
+      that.data.bean.ToVinc = getApp().shuaXin.proName
+      that.setData({
+        bean: that.data.bean
+      })
+      getApp().shuaXin.proName = ""
+    }
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+  /**
+   * 时效输入
+   */
+  shiXiaoInput(e) {
+    this.data.bean.rate = e.detail.value
+  },
+  /**
+   * 效率输入
+   */
+  xiaoLvInput(e) {
+    this.data.bean.plv = e.detail.value
+  },
+  /**
+   * 线路说明输入
+   */
+  shuoMingInput(e) {
+    this.data.bean.line.mark = e.detail.value
+  },
+
+  /**
+   * 选地址回调
+   */
+  chooseAddress(e) {
+    var that = this
+    console.log("回调", e)
+    that.data.bean.provin = e.detail.proID
+    that.data.bean.city = e.detail.cityID
+    that.data.bean.netID = e.detail.netID
+    that.data.bean.Vinc = e.detail.proName
+    that.data.bean.cityName = e.detail.cityName
+    that.data.bean.pointName = e.detail.pointName
+  },
+
+  chooseDistribution: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.deliverList,
+      success: function(e) {
+        that.data.bean.meth = e.tapIndex + 1
+        that.setData({
+          deliver: that.data.deliverList[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 是否代收货款
+   */
+  invoiceChange: function() {
+    var that = this
+    that.data.bean.line.isGetMoney = !that.data.bean.line.isGetMoney
+    that.setData({
+      bean: that.data.bean
+    })
+  },
+  /**
+   * 单程/往返
+   */
+  oneWayChange: function() {
+    var that = this
+    that.data.bean.line.isBack = !that.data.bean.line.isBack
+    that.setData({
+      bean: that.data.bean
+    })
+  },
+  goTransportPrice: function() {
+    wx.navigateTo({
+      url: '/pages/transport-price/transport-price?bean=' + JSON.stringify(this.data.bean),
+    })
+  },
+  /**
+   * 专线请求
+   */
+  request() {
+    var that = this
+    wx.showLoading({
+      title: '加载中……',
+      mask: true
+    })
+    that.setData({
+      enable: false
+    })
+    var json = new Object()
+    var mod = "gist"
+    json.ID = that.data.ID
+    wx.request({
+      url: getApp().appData.host + "vaild_one", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": JSON.stringify(json),
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          var transportTime = "小时"
+          switch (res.data.data.tranUnit) {
+            case "hour":
+              transportTime = "小时"
+              break
+            case "day":
+              transportTime = "天"
+              break
+            case "days":
+              transportTime = "天多"
+              break
+          }
+
+          that.setData({
+            transportTime: transportTime,
+            deliver: that.data.deliverList[res.data.data.meth - 1],
+            bean: res.data.data,
+            isfail: false,
+            enable: true
+          })
+          that.yunShuJiaGe()
+          wx.hideLoading()
+        } else { //请求失败
+          that.setData({
+            isfail: true,
+          })
+        }
+      },
+      fail: function(res) {
+        that.setData({
+          isfail: true,
+        })
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+  /**
+   * 运输价格
+   */
+  yunShuJiaGe() {
+    var that = this
+    that.setData({
+      price: ""
+    })
+    if (that.data.bean.oriPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.oriPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.tipPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.tipPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.xyPriceQ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+    if (that.data.bean.line.xyPriceZ > 0) {
+      that.setData({
+        price: "查看价格"
+      })
+      return
+    }
+  },
+  faBu(e) {
+    var that = this
+    var rate = e.detail.value.rate
+    var plv = e.detail.value.plv
+    var mark = e.detail.value.mark
+    if (that.data.bean.netID == 0) {
+      wx.showToast({
+        title: '请选择出发地',
+      })
+      return
+    }
+    if (that.data.bean.toProvin == 0) {
+      wx.showToast({
+        title: '请选择到达地',
+      })
+      return
+    }
+    if (!rate) {
+      wx.showToast({
+        title: '请输入运输时效',
+      })
+      return
+    } else {
+      if (parseInt(rate) < 1) {
+        wx.showModal({
+          title: '提示',
+          content: '运输时效必须大于1',
+        })
+        return
+      }
+    }
+    if (!plv) {
+      wx.showToast({
+        title: '请输入发车频率',
+      })
+      return
+    } else {
+      if (parseInt(plv) < 1) {
+        wx.showModal({
+          title: '提示',
+          content: '发车频率必须大于1',
+        })
+        return
+      }
+    }
+    var that = this
+    wx.showLoading({
+      title: '加载中……',
+      mask: true
+    })
+    var json = new Object()
+    var mod = "gist"
+    json.ID = that.data.bean.ID
+    json.point = that.data.bean.netID
+    json.vin = that.data.bean.provin
+    json.city = that.data.bean.city
+    json.tovin = parseInt(that.data.bean.toProvin)
+    json.tocitys = that.data.bean.toCitys
+    json.meth = that.data.bean.meth
+    json.plv = parseInt(plv)
+    json.rateunit = that.data.bean.tranUnit
+    json.rate = parseInt(rate)
+    if (that.data.bean.line.isGetMoney) {
+      json.getmoney = 1
+    } else {
+      json.getmoney = 0
+    }
+    if (that.data.bean.line.isBack) {
+      json.isback = 1
+    } else {
+      json.isback = 0
+    }
+    json.orpricez = that.data.bean.oriPriceZ
+    json.orpriceq = that.data.bean.oriPriceQ
+    json.orunit = that.data.bean.oriUnit
+    json.tipricez = that.data.bean.line.tipPriceZ
+    json.tipriceq = that.data.bean.line.tipPriceQ
+    json.tipunit = that.data.bean.line.tipUnit
+    json.xypricez = that.data.bean.line.xyPriceZ
+    json.xypriceq = that.data.bean.line.xyPriceQ
+    json.xyunit = that.data.bean.line.xyUnit
+    json.mark = mark
+    wx.request({
+      url: getApp().appData.host + "vaild_post", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": JSON.stringify(json),
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          getApp().shuaXin.SHUA_XIN_TONG_JI = true
+          that.setData({
+            isfail: false,
+          })
+          wx.hideLoading()
+          setTimeout(function() {
+            if (that.data.bean.ID == 0) {
+              wx.showToast({
+                title: '发布成功',
+              })
+            } else {
+              wx.showToast({
+                title: '修改成功',
+              })
+            }
+          }, 300)
+          WxNotificationCenter.postNotificationName(getApp().shuaXin.faBuZhuanXian);
+          wx.redirectTo({
+            url: '/pages/line-manage/line-manage?bean=' + JSON.stringify(that.data.userInfo1),
+          })
+        } else { //请求失败
+          setTimeout(function() {
+            wx.showToast({
+              title: res.data.msg,
+            })
+          }, 300)
+          wx.hideLoading()
+          that.setData({
+            isfail: true,
+          })
+        }
+      },
+      fail: function(res) {
+        setTimeout(function () {
+          wx.showToast({
+            title: "请求失败",
+          })
+        }, 300)
+        wx.hideLoading()
+        that.setData({
+          isfail: true,
+        })
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  }
+})

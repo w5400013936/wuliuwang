@@ -1,0 +1,75 @@
+<!--pages/index/index.wxml-->
+<view class='header bgwhite'>
+   <!-- <view class='header-title'>中易通物流网</view>  -->
+  <view class='header-p'>www.6-china.com</view>
+  <view class='banner'>
+    <view class='swiper-container'>
+      <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}} " bindchange="swiperChange">
+          <block wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" mode="widthFix" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="dots">
+          <block wx:for="{{imgUrls}}" wx:key="unique">
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='index-btn bgwhite'>
+  <view class='index-btn-span6'>
+    <image src='/img/index-btn-source.png' mode="widthFix" bindtap='goSource'></image>
+  </view>
+  <view class='index-btn-span6' bindtap='goLine'>
+    <image src='/img/index-btn-line.png' mode="widthFix"></image>
+  </view>
+  <view class='clear'></view>
+</view>
+<view class='height27'></view>
+<view class='menu bgwhite'>
+
+  <view class='menu-li' bindtap='goAddSource'>
+    <view class='menu-li-ico'>
+      <image src='/img/i1.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>发布货源</view>
+  </view>
+
+  <view class='menu-li' bindtap='goAddNetwork'>
+    <view class='menu-li-ico'>
+      <image src='/img/i2.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>发布网点</view>
+  </view>
+  <view class='menu-li' bindtap='goAddLine'>
+    <view class='menu-li-ico'>
+      <image src='/img/i3.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>发布专线</view>
+  </view>
+  <view class='menu-li' bindtap='goLineManage'>
+    <view class='menu-li-ico'>
+      <image src='/img/i4.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>专线刷新</view>
+  </view>
+  <view class='menu-li' bindtap='goCompany'>
+    <view class='menu-li-ico'>
+      <image src='/img/i5.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>企业信息</view>
+  </view>
+  <view class='menu-li' bindtap='goUserInfo'>
+    <view class='menu-li-ico'>
+      <image src='/img/i6.png' mode="widthFix"></image>
+    </view>
+    <view class='menu-li-p'>会员管理</view>
+  </view>
+  <view class='clear'></view>
+</view>
+<view class='height27'></view>

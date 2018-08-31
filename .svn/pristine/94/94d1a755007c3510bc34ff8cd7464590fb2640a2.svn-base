@@ -1,0 +1,36 @@
+/**app.wxss**/
+page{ background: #eeeeee;height: 100%;}
+.clear{ clear: both;}
+.height27{ height: 27rpx;}
+.bgwhite{ background: #fff;}
+.mainColor{color: #68c5cd;}
+.fl{float: left;}
+.fr{float: right;}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.bottom-box{
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 21rpx;
+  color: #ffffff;
+  background-color: #69c5cd;
+}
+.list-li-input input{
+  line-height: normal !important;
+}
+
+.bottom-btn{ position: fixed; bottom: 0;left: 0;right: 0; width: 100%; line-height: 90rpx; text-align: center; background: #68c5cd; color: #fff; font-size: 30rpx;border-radius: 0;z-index: 1000;}
+.pb110{ padding-bottom: 110rpx; }

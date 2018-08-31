@@ -1,0 +1,82 @@
+<!--pages/add-line/add-line.wxml-->
+<view class='height27'></view>
+<view class='bgwhite select-address '>
+  <!-- <view class='select-li'>
+    <image src='/img/f-address.png' class='ico-img' mode="aspectFill"></image>
+    <input class='input-text' maxlength="10" placeholder="出发地" />
+    <view class='ico arrow-down'><image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='select-li'>
+    <image src='/img/t-address.png'  class='ico-img' mode="aspectFill"></image>
+    <input class='input-text'  maxlength="10" placeholder="到达地" />
+    <view class='ico arrow-right'><image src='/img/arrow-right.png' mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view> -->
+  <view class='cell'>
+    <view class='cell-left'>
+      <image src='/img/f-address.png'  class='cell-ico' mode="aspectFill"></image>
+      <areaPicker class="cell-input" placeholder="请选择出发地"></areaPicker>
+      <!-- <input class='cell-input'  maxlength="10" placeholder="请选择出发地" disabled='{{true}}'/> -->
+    </view>
+    <view class='cell-right'>
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class='cell' bindtap='goAreaSelect'>
+    <view class='cell-left'>
+      <image src='/img/t-address.png'  class='cell-ico' mode="aspectFill"></image>
+      <input class='cell-input'  maxlength="10" placeholder="请选择到达地" disabled='{{true}}'/>
+    </view>
+    <view class='cell-right'>
+      <image src='/img/arrow-right.png' mode="aspectFill"></image>
+    </view>
+  </view>
+</view>
+<view class='height27'></view>
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>运输时效：</view>
+    <view class='list-li-input'><input class='input-text' placeholder="请输入运输时效" value='' /></view>
+    <view class='ico arrow-down' bindtap='chooseTransportTime'>{{transportTime}}<image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>发车频率：</view>
+    <view class='list-li-input'><input class='input-text' placeholder="请输入发车频率"  value=''/></view>
+     <view class='ico arrow-down'>次/天</view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li' bindtap='chooseDistribution'>
+    <view class='list-li-text'>配货方式：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder="请选择配货方式"  value='{{deliver}}'/></view>
+    <view class='ico arrow-down'><image src='/img/arrow-down.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'><text>*</text>是否代收发票：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder=""  value='{{invoice?"是":"否"}}'/></view>
+    <view class='open-btn {{invoice?"active":""}}' bindtap='invoiceChange'><view class='open-span'></view></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>单程/往返：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}'  placeholder=""  value='{{oneWay?"单程":"往返"}}'/></view>
+    <view class='open-btn {{oneWay?"":"active"}}' bindtap='oneWayChange'><view class='open-span'></view></view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li' bindtap='goTransportPrice'>
+    <view class='list-li-text'>运输价格：</view>
+    <view class='list-li-input'><input class='input-text' disabled='{{true}}' placeholder="请选择运输价格" /></view>
+    <view class='ico arrow-down'><image src='/img/arrow-right.png'  mode="aspectFill"></image></view>
+    <view class='clear'></view>
+  </view>
+   <view class='tips'>备注：运价小于等于0时会自动转成“面议”</view>
+  <view class='list-li'>
+    <view class='list-li-text textarea'>线路说明</view>
+    <textarea bindblur="bindTextAreaBlur"placeholder="请输入线路说明" />
+    <view class='clear'></view>
+  </view>
+</view>
+<button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary">立即发布 </button>

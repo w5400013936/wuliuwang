@@ -1,0 +1,18 @@
+/* pages/enterprise/enterprise.wxss */
+.search__top{ padding: 10px 20rpx; position: relative;}
+.search__input{  border-radius:15rpx; overflow: hidden;margin: 0 auto; padding:0 85rpx 0 75rpx; background: #fff; font-size: 14px;height:65rpx; line-height:65rpx;}
+.search__icon{ position: absolute; left:10rpx;top:39rpx;}
+.clearButton{background:none;position:absolute;border:0;right:20rpx;top:6rpx;bottom:0;width:80rpx; outline: 0;border-radius:0;}
+.enterprise{ padding: 0 20rpx 50rpx; }
+.enterprise-li{ background: #fff; border-radius:10rpx; overflow: hidden; margin-bottom: 20rpx;}
+.enterprise-li-info{ padding:35rpx 20rpx 0;}
+.enterprise-li-logo{ display: inline-block;width: 102rpx; height: 102rpx; line-height: 102rpx; border-radius: 50%; overflow: hidden; border:solid 1px #ddd; float: left; margin-right: 17rpx;}
+.enterprise-li-logo image{ width: 102rpx;}
+.enterprise-li-text{ float: left;}
+.enterprise-li-name{font-size:34rpx; color: #333;}
+.enterprise-li-name image{ width: 45rpx; vertical-align: middle; margin-left: 15rpx;}
+.enterprise-li-tel{ margin-top: 27rpx; font-size: 26rpx; color: #333; height: 47rpx; line-height: 47rpx;}
+.enterprise-li-tel image{ height: 47rpx; width: 47rpx; vertical-align: top; margin-right: 10rpx;}
+.enterprise-li-tel .tel{ float: right;}
+.enterprise-li-addres{ font-size: 26rpx; color: #999; border-top: solid 1px #e8e8e8; background: #fafafa; padding: 20rpx; margin-top: 45rpx; line-height: 47rpx;}
+.enterprise-li-addres image{ width: 47rpx; height: 47rpx; vertical-align: top;}

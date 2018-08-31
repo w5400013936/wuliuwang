@@ -1,0 +1,24 @@
+<!--pages/companyInfos/carInfo/carInfo.wxml-->
+<view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='roCarDetail' data-carid='{{item.ID}}'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          {{item.from}} 到 {{item.to}}
+        </view>
+        <view class='o-desc'>{{imte.carNo}}</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        {{item.carUser}}
+      </view>
+      <view catchtap='call' data-phone='{{item.mobile}}'>
+        <image class='ico' src='/img/phone.png'></image>
+        {{item.mobile}}
+      </view>
+    </view>
+  </view>
+</view>

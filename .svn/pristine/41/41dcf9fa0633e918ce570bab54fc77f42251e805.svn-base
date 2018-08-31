@@ -1,0 +1,318 @@
+// pages/add-source/add-source.js 
+var WxNotificationCenter = require("../../WxNotificationCenter/WxNotificationCenter.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    transportTypeList: ['不限', '物流公司', '整车配货', '零担配货'],
+    transportType: '不限',
+    goodTypeList: ['货', '重货', '轻货'],
+    goodType: '货',
+    weightList: ['公斤', '吨'],
+    weight: '公斤',
+    startDate: '2000-01-01',
+    endDate: '2100-01-01',
+    expiryDate: '',
+    profile: "",
+    userInfo1: "",
+    bean: new Object(),
+  },
+  transportTypeSelect: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.transportTypeList,
+      success: function(e) {
+        that.data.bean.sentType = e.tapIndex
+        that.setData({
+          transportType: that.data.transportTypeList[e.tapIndex],
+        })
+      }
+    })
+  },
+  goodTypeSelect: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.goodTypeList,
+      success: function(e) {
+        that.setData({
+          goodType: that.data.goodTypeList[e.tapIndex]
+        })
+      }
+    })
+  },
+  weightSelect: function() {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.weightList,
+      success: function(e) {
+        that.setData({
+          weight: that.data.weightList[e.tapIndex]
+        })
+      }
+    })
+  },
+  expiryDateChange: function(e) {
+    this.setData({
+      expiryDate: e.detail.value
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    var that = this
+    var date = new Date();
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
+    that.setData({
+      profile: JSON.parse(options.bean),
+      userInfo1: JSON.parse(options.bean1),
+      startDate: year + "-" + month + "-" + day
+    })
+    if (options.value) {
+      that.setData({
+        bean: JSON.parse(options.value)
+      })
+      that.setData({
+        transportType: that.data.transportTypeList[that.data.bean.sentType],
+        weight: that.data.bean.unit ? that.data.bean.unit : "公斤",
+        expiryDate: that.data.bean.limiTime,
+        goodType: that.data.bean.godType
+      })
+    } else {
+      var splitLink = that.data.profile.linkMan.split(",")
+      if (splitLink.length > 0) {
+        that.data.bean.contact = splitLink[0];
+      } else {
+        that.data.bean.contact = ""
+      }
+      var splitMobile = that.data.userInfo1.mobile.split(",")
+      if (splitMobile.length > 0) {
+        that.data.bean.mobile = splitMobile[0];
+      } else {
+        that.data.bean.mobile = "";
+      }
+      that.data.bean.ID = 0
+      that.data.bean.provin = 0
+      that.data.bean.city = 0
+      that.data.bean.town = 0
+      that.data.bean.FromPlace = ""
+      that.data.bean.toProvin = 0
+      that.data.bean.toCity = 0
+      that.data.bean.toTown = 0
+      that.data.bean.ToPlace = ""
+      that.data.bean.sentType = 0
+      that.data.bean.unit = "公斤"
+      that.setData({
+        bean: that.data.bean
+      })
+    }
+  },
+
+  chooseAddress(e) {
+    var that = this
+    console.log(e.detail.typeX)
+    if (e.detail.typeX == 1) {
+      that.data.bean.toProvin = e.detail.proID
+      that.data.bean.toCity = e.detail.cityID
+      that.data.bean.toTown = e.detail.townID
+      that.data.bean.ToPlace = e.detail.proName + " - " + e.detail.cityName + " - " + e.detail.townName
+    } else {
+      that.data.bean.provin = e.detail.proID
+      that.data.bean.city = e.detail.cityID
+      that.data.bean.town = e.detail.townID
+      that.data.bean.FromPlace = e.detail.proName + " - " + e.detail.cityName + " - " + e.detail.townName
+    }
+  },
+  /**
+   * 提交
+   */
+  tiJiao(e) {
+    var that = this
+    var fromPlace = e.detail.value.fromPlace
+    var toPlace = e.detail.value.toPlace
+    var name = e.detail.value.name
+    var weight = e.detail.value.weight
+    var tiji = e.detail.value.tiji
+    var price = e.detail.value.price
+    var userName = e.detail.value.userName
+    var mobile = e.detail.value.mobile
+    var mark = e.detail.value.mark
+    if (that.data.provin == 0) {
+      wx.showToast({
+        title: '请选择出发地',
+      })
+      return
+    }
+    if (!fromPlace) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入出发地详细地址',
+        showCancel: false
+      })
+      return
+    }
+    if (that.data.toProvin == 0) {
+      wx.showToast({
+        title: '请选择到达地',
+      })
+      return
+    }
+    if (!toPlace) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入到达地详细地址',
+        showCancel: false
+      })
+      return
+    }
+    if (!name) {
+      wx.showToast({
+        title: '请输入货物名称',
+      })
+      return
+    }
+    if (!weight) {
+      wx.showToast({
+        title: '请输入货物重量',
+      })
+      return
+    }
+    if (!that.data.expiryDate) {
+      wx.showToast({
+        title: '请选择有效期',
+      })
+      return
+    }
+    if (!userName) {
+      wx.showToast({
+        title: '请输入联系人',
+      })
+      return
+    }
+    if (!mobile) {
+      wx.showToast({
+        title: '请输入手机号码',
+      })
+      return
+    }
+    wx.showLoading({
+      title: '加载中……',
+      mask: true
+    })
+    var json = new Object()
+    var mod = "godds"
+    json.ID = that.data.bean.ID
+    json.vin = that.data.bean.provin
+    json.city = that.data.bean.city
+    json.town = that.data.bean.town
+    json.tovin = that.data.bean.toProvin
+    json.tocity = that.data.bean.toCity
+    json.totown = that.data.bean.toTown
+    json.contact = userName
+    json.mobile = mobile
+    json.godname = name
+    if (!weight) {
+      weight = 0
+    }
+    json.weight = parseInt(weight) 
+    json.unit = that.data.weight
+    if (!tiji) {
+      tiji = 0
+    }
+    json.tiji = parseInt(tiji) 
+    if (!price) {
+      price = 0
+    }
+    json.price = price
+    json.godtype = that.data.goodType
+    json.limitime = that.data.expiryDate
+    json.sentype = that.data.bean.sentType
+    json.mark = mark
+    json.fdress = fromPlace
+    json.todress = toPlace
+    wx.request({
+      url: getApp().appData.host + "vaild_post", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": JSON.stringify(json),
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function(res) {
+        //请求成功
+        if (res.data.state == 1) {
+          getApp().shuaXin.SHUA_XIN_TONG_JI = true
+          that.setData({
+            isfail: false,
+          })
+          wx.hideLoading()
+          setTimeout(function() {
+            if (that.data.bean.ID == 0) {
+              wx.showToast({
+                title: '发布成功',
+              })
+            } else {
+              wx.showToast({
+                title: '修改成功',
+              })
+            }
+          }, 300)
+          WxNotificationCenter.postNotificationName(getApp().shuaXin.faBuHuoYuan);
+          wx.redirectTo({
+            url: '/pages/source-manage/source-manage?bean=' + JSON.stringify(that.data.profile) + "&bean1=" + JSON.stringify(that.data.userInfo1),
+          })
+        } else { //请求失败
+          that.setData({
+            isfail: true,
+          })
+
+        }
+      },
+      fail: function(res) {
+        that.setData({
+          isfail: true,
+        })
+
+      },
+      complete: function() {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+})

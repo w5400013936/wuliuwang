@@ -1,0 +1,30 @@
+<!--pages/companyInfos/opportunity/opportunity.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view>
+        <view class='o-name'>广东湛江到河南省林州市物流货运专线</view>
+        <view class='o-desc'>广东湛江到河南省林州市物流货运专线</view>
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view>
+        <view class='o-name'>广东湛江到河南省林州市物流货运专线</view>
+        <view class='o-desc'>广东湛江到河南省林州市物流货运专线</view>
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view>
+        <view class='o-name'>广东湛江到河南省林州市物流货运专线</view>
+        <view class='o-desc'>广东湛江到河南省林州市物流货运专线</view>
+      </view>
+    </view>
+  </view>
+</view>

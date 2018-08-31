@@ -1,0 +1,17 @@
+/* pages/companyInfos/introduce/introduce.wxss */
+.banner-swiper{
+  height: 550rpx;
+}
+.banner-img{
+  width: 100%;
+  height: 100%;
+}
+.details-list{  margin: 0; position: 0; border-top:solid 1px #efefef;}
+.details-li{ line-height: 92rpx; border-bottom:solid 1px #ddd; padding: 0 20rpx; min-height: 92rpx;background: #fff;}
+.details-li-text{ width: 25%; float: left; font-size: 30rpx; color: #999; display: flex;}
+.details-li-info{ font-size: 30rpx; color: #333; line-height: 36rpx; padding: 28rpx 0;}
+
+.details-li-title{ line-height: 65rpx; padding: 0 20rpx; color: #666; font-size: 30rpx;}
+.details-li-t{ font-size: 30rpx; color: #999;}
+.details-li-t .text{ float: right; color: #4ab8d0; font-size: 30rpx;}
+.details-li-desc{ font-size: 28rpx; line-height: 45rpx; padding: 20rpx 0; color: #666;}

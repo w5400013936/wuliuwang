@@ -1,0 +1,37 @@
+/* pages/companyInfos/carInfo/carInfo.wxss */
+.info-list{
+  padding: 30rpx 30rpx;
+}
+.info-item{
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.info-top{
+  font-size: 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  padding: 38rpx;
+}
+.info-top .name{
+  font-size: 30rpx;
+  padding-left: 60rpx;
+  margin-top: 10rpx;
+  color: #999;
+}
+.info-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 20rpx;
+  background-color: #fafafa;
+}
+.o-name{
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.o-desc{
+  font-size: 26rpx;
+  color: #999;
+}

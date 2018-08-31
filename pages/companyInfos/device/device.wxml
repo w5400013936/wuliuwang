@@ -1,0 +1,21 @@
+<!--pages/companyInfos/device/device.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>货车绑带38mm拉紧器集装箱封箱带托盘紧固带</view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>货车绑带38mm拉紧器集装箱封箱带托盘紧固带</view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top flex'>
+      <image class='device-img' src='/img/source.png'></image>
+      <view class='desc'>货车绑带38mm拉紧器集装箱封箱带托盘紧固带</view>
+    </view>
+  </view>
+</view>

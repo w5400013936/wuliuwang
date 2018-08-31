@@ -1,0 +1,101 @@
+<!--pages/companyInfos/line-search/line-search.wxml-->
+<view class='line-search'>
+  <view class='line-add flex'>
+    <view class='line-start'>
+      <view class='line-top'>
+        <image class='ico' src='/img/f-address.png'></image>出发城市
+      </view>
+      <view class='line-con'>嘉兴市</view>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <view class='line-top'>
+        <image class='ico' src='/img/f-address.png'></image>到达城市
+      </view>
+      <view class='line-con'>厦门市</view>
+    </view>
+  </view>
+  <button class='line-btn'>查询线路</button>
+</view>
+
+<view class='recommond-box'>
+  <view class='recommond-title'>
+    <view class='rt'>推荐路线</view>
+  </view>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 嘉兴市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>福建省 厦门市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>重货：电询</view>
+        <view class='r-info'>最低一票：电询</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>轻货：电询</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png'></image>
+  </view>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 嘉兴市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>福建省 厦门市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>重货：电询</view>
+        <view class='r-info'>最低一票：电询</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>轻货：电询</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png'></image>
+  </view>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 嘉兴市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>福建省 厦门市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>重货：电询</view>
+        <view class='r-info'>最低一票：电询</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>轻货：电询</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png'></image>
+  </view>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 嘉兴市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>福建省 厦门市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>重货：电询</view>
+        <view class='r-info'>最低一票：电询</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>轻货：电询</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png'></image>
+  </view>
+</view>

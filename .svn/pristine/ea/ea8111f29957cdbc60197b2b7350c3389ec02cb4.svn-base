@@ -1,0 +1,48 @@
+<!--pages/feedback-list/feedback-list.wxml-->
+<view class='list'>
+  <view class='list-container' bindtap='showContent' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='0' style='{{listStyle[0]}}'>
+    <view class='list-left'>
+      <view class='list-left-title'>针对bug的意见反馈</view>
+      <view class='list-left-date'>2016-12-14</view>
+    </view>
+    <view class='list-right'>
+      <image class="list-right-img {{arrowDown[0]?'down':''}}" data-index='0' src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+  <view class='list-btns'>
+    <view class='list-del'>删除</view>
+  </view>
+  
+  <view class="list-content {{arrowDown[0]?'down':''}}">
+    <view class='list-title'>厦门SA软件有限公司</view>
+    <view class='list-message'>
+      这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见
+    </view>
+    <view class='list-info'>张先生：13600000000</view>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list-container' bindtap='showContent' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+    <view class='list-left'>
+      <view class='list-left-title'>针对bug的意见反馈</view>
+      <view class='list-left-date'>2016-12-14</view>
+    </view>
+    <view class='list-right'>
+      <image class="list-right-img {{arrowDown[1]?'down':''}}" data-index="1" src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+  <view class='list-btns'>
+    <view class='list-del'>删除</view>
+  </view>
+  
+  <view class="list-content {{arrowDown[1]?'down':''}}">
+    <view class='list-title'>厦门SA软件有限公司</view>
+    <view class='list-message'>
+      这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见这里是我要说的反馈意见
+    </view>
+    <view class='list-info'>张先生：13600000000</view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "专线管理",
+  "usingComponents": {
+    "confirm": "/component/confirm/confirm"
+  }
+}

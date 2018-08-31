@@ -1,0 +1,144 @@
+<!--pages/company/company.wxml-->
+<view class='search-box'>
+  <view class='search-form'>
+    <input type='text' placeholder='好企业搜出来'></input>
+    <icon type="search" size="16"></icon>
+  </view>
+  <view class='clear'></view>
+</view>
+
+<view class='cell'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='/img/logo.png'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>南昌市西湖区银燕景波货运信1111</view>
+        <image class='cell-right-img' src='/img/vip.png'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>吴经理</text>
+        </view>
+        <view class='dib'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>13600000000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>南昌市西湖区银燕物流基地</view>
+  </view>
+</view>
+<view class='cell'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='/img/logo.png'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>南昌市西湖区银燕景波货运信1111</view>
+        <image class='cell-right-img' src='/img/vip.png'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>吴经理</text>
+        </view>
+        <view class='dib'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>13600000000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>南昌市西湖区银燕物流基地</view>
+  </view>
+</view>
+<view class='cell'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='/img/logo.png'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>南昌市西湖区银燕景波货运信1111</view>
+        <image class='cell-right-img' src='/img/vip.png'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>吴经理</text>
+        </view>
+        <view class='dib'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>13600000000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>南昌市西湖区银燕物流基地</view>
+  </view>
+</view>
+<view class='cell'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='/img/logo.png'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>南昌市西湖区银燕景波货运信1111</view>
+        <image class='cell-right-img' src='/img/vip.png'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>吴经理</text>
+        </view>
+        <view class='dib'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>13600000000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>南昌市西湖区银燕物流基地</view>
+  </view>
+</view>
+<view class='cell'>
+  <view class='cell-container'>
+    <view class='cell-left'>
+      <image class='cell-left-img' src='/img/logo.png'></image>
+    </view>
+    <view class='cell-right'>
+      <view class='cell-right-header'>
+        <view class='dib vam ellipsis w450'>南昌市西湖区银燕景波货运信1111</view>
+        <image class='cell-right-img' src='/img/vip.png'></image>
+      </view>
+      <view class='cell-right-footer'>
+        <view class='dib mr70'>
+          <image class='cell-ico' src='/img/m-ico2.png'></image>
+          <text class='vam'>吴经理</text>
+        </view>
+        <view class='dib'>
+          <image class='cell-ico' src='/img/phone.png'></image>
+          <text class='vam'>13600000000</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cell-footer'>
+    <image class='cell-ico' src='/img/addres-ico.png'></image>
+    <view class='cell-footer-text vam dib'>南昌市西湖区银燕物流基地</view>
+  </view>
+</view>

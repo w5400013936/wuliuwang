@@ -1,0 +1,96 @@
+<!--pages/companyInfos/carInfo-detail/carInfo-detail.wxml-->
+<view class='details-list'>
+  <view class='details-li-title'>车源详细信息</view>
+  <view class='details-li'>
+    <view class='details-li-text'>车牌号</view>
+    <view class='details-li-info'>沪BK7600</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>类型</view>
+    <view class='details-li-info'>厢式货车</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>出发地</view>
+    <view class='details-li-info'>广东-云浮市 市辖区</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>途经地名</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li-title'>到达地（河南）</view>
+  <view class='details-li' >
+    <view class='details-li-t'>郑州市
+      <view class='text' bindtap='showDetail' data-index='{{index}}'>{{data.select?"收起":"查看"}}</view>
+    </view>
+    <view class='details-li-desc'>
+      中原区，二七区
+    </view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>发布时间</view>
+    <view class='details-li-info'>2018-08-13</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>发车时间</view>
+    <view class='details-li-info'>2018-08-13</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>运价</view>
+    <view class='details-li-info'>面议</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>常用语</view>
+    <view class='details-li-info'>求货源</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>即时/长期</view>
+    <view class='details-li-info'>即时车源</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>单程/往返</view>
+    <view class='details-li-info'>往返</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>说明</view>
+    <view class='details-li-info'>求货源</view>
+  </view>
+  <view class='details-li-title'>车辆档案资料</view>
+  <view class='details-li'>
+    <view class='details-li-text'>车牌号</view>
+    <view class='details-li-info'>沪BK7600</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车长</view>
+    <view class='details-li-info'>13.00 米</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>载重</view>
+    <view class='details-li-info'>32.00 吨</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车辆类型</view>
+    <view class='details-li-info'>厢式货车</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>体积</view>
+    <view class='details-li-info'>60 立方米</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车主</view>
+    <view class='details-li-info'>付经理</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车主联系电话</view>
+    <view class='details-li-info'>18826138850</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车辆识别代号</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>车辆常驻地</view>
+    <view class='details-li-info'>广东河源市市辖区</view>
+  </view>
+</view>
+
+<view class='more'>点击查看其它车源信息></view>

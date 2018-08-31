@@ -1,0 +1,303 @@
+// pages/userInfo/userInfo.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    genderIndex: null,
+    genderArray: ['男', '女'],
+    genderValueArray: ['male', 'female'],
+    identityIndex: null,
+    identityArray: ['买方', '卖方', '既是买方也是卖方'],
+    identityValueArray: ['buyer', 'seller', 'both'],
+    profile: "",
+    userInfo1: "",
+    sex: "",
+    businessRole: "",
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    that.setData({
+      profile: JSON.parse(options.bean),
+      userInfo1: JSON.parse(options.bean1),
+    })
+    var sex = ""
+    if (that.data.profile.sex == "male") {
+      sex = "男"
+    } else if (that.data.profile.sex == "female") {
+      sex = "女"
+    }
+    var businessRole = ""
+    switch (that.data.profile.businessRole) {
+      case "buyer":
+        businessRole = "买方"
+        break
+      case "seller":
+        businessRole = "卖方"
+        break
+      case "both":
+        businessRole = "既是买方也是卖方"
+        break
+      default:
+        break
+    }
+    that.setData({
+      sex: sex,
+      businessRole: businessRole
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  genderChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      genderIndex: e.detail.value
+    })
+  },
+
+  genderSelect: function () {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.genderArray,
+      success: function (e) {
+        that.data.profile.sex = that.data.genderValueArray[e.tapIndex]
+        that.setData({
+          sex: that.data.genderArray[e.tapIndex]
+        })
+      }
+    })
+  },
+
+  identitySelect: function () {
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.identityArray,
+      success: function (e) {
+        that.data.profile.businessRole = that.data.identityValueArray[e.tapIndex]
+        that.setData({
+          businessRole: that.data.identityArray[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 提交
+   */
+  tiJiao(e) {
+    var that = this
+    var companyName = e.detail.value.companyName
+    var trueName = e.detail.value.trueName
+    if (!trueName) {
+      wx.showToast({
+        title: '请输入真实姓名',
+      })
+      return
+    }
+    var sex = that.data.profile.sex
+    if (!sex) {
+      wx.showToast({
+        title: '请选择性别',
+      })
+      return
+    }
+    var department = e.detail.value.department
+    if (!department) {
+      wx.showToast({
+        title: '请输入部门名称',
+      })
+      return
+    }
+    var jobTitle = e.detail.value.jobTitle
+    if (!jobTitle) {
+      wx.showToast({
+        title: '请输入职位名称',
+      })
+      return
+    }
+    var businessRole = that.data.profile.businessRole
+    if (!businessRole) {
+      wx.showToast({
+        title: '请选择业务身份',
+      })
+      return
+    }
+    var linkMan = e.detail.value.linkMan
+    if (!linkMan) {
+      wx.showToast({
+        title: '请输入联系人',
+      })
+      return
+    }
+    var splitLinkMan = linkMan.split(",")
+    if (splitLinkMan.length > 3) {
+      wx.showModal({
+        title: '提示',
+        content: '联系人用半角逗号隔开，不能大于三个',
+        showCancel: false
+      })
+      return
+    }
+    var mobile = e.detail.value.mobile
+    if (!mobile) {
+      wx.showToast({
+        title: '请输入联系电话',
+      })
+      return
+    }
+    var splitMobile = mobile.split(",")
+    if (splitMobile.length > 3) {
+      wx.showModal({
+        title: '提示',
+        content: '联系电话用半角逗号隔开，不能大于三个',
+        showCancel: false
+      })
+      return
+    }
+    var address = e.detail.value.address
+    if (!address) {
+      wx.showToast({
+        title: '请输入详细地址',
+      })
+      return
+    }
+    var email = e.detail.value.email
+    if (!email) {
+      wx.showToast({
+        title: '请输入电子邮箱',
+      })
+      return
+    }
+    var webSite = e.detail.value.webSite
+    var qq = e.detail.value.qq
+    var msn = e.detail.value.msn
+    var fourZero = e.detail.value.fourZero
+    var phone_Area = e.detail.value.phone_Area
+    var phone_Number = e.detail.value.phone_Number
+    var fax_Area = e.detail.value.fax_Area
+    var fax_Number = e.detail.value.fax_Number
+    var postCode = e.detail.value.postCode
+    wx.showLoading({
+      title: '提交中……',
+      mask: true
+    })
+    var json = new Object()
+    var mod = "profile"
+    json.company = companyName;
+    json.trueName = trueName;
+    json.sex = sex;
+    json.depart = department;
+    json.jobtitle = jobTitle;
+    json.bussrole = businessRole;
+    json.email = email;
+    json.mobile = mobile;
+    json.linkName = linkMan;
+    json.dress = address;
+    json.webSite = webSite;
+    json.phonearea = phone_Area
+    json.phoneNo = phone_Number;
+    json.faxarea = fax_Area;
+    json.faxNo = fax_Number;
+    json.postcode = postCode;
+    json.qq = qq;
+    json.msn = msn;
+    json.fourZero = fourZero;
+    wx.request({
+      url: getApp().appData.host + "vaild_post", //仅为示例，并非真实的接口地址
+      data: {
+        "mod": mod,
+        "json": JSON.stringify(json),
+        "token": getApp().appData.userInfo.token
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      method: 'POST',
+      success: function (res) {
+        //请求成功
+        if (res.data.state == 1) {
+          wx.hideLoading()
+          that.setData({
+            isfail: false,
+          })
+          getApp().shuaXin.SHUA_XIN_PROFILE=true
+          getApp().shuaXin.SHUA_XIN_USERINFO1=true
+          setTimeout(function(){
+            wx.showToast({
+              title: '修改成功',
+            })
+          },300)
+          wx.navigateBack({
+            delta:1
+          })
+        } else {//请求失败
+          that.setData({
+            isfail: true,
+          })
+          wx.hideLoading()
+        }
+      },
+      fail: function (res) {
+        that.setData({
+          isfail: true,
+        })
+        wx.hideLoading()
+      },
+      complete: function () {
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+})

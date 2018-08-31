@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "物流专线",
+  "usingComponents": {
+    "cityPicker": "/component/cityPicker/cityPicker"
+  }
+}

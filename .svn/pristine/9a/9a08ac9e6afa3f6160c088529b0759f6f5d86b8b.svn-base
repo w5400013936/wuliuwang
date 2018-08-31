@@ -1,0 +1,25 @@
+<!--pages/companyInfos/line/line.wxml-->
+
+<view class='recommond-box'>
+  <view class='recommond-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toLineDetail' data-bean='{{item}}'>
+
+    <view class='address'>
+          <view class='add'>{{item.provin}} {{item.city}}</view>
+          <image class='add-img' src='/img/right.png'></image>
+          <view class='add'>{{item.toProvin}} {{item.toCity}}</view>
+        </view>
+        <view class='r-con'>
+          <view>
+            <view class='r-info'>运输时效：{{item.timeliness}}</view>
+            <view class='r-info'>发车频率：{{item.plv}}</view>
+            <view class='clear'></view>
+          </view>
+          <view>
+            <view class='r-info'>配货方式：{{item.meth}}</view>
+            <view class='clear'></view>
+          </view>
+        </view>
+        <image class='r-img' src='/img/c-phone.png' catchtap='callLine' data-phone='{{item.mobile}}'></image>
+  </view>
+  
+</view>

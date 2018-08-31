@@ -1,0 +1,108 @@
+<!--pages/companyInfos/order/order.wxml-->
+<view class='line-search'>
+  <view class='line-add flex'>
+    <view class='line-start'>
+      <view class='line-top'>
+        <image class='icon' src='/img/f-address.png'></image>出发城市
+      </view>
+      <view class='line-con'>嘉兴市</view>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <view class='line-top'>
+        <image class='icon' src='/img/f-address.png'></image>到达城市
+      </view>
+      <view class='line-con'>厦门市</view>
+    </view>
+  </view>
+</view>
+
+<view class='order-box'>
+    <view class='order-title'>
+      <view class='rt'>基本信息</view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>货物名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物名称" value='' />
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text> </text>运输类型：</view>
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择运输类型" value='整车配货' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text> </text>货物类型：</view>
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择货物类型" value='重货' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>货物重量：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物重量" value='' name="weight" />
+      </view>
+      <view class='ico arrow-down' bindtap='weightSelect'>吨
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text> </text>货物体积：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物体积" value='' name="weight" />
+      </view>
+      <view class='ico arrow-down' bindtap='weightSelect'>
+        立方米
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <picker mode='date' start="{{startDate}}" end='{{endDate}}' value='2018-01-01' bindchange='expiryDateChange'>
+        <view class='list-li-text'>
+          <text>*</text>信息有效期：</view>
+        <view class='list-li-input'>
+          <input class='input-text' disabled='{{true}}' placeholder="请选择有效期" value='{{expiryDate}}' />
+        </view>
+        <view class='ico arrow-down'>
+          <image src='/img/arrow-down.png' mode="aspectFill"></image>
+        </view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联 系 人 ：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请填写联系人姓名" value='' />
+      </view>
+      <view class='clear'></view>
+    </view>
+    
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联系电话：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请填写联系人电话" value='' />
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    <button class='submit-btn'>立即下单</button>
+  </view>

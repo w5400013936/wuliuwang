@@ -1,0 +1,53 @@
+<!--pages/line-manage/line-manage.wxml-->
+<view class='header'>
+  <view class='checkbox' bindtap='quanXuan'>
+    <image src='{{isAllCheck?"/img/selected.png":"/img/unselected.png"}}'></image>
+    全选
+  </view>
+  <view class='pageNav'>
+    <view bindtap='shangYiYe'>上一页</view>
+    <picker bindchange="bindPickerChange" value="{{page}}" range="{{pageArr}}" disabled='{{!enable}}'>
+      <view>{{page+1}}</view>
+    </picker>
+    <view bindtap='xiaYiYe'>下一页</view>
+  </view>
+  <view class='operation'>
+    <block wx:if="{{userInfo1.isMember}}">
+      <view class='operation-refresh' bindtap='shuaXinTap'>专线刷新</view>
+    </block>
+    <view class='operation-del' bindtap='delTap'>删除</view>
+  </view>
+</view>
+
+<scroll-view class='main' scroll-y="{{true}}">
+  <block wx:for="{{adapter}}" wx:key="{{index}}">
+    <view class='list' bindtap='checkTap' data-index='{{index}}'>
+      <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='{{index}}' style='{{item.listStyle || ""}}'>
+        <view class='checkbox list-checkbox'>
+          <image src='{{item.isCheck?"/img/selected.png":"/img/unselected.png"}}'></image>
+        </view>
+        <block wx:if="{{!item.shenhe}}">
+          <image class='list-ico' src='/img/warning.png' catchtap='warnTap'></image>
+        </block>
+        <view class='list-start'>
+          <image class='list-img' src='/img/f-address.png'></image>
+          <text>{{item.Vinc}}-{{item.cityName}}-{{item.townName}}</text>
+        </view>
+        <view class='list-end'>
+          <image class='list-img' src='/img/t-address.png'></image>
+          <text>{{item.ToVinc}}</text>（包含
+          <text class='mainColor'>{{item.xianLuNum}}</text> 条线路）
+        </view>
+        <view class='list-time'>{{item.shuaXinTime}}</view>
+      </view>
+      <view class='list-btns'>
+        <view class='list-edit' catchtap='bianJiTap' data-item='{{item}}'>编辑</view>
+        <view class='list-del' catchtap='shanChuTap' data-id='{{item.ID}}'>删除</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<button class='bottom-btn' bindtap='addNet'>添加专线</button>
+
+<!-- <confirm show="true" title="确认要删除选中的信息吗？"></confirm> -->

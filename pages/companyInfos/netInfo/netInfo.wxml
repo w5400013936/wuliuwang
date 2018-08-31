@@ -1,0 +1,60 @@
+<!--pages/companyInfos/infoInfo/infoInfo.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <image class='ico' src='/img/f-address.png'></image>
+        福建省厦门市湖里区
+      </view>
+      <view class='name'>厦门市湖里区辅酶物流服务部</view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓小姐
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <image class='ico' src='/img/f-address.png'></image>
+        福建省厦门市湖里区
+      </view>
+      <view class='name'>厦门市湖里区辅酶物流服务部</view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓小姐
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <image class='ico' src='/img/f-address.png'></image>
+        福建省厦门市湖里区
+      </view>
+      <view class='name'>厦门市湖里区辅酶物流服务部</view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓小姐
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+</view>

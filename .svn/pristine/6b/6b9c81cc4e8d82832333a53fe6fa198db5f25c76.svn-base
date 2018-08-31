@@ -1,0 +1,89 @@
+/* pages/companyInfos/carInfo/carInfo.wxss */
+.info-list{
+  padding: 30rpx 30rpx;
+}
+.info-item{
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.info-top{
+  font-size: 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  padding: 38rpx;
+}
+.info-top .name{
+  font-size: 30rpx;
+  padding-left: 60rpx;
+  margin-top: 10rpx;
+  color: #999;
+}
+.info-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 20rpx;
+  background-color: #fafafa;
+}
+.o-name{
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.o-desc{
+  font-size: 26rpx;
+  color: #999;
+  padding-left: 60rpx;
+}
+
+.recommond-box{
+  padding: 0 10rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.recommond-title{
+  font-size: 36rpx;
+  padding: 25rpx 0;
+  height: 80rpx;
+}
+.recommond-title .rt{
+  padding-left: 15rpx;
+  border-left: 6rpx solid #68c5cd;
+  line-height: 32rpx;
+}
+.recommond-item{
+  position: relative;
+  border-top: 1rpx solid #ddd;
+}
+.recommond-item .address{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  padding: 30rpx 0 25rpx 0;
+  padding-left: 26rpx;
+}
+.recommond-item .address .add-img{
+  width: 50rpx;
+  height: 30rpx;
+  margin: 0 20rpx;
+  vertical-align: bottom;
+}
+.recommond-item .r-con{
+  font-size: 28rpx;
+  color: #999;
+  padding-bottom: 30rpx;
+  padding-left: 26rpx;
+}
+.recommond-item .r-con .r-info{
+  float: left;
+  width: 300rpx;
+  margin-bottom: 10rpx;
+}
+.recommond-item  .r-img{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 40rpx;
+  bottom: 60rpx;
+}

@@ -1,0 +1,74 @@
+/* pages/login/login.wxss */
+view{
+  box-sizing: border-box;
+}
+.main{
+  height: 100%;
+  background-color: #fff;
+}
+.logo-box{
+  padding: 29rpx 0 67rpx 0;
+  text-align: center;
+}
+.logo-img{
+  width: 163rpx;
+  height: 163rpx;
+}
+.login-box{
+  width: 668rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #ddd;
+  margin: 0 auto;
+}
+.login-acount{
+  height: 116rpx;
+  border-bottom: 1rpx solid #ddd;
+  padding: 0 38rpx 0 38rpx;
+  display: flex;
+  align-items: center;
+}
+.login-acount-left{
+  flex: 1;
+}
+.login-password{
+  height: 117rpx;
+  padding: 0 38rpx 0 38rpx;
+  display: flex;
+  align-items: center;
+}
+.login-password-left{
+  flex: 1;
+}
+.login-ico{
+  width: 50rpx;
+  height: 23rpx;
+}
+.login-input{
+  font-size: 29rpx;
+  width: 100%;
+}
+
+.submit-btn{ margin-top: 82rpx; width: 668rpx; line-height: 97rpx; text-align: center; background: #68c5cd; color: #fff; font-size: 33rpx;border-radius: 0;}
+
+.unlogin{
+  width: 670rpx;
+  margin: 38rpx auto;
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+.copyright{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24rpx;
+  color: #999;
+  text-align: center;
+}
+.copyright .name{
+  font-size: 24rpx;
+}
+.copyright .website{
+  font-size: 20rpx;
+}

@@ -1,0 +1,118 @@
+<!--pages/line-details/line-details.wxml-->
+<!--pages/source-details/source-details.wxml-->
+<view class='header'>
+<view class='header-line'>
+  <view class='form'>
+    <view class='t'>广东</view>
+    <view class='c'>中山</view>
+  </view>
+  <view class='arrow'><image src='/img/arrow2.png' mode="widthFix"></image></view>
+  <view class='to'>
+    <view class='t'>吉林</view>
+    <view class='c'>通化</view>
+  </view>
+  <view class='clear'></view>
+  </view>
+  <view class='details-info'>
+      <view class='span3'>
+        <view class='t'>运输时效</view>
+        <view class='n'>4天</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>发车频率</view>
+        <view class='n'>2次/天</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>配货方式</view>
+        <view class='n'>整车配货</view>
+      </view>
+      <view class='clear'></view>
+  </view>
+</view>
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>网点</view>
+    <view class='details-li-info'>江门市鑫捷恒通物流有限公司</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>黄林</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>电话</view>
+    <view class='details-li-info'>13356573519</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>地址</view>
+    <view class='details-li-info'>江门市蓬江区西环路江莎物流通市场3栋5-6卡</view>
+  </view>
+  <view class='details-li-title'>到达吉林网点信息</view>
+   <view class='details-li'>
+    <view class='details-li-t'>长春市<view class='text' bindtap='showDetail'>查看</view></view>
+    <block wx:if="{{detailShow}}">
+    <view class='details-li-desc'>
+    南关区，宽城区，朝阳区，二道区，绿源区，双阳区，九台区，农安县，榆树市，德惠市
+    </view>
+    </block>
+  </view>
+     <view class='details-li'>
+    <view class='details-li-t'>长春市<view class='text'>查看</view></view>
+    <block wx:if="{{show}}">
+    <view class='details-li-desc'>
+    南关区，宽城区，朝阳区，二道区，绿源区，双阳区，九台区，农安县，榆树市，德惠市
+    </view>
+    </block>
+  </view>
+     <view class='details-li'>
+    <view class='details-li-t'>长春市<view class='text'>查看</view></view>
+    <block wx:if="{{show}}">
+    <view class='details-li-desc'>
+    南关区，宽城区，朝阳区，二道区，绿源区，双阳区，九台区，农安县，榆树市，德惠市
+    </view>
+    </block>
+  </view>
+     <view class='details-li'>
+    <view class='details-li-t'>长春市<view class='text'>查看</view></view>
+    <block wx:if="{{show}}">
+    <view class='details-li-desc'>
+    南关区，宽城区，朝阳区，二道区，绿源区，双阳区，九台区，农安县，榆树市，德惠市
+    </view>
+    </block>
+  </view>
+     <view class='details-li'>
+    <view class='details-li-t'>长春市<view class='text'>查看</view></view>
+    <block wx:if="{{show}}">
+    <view class='details-li-desc'>
+    南关区，宽城区，朝阳区，二道区，绿源区，双阳区，九台区，农安县，榆树市，德惠市
+    </view>
+    </block>
+  </view>
+   <view class='details-li'>
+    <view class='details-li-text'>重货价格</view>
+    <view class='details-li-info'>电议</view>
+  </view>
+   <view class='details-li'>
+    <view class='details-li-text'>轻货价格</view>
+    <view class='details-li-info'>电议</view>
+  </view>
+   <view class='details-li'>
+    <view class='details-li-text'>线路说明</view>
+    <view class='details-li-info'>物流专线</view>
+  </view>
+  <view class='details-li-title'>公司信息</view>
+   <view class='details-li'>
+    <view class='details-li-text'>发布公司</view>
+    <view class='details-li-info'>江门市鑫捷恒通物流有限公司</view>
+  </view>
+   <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>黄先生</view>
+  </view>
+   <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info'>13356573519</view>
+  </view>
+</view>
+<view class='time'><image src='/img/time.png' mode="widthFix"></image>信息有效期：2018-06-03</view>
+<view class='h100'></view>
+<view class='footer-tel'>致电网点联系人</view>

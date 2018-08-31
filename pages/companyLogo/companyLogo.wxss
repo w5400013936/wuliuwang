@@ -1,0 +1,26 @@
+/* pages/companyLogo/companyLogo.wxss */
+view{
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  height: 83rpx;
+  color: #999999;
+  font-size: 20rpx;
+  padding: 0 26rpx;
+  line-height: 83rpx;
+}
+.upload-box{
+  height: 207rpx;
+  padding: 25rpx;
+}
+.upload-img{
+  width: 157rpx;
+  height: 157rpx;
+}
+.upload-remark{
+  float: right;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 155rpx;
+}

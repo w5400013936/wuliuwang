@@ -1,0 +1,66 @@
+<!--pages/line-manage/line-manage.wxml-->
+<view class='header'>
+  <view class='checkbox' bindtap='changeSelect'>
+    <image src='{{select?"/img/selected.png":"/img/unselected.png"}}'></image>
+    全选
+  </view>
+  <view class='pageNav'>
+    <view>上一页</view>
+    <view>1</view>
+    <view>下一页</view>
+  </view>
+  <view class='operation'>
+    <view class='operation-refresh'>专线刷新</view>
+    <view class='operation-del' bindtap='{{handleDelete}}'>删除</view>
+  </view>
+</view>
+
+<scroll-view class='main' scroll-y="{{true}}">
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='0' style='{{listStyle[0]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-start'>
+        <image class='list-img' src='/img/f-address.png'></image>
+        <text>广东-深圳-南山区</text>
+      </view>
+      <view class='list-end'>
+        <image class='list-img' src='/img/t-address.png'></image>
+        <text>四川</text>（包含
+        <text class='mainColor'>204</text> 条线路）
+      </view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='1' style='{{listStyle[1]}}'>
+      <view class='checkbox list-checkbox'>
+        <image src='/img/unselected.png'></image>
+      </view>
+      <image class='list-ico' src='/img/warning.png'></image>
+      <view class='list-start'>
+        <image class='list-img' src='/img/f-address.png'></image>
+        <text>广东-深圳-南山区</text>
+      </view>
+      <view class='list-end'>
+        <image class='list-img' src='/img/t-address.png'></image>
+        <text>四川</text>（包含
+        <text class='mainColor'>204</text> 条线路）
+      </view>
+    </view>
+    <view class='list-btns'>
+      <view class='list-edit'>编辑</view>
+      <view class='list-del'>删除</view>
+    </view>
+  </view>
+</scroll-view>
+
+<button class='bottom-btn'>添加专线</button>
+
+<confirm show="true" title="确认要删除选中的信息吗？"></confirm>

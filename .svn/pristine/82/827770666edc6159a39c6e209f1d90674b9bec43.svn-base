@@ -1,0 +1,92 @@
+<!--pages/companyInfos/line-detail/line-detail.wxml-->
+<!--pages/line-details/line-details.wxml-->
+<!--pages/source-details/source-details.wxml-->
+<view class='header'>
+  <view class='header-line'>
+    <view class='form'>
+      <view class='t'>广东</view>
+      <view class='c'>贵州</view>
+    </view>
+    <view class='arrow'>
+      <image src='/img/arrow2.png' mode="widthFix"></image>
+    </view>
+    <view class='to'>
+      <view class='t'>佛山</view>
+      <view class='c'>黔东南</view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='details-info'>
+    <view class='span3'>
+      <view class='t'>运输时效</view>
+      <view class='n'>2天</view>
+    </view>
+    <view class='span3'>
+      <view class='t'>发车频率</view>
+      <view class='n'>2次/天</view>
+    </view>
+    <view class='span3'>
+      <view class='t'>配货方式</view>
+      <view class='n'>整车配货</view>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='details-list'>
+  <block wx:if="item.netID>0">
+    <view class='details-li'>
+      <view class='details-li-text'>网点</view>
+      <view class='details-li-info'>深圳市华亿物流有限公司</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>联系人</view>
+      <view class='details-li-info'>李经理</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>电话</view>
+      <view class='details-li-info' bindtap='call' data-mobile='{{item.wangDian.mobile}}'>13662223985</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>地址</view>
+      <view class='details-li-info'>广东省佛山市物流园</view>
+    </view>
+  </block>
+
+  <view class='details-li-title'>到达贵州网点信息</view>
+  <view class='details-li' >
+    <view class='details-li-t'>贵阳市
+      <view class='text' bindtap='showDetail' data-index='{{index}}'>{{data.select?"收起":"查看"}}</view>
+    </view>
+      <view class='details-li-desc'>
+        南明区，云岩区
+      </view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>重货价格</view>
+    <view class='details-li-info'>电议</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>轻货价格</view>
+    <view class='details-li-info'>电议</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>线路说明</view>
+    <view class='details-li-info'>暂无</view>
+  </view>
+  <view class='details-li-title'>公司信息</view>
+  <view class='details-li'>
+    <view class='details-li-text'>发布公司</view>
+    <view class='details-li-info'>深圳市华亿物流有限公司</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>李经理</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info' bindtap='call' data-mobile='{{item.minfo.mobile}}'>13662223985</view>
+  </view>
+</view>
+
+<view class='more'>点击查看其它专线></view>
+

@@ -1,0 +1,24 @@
+/* pages/authentication/authentication.wxss */
+.cell{
+  height: 83rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center; 
+  border-top: 1rpx solid #dddddd;
+}
+.cell-left{
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.seletAll{
+  margin-top: 52rpx;
+  padding-left: 24rpx;
+  font-size: 22rpx; 
+  color: #666666;
+}
+
+checkbox .wx-checkbox-input{
+   width: 30rpx;
+   height: 30rpx; 
+}

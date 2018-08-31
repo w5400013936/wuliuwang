@@ -1,0 +1,7 @@
+<!--pages/no-data/no-data.wxml-->
+<view class='no-data'>
+  <image src='/img/noData.png' bindtap='showPopup'></image>
+</view>
+<popup show='{{popupShow}}' bindclickmask='handleclickmask'>
+  <view style='box-sizing:border-box;padding:20rpx 30rpx;width:100%;text-align:center;'>底部弹窗</view>
+</popup>

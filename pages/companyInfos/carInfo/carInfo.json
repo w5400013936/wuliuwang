@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "车源信息",
+  "usingComponents": {
+    "cityPicker": "/component/cityPicker/cityPicker"
+  }
+}

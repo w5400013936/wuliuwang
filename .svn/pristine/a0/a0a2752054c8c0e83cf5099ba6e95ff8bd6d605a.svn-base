@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "zhongyitong"]
+	url = https://gitee.com/huisedebi/central_easy_program.git
+	fetch = +refs/heads/*:refs/remotes/zhongyitong/*
+[user]
+	name = Administrator
+	email = 530092772@qq.com
+[branch "master"]
+	remote = zhongyitong
+	merge = refs/heads/master

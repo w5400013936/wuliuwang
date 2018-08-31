@@ -1,0 +1,36 @@
+<!--pages/companyInfos/concactUs/contactUS.wxml-->
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>公司名称</view>
+    <view class='details-li-info'>福建家平物流有限公司</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>漆家平   业务部</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司地址</view>
+    <view class='details-li-info'>福州市仓山区林浦路旭辉物流园4排13-14号</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>邮政编码</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司电话</view>
+    <view class='details-li-info'>059186291671 - 059186291671</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info'>15880021111</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>传真</view>
+    <view class='details-li-info'>059186291671</view>
+  </view>
+  
+  <view class='details-li'>
+    <view class='details-li-text'>网站地址</view>
+    <view class='details-li-info'>http://jiaping56.6-china.com</view>
+  </view>
+</view>

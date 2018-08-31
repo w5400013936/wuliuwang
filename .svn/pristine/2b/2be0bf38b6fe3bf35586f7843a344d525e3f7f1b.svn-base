@@ -1,0 +1,11 @@
+<!--pages/companyLogo/companyLogo.wxml-->
+<view class='title'>上传说明：为JPG或GIF格式，小于200K，大约“80×80像素”最佳</view>
+<view class='upload-box bgwhite'>
+  <image class='upload-img' src='/img/upload.png'></image>
+  <view class='upload-remark'>标志</view>
+</view>
+<view class='title'>上传说明：为JPG或GIF格式，小于200K，大约“100×100像素”最佳</view>
+<view class='upload-box bgwhite'>
+  <image class='upload-img' src='/img/upload.png'></image>
+  <view class='upload-remark'>门牌照</view>
+</view>

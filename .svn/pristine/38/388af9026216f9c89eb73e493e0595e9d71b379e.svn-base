@@ -1,0 +1,67 @@
+<!--pages/companyInfos/carInfo/carInfo.wxml-->
+<!-- <view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='roCarDetail' data-carid='{{item.ID}}'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          {{item.from}} 到 {{item.to}}
+        </view>
+        <view class='o-desc'>{{imte.carNo}}</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        {{item.carUser}}
+      </view>
+      <view catchtap='call' data-phone='{{item.mobile}}'>
+        <image class='ico' src='/img/phone.png'></image>
+        {{item.mobile}}
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<view class='recommond-box'>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 温州市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>湖北省 武汉市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>车源类型：回程车</view>
+        <view class='r-info'>车长：<text style='color:#EA582E;'>17</text>米</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>车辆类型：平板车</view>
+        <view class='r-info'>载重：<text style='color:#EA582E;'>30</text>吨</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png' catchtap='callLine' data-phone=''></image>
+  </view>
+  <view class='recommond-item'>
+    <view class='address'>
+      <view class='add'>浙江省 温州市</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>湖北省 武汉市</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>车源类型：回程车</view>
+        <view class='r-info'>车长：<text style='color:#EA582E;'>17</text>米</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>车辆类型：平板车</view>
+        <view class='r-info'>载重：<text style='color:#EA582E;'>30</text>吨</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png' catchtap='callLine' data-phone=''></image>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/companyInfos/opportunity-detail/opportunity-detail.wxml-->
+
+<view class='details-list'>
+  <view class='details-li'>
+    <image class='details-li-img' src='/img/source.png'></image>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>被访问</view>
+    <view class='details-li-info'>25</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>设备类型</view>
+    <view class='details-li-info'>物流服务 货运站</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>求购数量</view>
+    <view class='details-li-info'>1</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>发布日期</view>
+    <view class='details-li-info'>2018-08-03</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系电话</view>
+    <view class='details-li-info'>18066666666</view>
+  </view>
+</view>
+ <view class='details-li-title'>公司信息</view>
+ <view class='details-li'>
+    <!-- <view class='details-li-t'>
+    {{data.cityName}}
+    </view> -->
+    <view class='details-li-desc'>
+      福州到江苏苏州货物运输公司 福州到江苏苏州物流专线 福州到江苏苏州物流公司
+    </view>
+  </view>

@@ -1,0 +1,94 @@
+<!--pages/line-details/line-details.wxml-->
+<!--pages/source-details/source-details.wxml-->
+<view class='header'>
+  <view class='header-line'>
+    <view class='form'>
+      <view class='t'>{{item.Vinc}}</view>
+      <view class='c'>{{item.cityName}}</view>
+    </view>
+    <view class='arrow'>
+      <image src='/img/arrow2.png' mode="widthFix"></image>
+    </view>
+    <view class='to'>
+      <view class='t'>{{item.ToVinc}}</view>
+      <view class='c'>{{item.muDiDi}}</view>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='details-info'>
+    <view class='span3'>
+      <view class='t'>运输时效</view>
+      <view class='n'>{{item.rate}}{{item.tranUnitText}}</view>
+    </view>
+    <view class='span3'>
+      <view class='t'>发车频率</view>
+      <view class='n'>{{item.plv}}次/天</view>
+    </view>
+    <view class='span3'>
+      <view class='t'>配货方式</view>
+      <view class='n'>{{item.meth==1?"零担配货":"整车配货"}}</view>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='details-list'>
+  <block wx:if="item.netID>0">
+    <view class='details-li' bindtap='companyTap'>
+      <view class='details-li-text'>网点</view>
+      <view class='details-li-info'>{{item.wangDian.pointName}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>联系人</view>
+      <view class='details-li-info'>{{item.wangDian.linkMan}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>电话</view>
+      <view class='details-li-info' bindtap='call' data-mobile='{{item.wangDian.mobile}}'>{{item.wangDian.mobile}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>地址</view>
+      <view class='details-li-info'>{{item.wangDian.address}}</view>
+    </view>
+  </block>
+
+  <view class='details-li-title'>到达{{item.ToVinc}}网点信息</view>
+  <view class='details-li' wx:for="{{dataBeanListX}}" wx:key="{{index}}" wx:for-item="data">
+    <view class='details-li-t'>{{data.cityName}}
+      <view class='text' bindtap='showDetail' data-index='{{index}}'>{{data.select?"收起":"查看"}}</view>
+    </view>
+    <block wx:if="{{data.select}}">
+      <view class='details-li-desc'>
+        {{data.townName}}
+      </view>
+    </block>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>重货价格</view>
+    <view class='details-li-info'>{{item.oriPriceZ>0?item.oriUnitText:"电议"}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>轻货价格</view>
+    <view class='details-li-info'>{{item.oriPriceQ>0?item.oriPriceZQ:"电议"}}{{item.oriPriceQ>0?"/立方":""}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>线路说明</view>
+    <view class='details-li-info'>{{item.line.mark?item.line.mark:"暂无"}}</view>
+  </view>
+  <view class='details-li-title'>公司信息</view>
+  <view class='details-li'>
+    <view class='details-li-text' bindtap='companyTap'>发布公司</view>
+    <view class='details-li-info'>{{item.minfo.companyName}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>{{item.linkman}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info' bindtap='call' data-mobile='{{item.minfo.mobile}}'>{{item.minfo.mobile}}</view>
+  </view>
+</view>
+<view class='time'>
+  <image src='/img/time.png' mode="widthFix"></image>信息有效期：2018-06-03</view>
+<view class='h100'></view>
+<view class='footer-tel' bindtap='call' data-mobile='{{item.wangDian.mobile}}'>致电网点联系人</view>

@@ -1,0 +1,186 @@
+<!--pages/source/source.wxml-->
+<view class='search-box bgwhite'>
+  <view class='search-list'>
+    <view class='search-list-span4 active'>出发地
+      <view class='search-ico'>
+        <image src='/img/down.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='search-list-span4'>到达地
+      <view class='search-ico'>
+        <image src='/img/down.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='search-list-span4'>搜索
+      <view class='search-ico'>
+        <image src='/img/search.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='height130'></view>
+
+<view class='list'>
+  <navigator url='/pages/source-details/source-details'>
+    <view class='list-li'>
+      <view class='list-li-time'>5小时</view>
+      <view class='list-li-info'>
+        <view class='logo'>
+          <image src='/img/logo.png' mode="widthFix" class='logo-img'></image>
+          <image src='/img/vip.png' class='vip' mode="widthFix"></image>
+        </view>
+        <view class='from'>
+          <view class='p'>广西</view>
+          <view class='c'>来宾市</view>
+        </view>
+        <view class='text'>
+          <view class='n'>袋装米</view>
+          <view class='t'>
+            <image src='/img/arrow.png' mode="widthFix"></image>
+          </view>
+          <view class='z'>30吨</view>
+        </view>
+        <view class='to'>
+          <view class='p'>江西</view>
+          <view class='c'>吉安市</view>
+        </view>
+        <view class='clear'></view>
+      </view>
+      <view class='list-li-name'>
+        <view class='name'>
+          <image src='/img/name.png' mode="aspectFill"></image>符女生</view>
+        <view class='tel'>
+          <image src='/img/phone.png' mode="aspectFill"></image>13377280419</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+  </navigator>
+  <view class='list-li'>
+    <view class='list-li-time'>5小时</view>
+    <view class='list-li-info'>
+      <view class='logo'>
+        <image src='/img/logo.png' mode="widthFix" class='logo-img'></image>
+      </view>
+      <view class='from'>
+        <view class='p'>广西</view>
+        <view class='c'>来宾市</view>
+      </view>
+      <view class='text'>
+        <view class='n'>货</view>
+        <view class='t'>
+          <image src='/img/arrow.png' mode="widthFix"></image>
+        </view>
+        <view class='z'>30吨</view>
+      </view>
+      <view class='to'>
+        <view class='p'>江西</view>
+        <view class='c'>吉安市</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li-name'>
+      <view class='name'>
+        <image src='/img/name.png' mode="aspectFill"></image>符女生</view>
+      <view class='tel'>
+        <image src='/img/phone.png' mode="aspectFill"></image>13377280419</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-time'>5小时</view>
+    <view class='list-li-info'>
+      <view class='logo'>
+        <image src='/img/logo.png' mode="widthFix" class='logo-img'></image>
+      </view>
+      <view class='from'>
+        <view class='p'>广西</view>
+        <view class='c'>来宾市</view>
+      </view>
+      <view class='text'>
+        <view class='n'>米</view>
+        <view class='t'>
+          <image src='/img/arrow.png' mode="widthFix"></image>
+        </view>
+        <view class='z'>30吨</view>
+      </view>
+      <view class='to'>
+        <view class='p'>江西</view>
+        <view class='c'>吉安市</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li-name'>
+      <view class='name'>
+        <image src='/img/name.png' mode="aspectFill"></image>符女生</view>
+      <view class='tel'>
+        <image src='/img/phone.png' mode="aspectFill"></image>13377280419</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-time'>5小时</view>
+    <view class='list-li-info'>
+      <view class='logo'>
+        <image src='/img/logo.png' mode="widthFix" class='logo-img'></image>
+      </view>
+      <view class='from'>
+        <view class='p'>广西</view>
+        <view class='c'>来宾市</view>
+      </view>
+      <view class='text'>
+        <view class='n'>货物</view>
+        <view class='t'>
+          <image src='/img/arrow.png' mode="widthFix"></image>
+        </view>
+        <view class='z'>3000吨</view>
+      </view>
+      <view class='to'>
+        <view class='p'>江西</view>
+        <view class='c'>吉安市</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li-name'>
+      <view class='name'>
+        <image src='/img/name.png' mode="aspectFill"></image>符女生</view>
+      <view class='tel'>
+        <image src='/img/phone.png' mode="aspectFill"></image>13377280419</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+</view>
+<view class='search-city-list' wx:if="{{hasMask}}">
+  <view class='search-bg'></view>
+  <view class='search-city'>
+    <view class='item-city'>
+      <scroll-view scroll-y="true" style="height:663rpx">
+        <view class='item-city-li'>不限</view>
+        <view class='item-city-li active'>福建</view>
+        <view class='item-city-li'>广东</view>
+        <view class='item-city-li'>浙江</view>
+        <view class='item-city-li'>河南</view>
+        <view class='item-city-li'>河北</view>
+        <view class='item-city-li'>江苏</view>
+        <view class='item-city-li'>湖北</view>
+        <view class='item-city-li'>吉林</view>
+        <view class='item-city-li'>甘肃</view>
+        <view class='item-city-li'>湖南</view>
+        <view class='item-city-li'>北京</view>
+      </scroll-view>
+    </view>
+    <view class='sub-item-city'>
+      <scroll-view scroll-y="true" style="height:663rpx">
+        <view class='sub-item-city-li'>福州市</view>
+        <view class='sub-item-city-li'>厦门市</view>
+        <view class='sub-item-city-li'>莆田市</view>
+        <view class='sub-item-city-li'>三明市</view>
+        <view class='sub-item-city-li'>泉州市</view>
+        <view class='sub-item-city-li active'>漳州市</view>
+        <view class='sub-item-city-li'>南平市</view>
+        <view class='sub-item-city-li'>龙岩市</view>
+        <view class='sub-item-city-li'>宁德市</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

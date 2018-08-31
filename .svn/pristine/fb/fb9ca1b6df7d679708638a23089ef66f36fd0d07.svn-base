@@ -1,0 +1,22 @@
+<!--pages/companyPic/companyPic.wxml-->
+<scroll-view class='main' scroll-y="{{true}}" bindscrolltolower="scorllBtm">
+  <block wx:for="{{adapter}}" wx:key="{{index}}">
+    <view class='cell'>
+      <view class='cell-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='{{index}}' style='{{item.listStyle}}'>
+        <view class='cell-left'>
+          <image src='{{item.imgUrl}}' bindtap='showImg' data-url='{{item.imgUrl}}'></image>
+          {{item.imgName}}
+        </view>
+      </view>
+      <view class='cell-btns'>
+        <view class='cell-del' bindtap='del' data-index='{{index}}'>删除</view>
+      </view>
+    </view>
+  </block>
+
+</scroll-view>
+
+<button class='bottom-btn' bindtap='uploadTap'>上传图片</button>
+
+<uploadBox id="uploadBox" show="{{showUpLoad}}" path="{{path}}" base="{{base64}}" typeX="{{typeX}}" bind:handleUpload="handleUpload"></uploadBox>
+<canvas style="width: {{width}}px; height: {{height}}px;" canvas-id='canvas'></canvas>

@@ -1,0 +1,453 @@
+// component/area/area.js 
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    multiArray: {
+      type: Array,
+      value: [
+        ['福建省', '广东省'],
+        ['福州市', '厦门市', '莆田市', '泉州市', '漳州市'],
+        ['鼓楼区', '闽侯县']
+      ]
+    },
+    multiIndex: {
+      type: Array,
+      value: [0, 0, 0]
+    },
+    placeholder: {
+      type: String,
+      value: '请选择地址'
+    },
+    diZhi: {
+      type: String,
+      value: ""
+    },
+    proID: {
+      type: Number,
+      value: 0
+    },
+    cityID: {
+      type: Number,
+      value: 0
+    },
+    townID: {
+      type: Number,
+      value: 0
+    },
+    netID: {
+      type: Number,
+      value: 0
+    },
+    typeX: {
+      type: Number,
+      value: 0
+    },
+    isChooseNet: {
+      type: Boolean,
+      value: false
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    proList: [],
+    cityList: [],
+    townList: [],
+    pointList: [],
+  },
+
+  ready() {
+    var that = this
+    if (that.data.diZhi) {
+      console.log("不为空")
+      if (that.data.proID == 0) {
+        that.setData({
+          diZhi: ""
+        })
+      }
+    } else {
+      console.log("空")
+    }
+    that.requestSheng()
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    areaTap: function() {
+      console.log(this.data.multiIndex)
+    },
+    areaChange: function(e) { // 地区选择
+      var that = this
+      const val = e.detail.value
+      var dizhi = ""
+      if (that.data.isChooseNet) {
+        if (that.data.pointList[val[2]].ID == 0) {
+          wx.showModal({
+            title: '提示',
+            content: '该地区暂无网点',
+            showCancel: false
+          })
+          return
+        }
+        dizhi = that.data.proList[val[0]].proName + " " + that.data.cityList[val[1]].cityName + " " + that.data.pointList[val[2]].pointName
+        that.setData({
+          netID: that.data.pointList[val[2]].ID,
+        })
+      } else {
+        dizhi = that.data.proList[val[0]].proName + " " + that.data.cityList[val[1]].cityName + " " + that.data.townList[val[2]].townName
+        that.setData({
+          townID: that.data.townList[val[2]].townID,
+        })
+      }
+      that.setData({
+        diZhi: dizhi,
+        proID: that.data.proList[val[0]].proID,
+        cityID: that.data.cityList[val[1]].cityID,
+      })
+      var idObj = new Object()
+      idObj.proID = that.data.proList[val[0]].proID
+      idObj.proName = that.data.proList[val[0]].proName
+      idObj.cityID = that.data.cityList[val[1]].cityID
+      idObj.cityName = that.data.cityList[val[1]].cityName
+      idObj.typeX = that.data.typeX
+      if (that.data.isChooseNet) {
+        idObj.netID = that.data.pointList[val[2]].ID
+        idObj.pointName = that.data.pointList[val[2]].pointName
+      } else {
+        idObj.townID = that.data.townList[val[2]].townID
+        idObj.townName = that.data.townList[val[2]].townName
+      }
+      that.triggerEvent("chooseAddress", idObj)
+    },
+
+    areaColumnChange: function(e) { // 地区每列选择
+      var that = this
+      console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+      var data = {
+        multiArray: this.data.multiArray,
+        multiIndex: this.data.multiIndex
+      };
+      data.multiIndex[e.detail.column] = e.detail.value;
+
+      switch (e.detail.column) {
+        case 0:
+          wx.showLoading({
+            title: '加载中……',
+            mask: true
+          })
+          that.requestCity(e.detail.value);
+          break
+        case 1:
+          wx.showLoading({
+            title: '加载中……',
+            mask: true
+          })
+          if (that.data.isChooseNet) {
+            that.requestNet(e.detail.value)
+          } else {
+            that.requestTown(e.detail.value);
+          }
+          break
+        case 2:
+          // that.data.multiIndex[2] = e.detail.value
+          // that.setData({
+          //   multiIndex: that.data.multiIndex
+          // })
+          break
+      }
+    },
+    // 网络请求
+    requestSheng: function() {
+      var that = this
+      wx.showLoading({
+        title: '加载中……',
+        mask: true
+      })
+      wx.request({
+        url: getApp().appData.host + "novaild_list", //仅为示例，并非真实的接口地址
+        data: {
+          "json": "",
+          "mod": "provin",
+          "token": getApp().md5("provin")
+        },
+        header: {
+          'content-type': 'application/json', // 默认值
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log("获取省份", res.data)
+          //请求成功
+          if (res.data.state == 1) {
+            that.data.multiArray[0] = []
+            that.data.multiIndex[0] = 0
+            for (let i = 0; i < res.data.data.length; i++) {
+              that.data.multiArray[0].push(res.data.data[i].proName)
+              if (res.data.data[i].proID == that.data.proID) {
+                that.data.multiIndex[0] = i
+              }
+            }
+            that.setData({
+              multiArray: that.data.multiArray,
+              multiIndex: that.data.multiIndex,
+              proList: res.data.data
+            })
+            that.requestCity(that.data.multiIndex[0]);
+            // wx.hideLoading()
+            that.setData({
+              isfail: false,
+            })
+          } else { //请求失败
+            that.setData({
+              isfail: true,
+            })
+            wx.hideLoading()
+          }
+        },
+        fail: function(res) {
+          that.setData({
+            isfail: true,
+          })
+          wx.hideLoading()
+        },
+        complete: function() {
+          wx.stopPullDownRefresh();
+        }
+      })
+    },
+    // 网络请求
+    requestCity: function(index) {
+      var that = this
+      wx.showLoading({
+        title: '加载中……',
+        mask: true
+      })
+      wx.request({
+        url: getApp().appData.host + "novaild_list", //仅为示例，并非真实的接口地址
+        data: {
+          "json": "{vin:" + that.data.proList[index].proID + "}",
+          "mod": "city",
+          "token": getApp().md5("{vin:" + that.data.proList[index].proID + "}" + "city")
+        },
+        header: {
+          'content-type': 'application/json', // 默认值
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log("获取城市", res.data)
+          //请求成功
+          if (res.data.state == 1) {
+            that.data.multiArray[1] = []
+            that.data.multiIndex[1] = 0
+            for (let i = 0; i < res.data.data.length; i++) {
+              that.data.multiArray[1].push(res.data.data[i].cityName)
+              if (that.data.cityID == res.data.data[i].cityID) {
+                that.data.multiIndex[1] = i
+              }
+            }
+            that.setData({
+              multiArray: that.data.multiArray,
+              multiIndex: that.data.multiIndex,
+              cityList: res.data.data,
+            })
+            if (that.data.isChooseNet) {
+              that.requestNet(that.data.multiIndex[1])
+            } else {
+              that.requestTown(that.data.multiIndex[1])
+            }
+            // wx.hideLoading()
+            that.setData({
+              isfail: false,
+            })
+          } else { //请求失败
+            that.setData({
+              isfail: true,
+            })
+            wx.hideLoading()
+          }
+        },
+        fail: function(res) {
+          that.setData({
+            isfail: true,
+          })
+          wx.hideLoading()
+        },
+        complete: function() {
+          wx.stopPullDownRefresh();
+        }
+      })
+    },
+    // 网络请求
+    requestTown: function(index) {
+      var that = this
+      wx.showLoading({
+        title: '加载中……',
+        mask: true
+      })
+      wx.request({
+        url: getApp().appData.host + "novaild_list", //仅为示例，并非真实的接口地址
+        data: {
+          "json": "{city:" + that.data.cityList[index].cityID + "}",
+          "mod": "town",
+          "token": getApp().md5("{city:" + that.data.cityList[index].cityID + "}" + "town")
+        },
+        header: {
+          'content-type': 'application/json', // 默认值
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log("获取乡镇", res.data)
+          //请求成功
+          if (res.data.state == 1) {
+            that.data.multiArray[2] = []
+            that.data.multiIndex[2] = 0
+            if (res.data.data) {
+              if (res.data.data.length > 0) {
+                for (let i = 0; i < res.data.data.length; i++) {
+                  that.data.multiArray[2].push(res.data.data[i].townName)
+                  if (that.data.townID == res.data.data[i].townID) {
+                    that.data.multiIndex[2] = i
+                  }
+                }
+                that.setData({
+                  townList: res.data.data,
+                })
+              } else {
+                that.setData({
+                  townList: [],
+                })
+              }
+            } else {
+              that.setData({
+                townList: [],
+              })
+            }
+            that.setData({
+              multiArray: that.data.multiArray,
+              multiIndex: that.data.multiIndex
+            })
+            wx.hideLoading()
+            that.setData({
+              isfail: false,
+            })
+          } else { //请求失败
+            that.setData({
+              isfail: true,
+            })
+            wx.hideLoading()
+          }
+        },
+        fail: function(res) {
+          that.setData({
+            isfail: true,
+          })
+          wx.hideLoading()
+        },
+        complete: function() {
+          wx.stopPullDownRefresh();
+        }
+      })
+    },
+    // 网络请求
+    requestNet: function(index) {
+      var that = this
+      wx.showLoading({
+        title: '加载中……',
+        mask: true
+      })
+      wx.request({
+        url: getApp().appData.host + "vaild_list", //仅为示例，并非真实的接口地址
+        data: {
+          "json": "{city:" + that.data.cityList[index].cityID + "}",
+          "mod": "userpoint",
+          "token": getApp().appData.userInfo.token
+        },
+        header: {
+          'content-type': 'application/json', // 默认值
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log("获取网点", res.data)
+          //请求成功
+          that.data.multiArray[2] = []
+          that.data.multiIndex[2] = 0
+          if (res.data.state == 1) {
+            if (res.data.data) {
+              if (res.data.data.length > 0) {
+                for (let i = 0; i < res.data.data.length; i++) {
+                  that.data.multiArray[2].push(res.data.data[i].pointName)
+                  if (that.data.netID == res.data.data[i].ID) {
+                    that.data.multiIndex[2] = i
+                  }
+                }
+                that.setData({
+                  pointList: res.data.data,
+                })
+              } else {
+                var net = new Object()
+                net.ID = 0;
+                net.pointName = "暂无网点"
+                that.data.multiArray[2].push(net.pointName)
+                that.data.multiIndex[2] = 0
+                that.data.pointList = []
+                that.data.pointList.push(net)
+                that.setData({
+                  pointList: that.data.pointList,
+                })
+              }
+            } else {
+              var net = new Object()
+              net.ID = 0;
+              net.pointName = "暂无网点"
+              that.data.multiArray[2].push(net.pointName)
+              that.data.multiIndex[2] = 0
+              that.data.pointList = []
+              that.data.pointList.push(net)
+              that.setData({
+                pointList: that.data.pointList,
+              })
+            }
+            wx.hideLoading()
+            that.setData({
+              isfail: false,
+            })
+          } else { //请求失败
+            var net = new Object()
+            net.ID = 0;
+            net.pointName = "暂无网点"
+            that.data.multiArray[2].push(net.pointName)
+            that.data.multiIndex[2] = 0
+            that.data.pointList = []
+            that.data.pointList.push(net)
+            that.setData({
+              pointList: that.data.pointList,
+            })
+            that.setData({
+              isfail: true,
+            })
+            wx.hideLoading()
+          }
+          console.log(that.data.multiArray)
+          that.setData({
+            multiArray: that.data.multiArray,
+            multiIndex: that.data.multiIndex
+          })
+        },
+        fail: function(res) {
+          that.setData({
+            isfail: true,
+          })
+          wx.hideLoading()
+        },
+        complete: function() {
+          wx.stopPullDownRefresh();
+        }
+      })
+    },
+  }
+})

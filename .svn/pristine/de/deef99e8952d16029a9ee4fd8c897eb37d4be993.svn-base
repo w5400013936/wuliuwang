@@ -1,0 +1,15 @@
+<!--pages/changePwd/changePwd.wxml-->
+<form bindsubmit='wanCheng'>
+  <view class='main'>
+    <view class='cell'>
+      <input type='text' placeholder='旧密码' name="oldPassword" password='true'></input>
+    </view>
+    <view class='cell'>
+      <input type='text' placeholder='新密码' name="password01" password='true'></input>
+    </view>
+    <view class='cell'>
+      <input type='text' placeholder='确认密码' name="password02" password='true'></input>
+    </view>
+    <button class='submit-btn on' form-type='submit'>完成</button>
+  </view>
+</form>

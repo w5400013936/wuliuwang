@@ -1,0 +1,73 @@
+<!--pages/transport-price/transport-price.wxml-->
+<form bindsubmit='wanCheng'>
+  <view class='transport-title'>重货</view>
+  <view class='list bgwhite'>
+    <view class='list-li'>
+      <view class='list-li-text'>原价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入原价" value='{{bean.oriPriceZ}}' type='number' name="oriPriceZ" />
+      </view>
+      <view class='ico arrow-down' bindtap='changeOrig'>
+        {{orig}}
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>折扣价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入折扣价" value='{{bean.line.tipPriceZ}}' type='number' name="tipPriceZ" />
+      </view>
+      <view class='ico arrow-down' bindtap='changeDiscount'>
+        {{discount}}
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>协议价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入协议价" value='{{bean.line.xyPriceZ}}' type='number' name="xyPriceZ" />
+      </view>
+      <view class='ico arrow-down' bindtap='changeAgreement'>
+        {{agreement}}
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='transport-title'>轻货</view>
+  <view class='list bgwhite'>
+    <view class='list-li'>
+      <view class='list-li-text'>原价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入原价" value='{{bean.oriPriceQ}}' type='number' name="oriPriceQ" />
+      </view>
+      <view class='ico arrow-down'>
+        元/立方
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>折扣价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入折扣价" value='{{bean.line.tipPriceQ}}' type='number' name="tipPriceQ" />
+      </view>
+      <view class='ico arrow-down'>
+        元/立方
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>协议价：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入协议价" value='{{bean.line.xyPriceQ}}' type='number' name="xyPriceQ" />
+      </view>
+      <view class='ico arrow-down'>
+        元/立方
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" form-type='submit'>完成 </button>
+</form>

@@ -1,0 +1,47 @@
+/* pages/service/service.wxss */
+view{
+  box-sizing: border-box;
+}
+.panel{
+  height: 183rpx;
+  margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 25rpx;
+}
+.panel-left{
+  font-size: 29rpx;
+  color: #333333;
+  line-height: 183rpx;
+  margin-right: 15rpx;
+}
+.panel-right{
+  flex: 1;
+}
+.panel-right .panel-cell{
+  height: 91rpx;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 91rpx;
+  border-bottom: 1rpx solid #dddddd;
+}
+.panel-right .panel-cell:last-child{
+  border-bottom: none;
+}
+.cell{
+  height: 92rpx;
+  padding: 0 25rpx;
+  margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.cell-left{
+  font-size: 29rpx;
+  color: #333333;
+  margin-right: 25rpx;
+}
+.cell-right{
+  flex: 1;
+  color: #666666;
+  font-size: 26rpx;
+}

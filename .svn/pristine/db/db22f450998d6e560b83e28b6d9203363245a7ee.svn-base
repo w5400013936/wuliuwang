@@ -1,0 +1,59 @@
+<!--pages/source-details/source-details.wxml-->
+<view class='header'>
+<view class='header-line'>
+  <view class='form'>
+    <view class='t'>河北</view>
+    <view class='c'>廊坊市</view>
+  </view>
+  <view class='arrow'><image src='/img/arrow2.png' mode="widthFix"></image></view>
+  <view class='to'>
+    <view class='t'>河北</view>
+    <view class='c'>承德市</view>
+  </view>
+  <view class='clear'></view>
+  </view>
+  <view class='details-info'>
+      <view class='span3'>
+        <view class='t'>重量</view>
+        <view class='n'>6000公斤</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>体积</view>
+        <view class='n'>50(立方米)</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>运价</view>
+        <view class='n'>面议</view>
+      </view>
+      <view class='clear'></view>
+  </view>
+</view>
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>张先生</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物名称</view>
+    <view class='details-li-info'>塑料托盘|河北众博塑料业有限公司</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物类型</view>
+    <view class='details-li-info'>轻货</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>运输类型</view>
+    <view class='details-li-info'>整车配货</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>具体地址</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>说明备注</view>
+    <view class='details-li-info'>运费合适随时发货</view>
+  </view>
+</view>
+<view class='time'><image src='/img/time.png' mode="widthFix"></image>信息有效期：2018-06-03</view>
+<view class='h100'></view>
+<view class='footer-tel'>拨打电话：17331363669</view>

@@ -1,0 +1,72 @@
+<!--pages/companyInfos/carInfo/carInfo.wxml-->
+<!-- <view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='roCarDetail' data-carid='{{item.ID}}'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          {{item.from}} 到 {{item.to}}
+        </view>
+        <view class='o-desc'>{{imte.carNo}}</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        {{item.carUser}}
+      </view>
+      <view catchtap='call' data-phone='{{item.mobile}}'>
+        <image class='ico' src='/img/phone.png'></image>
+        {{item.mobile}}
+      </view>
+    </view>
+  </view>
+</view> -->
+
+
+<view class='line-search'>
+  <view class='line-add flex'>
+    <view class='line-start'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="1" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>出发城市
+          <view class='province'>广东省</view>
+        </view>
+        <view class='line-con'>广州市</view>
+      </cityPicker>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="2" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>到达城市
+          <view class='province'>广东省</view>
+        </view>
+        <view class='line-con'>广州市</view>
+      </cityPicker>
+    </view>
+  </view>
+  <button class='line-btn' bindtap='chaXun'>查询线路</button>
+</view>
+<view class='recommond-box'>
+  <view class='recommond-item'  wx:for="{{list}}" wx:key="{{index}}" bindtap='roCarDetail' data-carid='{{item.ID}}'>
+    <view class='address'>
+      <view class='add'>{{item.from}}</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>{{item.to}}</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>车辆牌照：{{item.carNo}}</view>
+        <view class='r-info'>车长：<text style='color:#EA582E;'>{{item.car_long}}</text></view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>车辆类型：{{item.car_type}}</view>
+        <view class='r-info'>载重：<text style='color:#EA582E;'>{{item.weight}}</text></view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png' catchtap='call' data-phone='{{item.mobile}}'></image>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<!--component/contact/contact.wxml-->
+<view class='details-list'>
+  <view class='details-li-title'>
+    <!-- <image src='/img/f-address.png'></image> -->
+    联系方式
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>{{linkman}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司地址</view>
+    <view class='details-li-info'>{{address}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>公司电话</view>
+    <view class='details-li-info'>{{telphone}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info'>{{phone}}</view>
+  </view>
+  <!-- <view class='details-li'>
+    <view class='details-li-text'>传真</view>
+    <view class='details-li-info'>{{fax}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>邮箱</view>
+    <view class='details-li-info'>{{email}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>网站地址</view>
+    <view class='details-li-info'>{{website}}</view>
+  </view> -->
+</view>

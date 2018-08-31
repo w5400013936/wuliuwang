@@ -1,0 +1,21 @@
+/* pages/index/index.wxss */
+.header{ text-align: center; position: relative;}
+.header::after{ content: ''; display: inline-block; position: absolute; top:0; left: 0; right: 0; bottom: 48rpx; background: #4ab8d0; z-index: 0;}
+.header-title{ font-size: 36rpx; position: relative; z-index: 1; color: #fff; line-height: 60rpx;}
+.header-p{ font-size: 30rpx;position: relative; z-index: 1;color: #fff;line-height: 20rpx;}
+.banner{ margin: 40rpx 31rpx 0; border-radius: 14rpx; overflow: hidden;position: relative; z-index: 1;}
+.swiper-container{ background: #fff; padding:0; position: relative;}
+.slide-image{ width: 100%;}
+.swiper-container .dots{  position: absolute;  left: 0;   right: 0;   bottom: 22rpx;  display: flex;  justify-content: flex-end;  padding-right: 65rpx; }  
+.swiper-container .dots .dot{  margin: 0 4rpx;  width: 10rpx;  height: 10rpx;  background: #fff;  border-radius: 5rpx;  transition: all .6s;  }  
+.swiper-container .dots .dot.active{  width: 24rpx;  background: #4ab8d0;  }  
+.index-btn{ padding: 60rpx 27rpx;}
+.index-btn-span6{ width: 340rpx; float: left; margin-left: 16rpx;}
+.index-btn-span6:first-child{ margin-left: 0;}
+.index-btn-span6 image{ width: 100%;}
+.menu-li{ width: 33.3333%; float: left; padding: 57rpx 0 53rpx; text-align: center; position: relative; border-bottom:solid 1px #eaeaea;}
+.menu-li::after{content: ''; display: inline-block; position: absolute; top: 0px; bottom: 0px; left: 0px; width: 1px; background: #eaeaea;}
+.menu-li:nth-child(3n+1):after{ display: none;}
+.menu-li-ico{ height: 69rpx;display: flex;  justify-content:center; line-height: 69rpx;}
+.menu-li-ico image{ width: 80rpx; vertical-align: middle;}
+.menu-li-p{ font-size: 28rpx; color: #666; line-height: 60rpx; margin-top: 23rpx;}

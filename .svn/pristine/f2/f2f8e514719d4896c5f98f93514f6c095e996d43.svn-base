@@ -1,0 +1,71 @@
+<!--pages/transport-price/transport-price.wxml-->
+<view class='transport-title'>重货</view>
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>原价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入原价" />
+    </view>
+    <view class='ico arrow-down' bindtap='changeOrig'>
+      {{orig}}
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>折扣价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入折扣价" />
+    </view>
+    <view class='ico arrow-down' bindtap='changeDiscount'>
+      {{discount}}
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>协议价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入协议价" />
+    </view>
+    <view class='ico arrow-down' bindtap='changeAgreement'>
+      {{agreement}}
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='transport-title'>轻货</view>
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>原价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入原价" />
+    </view>
+    <view class='ico arrow-down'>
+      元/立方
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>折扣价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入折扣价" />
+    </view>
+    <view class='ico arrow-down'>
+      元/立方
+    </view>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>协议价：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入协议价" />
+    </view>
+    <view class='ico arrow-down'>
+      元/立方
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="primary">完成 </button>

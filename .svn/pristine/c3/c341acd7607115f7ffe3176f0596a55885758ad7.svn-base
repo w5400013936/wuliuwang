@@ -1,0 +1,23 @@
+/* pages/companyInfos/case/case.wxss */
+.info-list{
+  padding: 30rpx 30rpx;
+}
+.info-item{
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.info-top{
+  font-size: 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  padding: 38rpx;
+}
+.device-img{
+  width: 130rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+.desc{
+  flex: 1;
+}

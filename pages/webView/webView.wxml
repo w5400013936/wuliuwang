@@ -1,0 +1,2 @@
+<!--page/sellcar/webView.wxml-->
+<web-view src="{{url}}"></web-view>

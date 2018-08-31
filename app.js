@@ -1,0 +1,154 @@
+//app.js
+var md5utf = require('utils/md5utf-8.js');
+App({
+  onLaunch: function () {
+    var that = this
+    wx.getStorage({
+      key: that.acache.userInfo,
+      success: function (res) {
+        that.appData.userInfo = res.data
+      },
+    })
+  },
+  globalData: {
+    userInfo: null
+  },
+  appData: {
+    host: "https://data.6-china.com/app/",
+    hostPhp: "https://datacenter.6-china.com/",
+    xieYi: "https://data.6-china.com/home/xieyi",
+    SECRET: "7bb7c27e9a2fe9b1",
+    userInfo: "",
+    changeControl: 2017,
+    manageCert:""
+  },
+  acache: {
+    userInfo: "userInfo"
+  },
+  shuaXin:{
+    SHUA_XIN_PROFILE:false,
+    SHUA_XIN_USERINFO1:false,
+    SHUA_XIN_COMPANY:false,
+    SHUA_XIN_TONG_JI:false,
+    manageCert:false,
+    uplogo:"",
+    upmpzhao:"",
+    faBuWangDian:"faBuWangDian",
+    faBuZhuanXian:"faBuZhuanXian",
+    faBuHuoYuan:"faBuHuoYuan",
+    guanBiSheZhi:"guanBiSheZhi",
+    yunShuJiaGe:"",
+    toProvin:"",
+    toCitys:"",
+    proName:"",
+  },
+  md5: function (str) {
+    var my_provin = str + this.appData.SECRET;
+    var md5_provin = md5utf.md5(my_provin);
+    var md5_1_provin = md5_provin.substr(0, 3);
+    var md5_2_provin = md5_provin.substr(8, 3);
+    var md5_3_provin = md5_provin.substr(16, 3);
+    var md5_4_provin = md5_provin.substr(24, 3);
+    var token = md5_1_provin + md5_2_provin + md5_3_provin + md5_4_provin;
+    return token
+  },
+  md5Php: function (str) {
+    var md5_provin = md5utf.md5(md5utf.md5(str));
+    var md5_1_provin = md5_provin.substr(0, 9);
+    var md5_2_provin = md5_provin.substr(18, 7);
+    var token = md5_1_provin + md5_2_provin;
+    return token
+  },
+  formatTime: function (shijianchuo) {
+    //shijianchuo是整数，否则要parseInt转换
+    var time = new Date(shijianchuo);
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    return y + '-' +m + '-' + d;
+  },
+  formatTimeX: function (shijianchuo) {
+    //shijianchuo是整数，否则要parseInt转换
+    var time = new Date(shijianchuo);
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds();
+    if(h<10){
+      h = "0"+h
+    }
+    if(mm<10){
+      mm = "0"+mm
+    }
+    return y + '-' + m + '-' + d + ' ' + h + ':' + mm;
+  },
+  /**
+  * 检查电话号码
+  */
+  checkPhone: function (phone) {
+    if (!(/^1[123456789]\d{9}$/.test(phone))) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+  /**
+   * 格式化时间
+   */
+  TimeFormatX(progress) {
+    var year = parseInt(progress / (60 * 60 * 1000 * 24 * 365))
+    if (year > 0) {
+      return "一年前"
+    }
+    var month = parseInt(progress % (60 * 60 * 1000 * 24 * 365) / (60 * 60 * 1000 * 24 * 30))
+    if (month > 0) {
+      return "1月前";
+    }
+    var day = parseInt(progress % (60 * 60 * 1000 * 24 * 30) / (60 * 60 * 1000 * 24))
+    if (day > 0) {
+      return day + "天前";
+    }
+    var hour = parseInt(progress % (60 * 1000 * 60 * 24) / (60 * 60 * 1000));
+    if (hour > 0) {
+      return hour + "小时前";
+    }
+    var min = parseInt(progress % (60 * 1000 * 60) / (60 * 1000));
+    if (min > 0) {
+      return min + "分钟前";
+    }
+    var sec = parseInt(progress % (60 * 1000) / 1000);
+    if (sec > 0) {
+      return "刚刚";
+    }
+    return "刚刚";
+  },
+  /**
+   * 打电话
+   */
+  call(mobile){
+    var mobileSplit = mobile.split(",")
+    if (mobileSplit.length > 0) {
+      if (mobileSplit.length == 1) {
+        wx.makePhoneCall({
+          phoneNumber: mobileSplit[0],
+        })
+      } else {
+        wx.showActionSheet({
+          itemList: mobileSplit,
+          success: function (res) {
+            console.log(res.tapIndex)
+            wx.makePhoneCall({
+              phoneNumber: mobileSplit[res.tapIndex],
+            })
+          },
+        })
+      }
+    } else {
+      wx.showToast({
+        title: '暂无联系方式',
+      })
+    }
+  }
+})

@@ -1,0 +1,139 @@
+// pages/index/index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrls: [
+      'https://api.6-china.com/images/zhuye_banner01.jpg',
+      'https://api.6-china.com/images/zhuye_banner02.jpg',
+      'https://api.6-china.com/images/zhuye_banner03.jpg'
+    ],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    swiperCurrent: 0,
+  },
+  changeIndicatorDots: function (e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function (e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function (e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+  swiperChange: function (e) {
+    this.setData({
+      swiperCurrent: e.detail.current
+    })
+  }, 
+  goSource:function(){
+    wx.reLaunch({
+      url: '/pages/source/source',
+    })
+  },
+  goLine:function(){
+    wx.reLaunch({
+      url: '/pages/line/line',
+    })
+  },
+  goAddSource:function(){
+    wx.navigateTo({
+      url: '/pages/add-source/add-source',
+    })
+  },
+  goAddNetwork: function () {
+    wx.navigateTo({
+      url: '/pages/add-network/add-network',
+    })
+  },
+  goAddLine: function () {
+    wx.navigateTo({
+      url: '/pages/add-line/add-line',
+    })
+  },
+  goLineManage: function () {
+    wx.navigateTo({
+      url: '/pages/line-manage/line-manage',
+    })
+  },
+  goCompany: function () {
+    wx.navigateTo({
+      url: '/pages/company/company',
+    })
+  },
+  goUserInfo: function () {
+    wx.navigateTo({
+      url: '/pages/userInfo/userInfo',
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  }
+})

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "在线下单",
+  "usingComponents": {
+    "cityPicker": "/component/cityPicker/cityPicker"
+  }
+}

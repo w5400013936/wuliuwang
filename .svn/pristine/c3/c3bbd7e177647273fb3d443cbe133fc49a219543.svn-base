@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "企业信息",
+  "usingComponents": {
+    "cityPicker": "/component/cityPicker/cityPicker"
+  }
+}

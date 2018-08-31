@@ -1,0 +1,7 @@
+<!--component/popup/popup.wxml-->
+<view class="pop pop--bottom {{ show ? 'pop--show' : '' }}">
+  <view class='popup-container'>
+    <slot></slot>
+  </view>
+  <view class='popup-mask' bindtap='hidePopup'></view>
+</view>

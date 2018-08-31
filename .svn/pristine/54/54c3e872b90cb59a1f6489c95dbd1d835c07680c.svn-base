@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "中易通物流网",
+  "usingComponents": {
+    "toast": "/component/toast/toast"
+  }
+}

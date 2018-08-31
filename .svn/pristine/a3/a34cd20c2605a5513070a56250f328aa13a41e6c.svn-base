@@ -1,0 +1,62 @@
+<!--pages/area-select/area-select.wxml-->
+<scroll-view class='sideBar' scroll-y="{{true}}" style='height:100%;'>
+  <block wx:for="{{proList}}" wx:key="{{index}}">
+    <view class='province {{item.select?"active":""}}' bindtap='proTap' data-index='{{index}}'>{{item.proName}}</view>
+  </block>
+</scroll-view>
+<scroll-view class='main' scroll-y="{{true}}" style='height:100%;'>
+  <view class='cell-list'>
+    <block wx:for="{{cityList}}" wx:key="{{index}}" wx:for-item="item1">
+      <view class='cell'>
+        <view class='cell-container' data-index="{{index}}" bindtap='showCounty'>
+          <view class='cell-left'>{{item1.cityName}}</view>
+          <view class='cell-right' catchtap='quanXuan' data-index='{{index}}'>
+            <image class='cell-img' src='{{item1.select?"/img/selected.png":"/img/unselected.png"}}'></image>
+            全选
+          </view>
+        </view>
+        <view class='cell-content {{item1.open?"show":""}}'>
+          <!-- <view class='cell-list-ul'>
+            <block wx:for="{{item1.townList}}" wx:key="{{index}}" wx:for-item="item2">
+              <view class='cell-list-li'>
+                <image class='cell-img' src='{{item2.select?"/img/selected.png":"/img/unselected.png"}}'></image>
+                {{item2.townName}}
+              </view>
+            </block>
+          </view> -->
+          <block wx:for="{{item1.townList.length/3}}" wx:for-index="indexx" wx:for-item="item2" wx:key="{{indexx}}">
+            <view class='cell-list-ul'>
+              <block wx:if="{{item1.townList[indexx*3]}}">
+                <view class='cell-list-li' bindtap='townTap' data-indexx='{{indexx*3}}' data-index='{{index}}'>
+                  <image class='cell-img' src='{{item1.townList[indexx*3].select?"/img/selected.png":"/img/unselected.png"}}'></image>
+                  {{item1.townList[indexx*3].townName}}
+                </view>
+              </block>
+              <block wx:if="{{item1.townList[indexx*3+1]}}">
+                <view class='cell-list-li' bindtap='townTap' data-indexx='{{indexx*3+1}}' data-index='{{index}}'>
+                  <image class='cell-img' src='{{item1.townList[indexx*3+1].select?"/img/selected.png":"/img/unselected.png"}}'></image>
+                  {{item1.townList[indexx*3+1].townName}}
+                </view>
+              </block>
+              <block wx:if="{{item1.townList[indexx*3+2]}}">
+                <view class='cell-list-li' bindtap='townTap' data-indexx='{{indexx*3+2}}' data-index='{{index}}'>
+                  <image class='cell-img' src='{{item1.townList[indexx*3+2].select?"/img/selected.png":"/img/unselected.png"}}'></image>
+                  {{item1.townList[indexx*3+2].townName}}
+                </view>
+              </block>
+            </view>
+          </block>
+
+
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- <view class='selectAll'>
+    <image class='selectAll-img' src='/img/selected.png'></image>
+    全选
+  </view> -->
+  
+</scroll-view>
+<button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="tiJiao">提交 </button>

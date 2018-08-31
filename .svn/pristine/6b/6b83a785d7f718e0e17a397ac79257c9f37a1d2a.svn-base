@@ -1,0 +1,66 @@
+<!--pages/companyInfos/carInfo/carInfo.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          广东 广州市 市辖区 到 江苏
+        </view>
+        <view class='o-desc'>甘C10521</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          广东 广州市 市辖区 到 江苏
+        </view>
+        <view class='o-desc'>甘C10521</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address'>
+        <view class='o-name'>
+          <image class='ico' src='/img/f-address.png'></image>
+          广东 广州市 市辖区 到 江苏
+        </view>
+        <view class='o-desc'>甘C10521</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+</view>

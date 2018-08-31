@@ -1,0 +1,99 @@
+<!--pages/companyInfos/carInfo-detail/carInfo-detail.wxml-->
+<block wx:if="{{!isfail}}">
+  <view class='details-list'>
+    <view class='details-li-title'>车源详细信息</view>
+    <view class='details-li'>
+      <view class='details-li-text'>车牌号</view>
+      <view class='details-li-info'>{{bean.car_info.car_no}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>类型</view>
+      <view class='details-li-info'>{{bean.car_info.car_type}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>出发地</view>
+      <view class='details-li-info'>{{bean.car_source.from}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>途经地名</view>
+      <view class='details-li-info'></view>
+    </view>
+    <view class='details-li-title'>到达地（{{bean.car_source.to_province}}）</view>
+    <view class='details-li' wx:for="{{bean.car_source.to_citys}}" wx:key="{{index}}">
+      <view class='details-li-t'>{{item.city}}
+        <view class='text' bindtap='showDetail' data-index='{{index}}'>{{item.select?"收起":"查看"}}</view>
+      </view>
+      <view class='details-li-desc' hidden='{{!item.select}}'>
+        {{item.towns}}
+      </view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>发布时间</view>
+      <view class='details-li-info'>{{bean.car_source.post_time}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>发车时间</view>
+      <view class='details-li-info'>{{bean.car_source.start_time?bean.car_source.start_time:"暂无"}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>运价</view>
+      <view class='details-li-info'>{{bean.car_source.price}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>常用语</view>
+      <view class='details-li-info'>{{bean.car_source.word}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>即时/长期</view>
+      <view class='details-li-info'>{{bean.car_source.is_long_time}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>单程/往返</view>
+      <view class='details-li-info'>{{bean.car_source.is_back}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>说明</view>
+      <view class='details-li-info'>{{bean.car_source.mark}}</view>
+    </view>
+    <view class='details-li-title'>车辆档案资料</view>
+    <view class='details-li'>
+      <view class='details-li-text'>车牌号</view>
+      <view class='details-li-info'>{{bean.car_info.car_no}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>车长</view>
+      <view class='details-li-info'>{{bean.car_info.car_long}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>载重</view>
+      <view class='details-li-info'>{{bean.car_info.weight}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>车辆类型</view>
+      <view class='details-li-info'>{{bean.car_info.car_type}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>体积</view>
+      <view class='details-li-info'>{{bean.car_info.volume}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>车主</view>
+      <view class='details-li-info'>{{bean.car_info.car_usr}}</view>
+    </view>
+    <view class='details-li' bindtap='call' data-mobile='{{bean.car_info.mobile}}'>
+      <view class='details-li-text'>车主联系电话</view>
+      <view class='details-li-info'>{{bean.car_info.mobile}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>车辆识别代号</view>
+      <view class='details-li-info'>{{bean.car_info.identify_num}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>车辆常驻地</view>
+      <view class='details-li-info'>{{bean.car_info.seat}}</view>
+    </view>
+  </view>
+  <contact linkman="{{contact.linkMan}}" address="{{contact.address}}" telphone="{{contact.tel}}" phone="{{contact.phone}}" fax="{{contact.fax}}" email="{{contact.email}}" website="{{contact.webSite}}">
+  </contact>
+  <!-- <view class='more'>点击查看其它车源信息></view> -->
+</block>

@@ -1,0 +1,73 @@
+<!--pages/add-network/add-network.wxml-->
+<form bindsubmit='tiJiao'>
+  <view class='title-tips'>您的该信息库中可发布(
+    <text bindtap='wangDianTap'>{{userInfo1.isMember?30:5}}</text>)个网点，您可以替换旧的网点或联系我们申请更高的服务</view>
+  <view class='list bgwhite'>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>网点名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入网点名称" value='{{netDetail.pointName}}' name="pointName" />
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联系人：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入联系人" value='{{netDetail.linkMan}}' name="linkMan" />
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>手机：</view>
+      <view class='list-li-input'>
+        <input class='input-text' type='tel' placeholder="请输入手机号码" value='{{netDetail.mobile}}' name="mobile"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>固话：</view>
+      <view class='list-li-input'>
+        <input class='input-text' type="number" placeholder="请输入固定电话" value='{{netDetail.tel}}' name="tel"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>传真：</view>
+      <view class='list-li-input'>
+        <input class='input-text' type="number" placeholder="请输入传真" value='{{netDetail.fax}}' name ="fax"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>QQ：</view>
+      <view class='list-li-input'>
+        <input class='input-text' type="number" placeholder="请输入QQ号码" value='{{netDetail.qq}}' name="qq"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>详细地址：</view>
+      <!-- <view class='list-li-input'><input class='input-text' placeholder="请选择地址"  value=''/></view> -->
+      <view class='list-li-input'>
+        <areaPicker class="cell-input" placeholder="请选择出发地" diZhi="{{netDetail.Vinc}} {{netDetail.cityName}} {{netDetail.townName}}" proID="{{netDetail.provin}}" cityID="{{netDetail.city}}" townID="{{netDetail.town}}" bind:chooseAddress="chooseAddress"></areaPicker>
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>街道地址：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入街道地址" value='{{netDetail.address}}' name="address"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" form-type='submit'>立即发布 </button>
+</form>

@@ -1,0 +1,59 @@
+<!--pages/source-details/source-details.wxml-->
+<view class='header'>
+<view class='header-line'>
+  <view class='form'>
+    <view class='t'>{{item.fromSheng}}</view>
+    <view class='c'>{{item.fromShi}}</view>
+  </view>
+  <view class='arrow'><image src='/img/arrow2.png' mode="widthFix"></image></view>
+  <view class='to'>
+    <view class='t'>{{item.toSheng}}</view>
+    <view class='c'>{{item.toShi}}</view>
+  </view>
+  <view class='clear'></view>
+  </view>
+  <view class='details-info'>
+      <view class='span3'>
+        <view class='t'>重量</view>
+        <view class='n'>{{item.weight}}{{item.unit}}</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>体积</view>
+        <view class='n'>{{item.tiji>0?item.tiji:"不详"}}(立方米)</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>运价</view>
+        <view class='n'>{{item.price>0?item.price:"面议"}}</view>
+      </view>
+      <view class='clear'></view>
+  </view>
+</view>
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>{{item.contact}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物名称</view>
+    <view class='details-li-info'>{{item.godName}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物类型</view>
+    <view class='details-li-info'>{{item.godType}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>运输类型</view>
+    <view class='details-li-info'>{{item.sentText}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>具体地址</view>
+    <view class='details-li-info'>{{item.fdress}}</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>说明备注</view>
+    <view class='details-li-info'>{{item.mark?item.mark:"暂无"}}</view>
+  </view>
+</view>
+<view class='time'><image src='/img/time.png' mode="widthFix"></image>信息有效期：{{item.limiTime}}</view>
+<view class='h100'></view>
+<view class='footer-tel' bindtap='call'>{{isLogin?"拨打电话：":""}}{{isLogin?item.mobile:"请登录后，再联系货源方"}}</view>

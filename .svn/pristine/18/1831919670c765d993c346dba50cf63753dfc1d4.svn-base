@@ -1,0 +1,69 @@
+<!--pages/companyInfos/line/line.wxml-->
+<view class='line-search'>
+  <view class='line-add flex'>
+    <!-- <view class='line-start'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="1" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>出发城市
+          <view class='province'>广东省</view>
+        </view>
+        <view class='line-con'>广州市</view>
+      </cityPicker>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="2" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>到达城市
+          <view class='province'>广东省</view>
+        </view>
+        <view class='line-con'>广州市</view>
+      </cityPicker>
+    </view> -->
+
+    <view class='line-start'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="1" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='ico' src='/img/f-address.png'></image>出发城市
+          <view class='province'>{{bean.province}}</view>
+        </view>
+        <view class='line-con'>{{bean.city}}</view>
+      </cityPicker>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="2" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='ico' src='/img/f-address.png'></image>到达城市
+          <view class='province'>{{toProvin}}</view>
+        </view>
+        <view class='line-con'>{{toCity}}</view>
+      </cityPicker>
+    </view>
+  </view>
+  <button class='line-btn' bindtap='chaXun'>查询线路</button>
+</view>
+
+<view class='recommond-box'>
+  <view class='recommond-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toLineDetail' data-bean='{{item}}'>
+
+    <view class='address'>
+      <view class='add'>{{item.provin}} {{item.city}}</view>
+      <image class='add-img' src='/img/right.png'></image>
+      <view class='add'>{{item.toProvin}} {{item.toCity}}</view>
+    </view>
+    <view class='r-con'>
+      <view>
+        <view class='r-info'>运输时效：{{item.timeliness}}</view>
+        <view class='r-info'>发车频率：{{item.plv}}</view>
+        <view class='clear'></view>
+      </view>
+      <view>
+        <view class='r-info'>配货方式：{{item.meth}}</view>
+        <view class='clear'></view>
+      </view>
+    </view>
+    <image class='r-img' src='/img/c-phone.png' catchtap='callLine' data-phone='{{item.mobile}}'></image>
+  </view>
+
+</view>

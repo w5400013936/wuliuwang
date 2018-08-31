@@ -1,0 +1,80 @@
+<!--pages/line/line.wxml--> 
+<view class='search-box bgwhite'>
+  <view class='search-list'>
+    <view class='search-list-span4 {{shaiXuan==1?"active":""}}' bindtap='shaiXuan' data-shaixuan='1'>{{fromCityName}}
+      <view class='search-ico'>
+        <image src='/img/down.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='search-list-span4 {{shaiXuan==2?"active":""}}' bindtap='shaiXuan' data-shaixuan='2'>{{toCityName}}
+      <view class='search-ico'>
+        <image src='/img/down.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='search-list-span4' bindtap='shaiXuan' data-shaixuan='0'>重置
+      <view class='search-ico'>
+        <image src='/img/reset.png' mode="widthFix"></image>
+      </view>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='height130'></view>
+
+<view class='list'>
+  <view class='list-li' wx:for="{{rows}}" wx:key="{{index}}" bindtap='detail' data-index='{{index}}'>
+    <view class='list-li-time'>{{item.time}}
+      <!-- <view class='timeliness'> -->
+        <!-- <image src='/img/timeliness.png' mode="aspectFill"></image>时效：3天</view> -->
+      <view class='clear'></view>
+    </view>
+    <view class='list-li-info'>
+      <view class='logo'>
+        <image src='{{item.minfo.mendian?item.minfo.imgDir+item.minfo.mendian:"/img/logo.png"}}' class='logo-img'></image>
+        <image src='{{item.minfo.isMember?"/img/vip.png":""}}' class='vip' mode="widthFix"></image>
+      </view>
+      <view class='from'>
+        <view class='p'>{{item.Vinc}}</view>
+        <view class='c'>{{item.cityName}}</view>
+      </view>
+      <view class='text'>
+        <view class='n'>{{item.plv}}次/天</view>
+        <view class='t'>
+          <image src='/img/arrow.png' mode="widthFix"></image>
+        </view>
+        <view class='z'>{{item.meth==1?"零担配货":"整车配货"}}</view>
+      </view>
+      <view class='to'>
+        <view class='p'>{{item.ToVinc}}</view>
+        <view class='c'>{{item.muDiDi}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li-name'>
+      <view class='name'>
+        <image src='/img/name.png' mode="aspectFill"></image>{{item.minfo.companyName}}</view>
+      <view class='tel' catchtap='call' data-index='{{index}}'>
+        <image src='/img/phone.png' mode="aspectFill"></image>{{item.phone}}</view>
+      <view class='clear'></view>
+    </view>
+  </view>
+</view>
+<view class='search-city-list' wx:if="{{shaiXuan>0}}">
+  <view class='search-bg' bindtap='dismiss'></view>
+  <view class='search-city'>
+    <view class='item-city'>
+      <scroll-view scroll-y="true" style="height:663rpx">
+        <block wx:for="{{proList}}" wx:key="{{index}}">
+          <view class='item-city-li {{item.select?"active":""}}' bindtap='shengTap' data-index='{{index}}'>{{item.proName}}</view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='sub-item-city'>
+      <scroll-view scroll-y="true" style="height:663rpx">
+        <block wx:for="{{cityList}}" wx:key="{{index}}">
+          <view class='sub-item-city-li {{item.select?"active":""}}' bindtap='shiTap' data-index='{{index}}'>{{item.cityName}}</view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

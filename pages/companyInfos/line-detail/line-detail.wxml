@@ -1,0 +1,93 @@
+<!--pages/companyInfos/line-detail/line-detail.wxml-->
+<!--pages/line-details/line-details.wxml-->
+<!--pages/source-details/source-details.wxml-->
+<block wx:if="{{!isfail}}">
+  <view class='header'>
+    <view class='header-line'>
+      <view class='form'>
+        <view class='t'>{{lineBean.provin}}</view>
+        <view class='c'>{{lineBean.city}}</view>
+      </view>
+      <view class='arrow'>
+        <image src='/img/arrow2.png' mode="widthFix"></image>
+      </view>
+      <view class='to'>
+        <view class='t'>{{lineBean.toProvin}}</view>
+        <view class='c'>{{lineBean.toCity}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='details-info'>
+      <view class='span3'>
+        <view class='t'>运输时效</view>
+        <view class='n'>{{bean.price.timeliness}}</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>发车频率</view>
+        <view class='n'>{{bean.price.plv}}</view>
+      </view>
+      <view class='span3'>
+        <view class='t'>配货方式</view>
+        <view class='n'>{{bean.price.meth}}</view>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </view>
+  <view class='details-list'>
+    <block wx:if="item.netID>0">
+      <view class='details-li'>
+        <view class='details-li-text'>网点</view>
+        <view class='details-li-info'>{{bean.fromInfo.branchesName}}</view>
+      </view>
+      <view class='details-li'>
+        <view class='details-li-text'>联系人</view>
+        <view class='details-li-info'>{{bean.fromInfo.linkMan}}</view>
+      </view>
+      <view class='details-li'>
+        <view class='details-li-text'>电话</view>
+        <view class='details-li-info' bindtap='call' data-mobile='{{bean.fromInfo.mobile}}'>{{bean.fromInfo.mobile}}</view>
+      </view>
+      <view class='details-li'>
+        <view class='details-li-text'>地址</view>
+        <view class='details-li-info'>{{bean.fromInfo.address}}</view>
+      </view>
+    </block>
+
+    <view class='details-li-title'>到达{{bean.toInfo.toProvin}}网点信息</view>
+    <view class='details-li' wx:for="{{bean.toInfo.toCitys}}" wx:key="{{index}}">
+      <view class='details-li-t'>{{item.city}}
+        <view class='text' bindtap='showDetail' data-index='{{index}}'>{{item.select?"收起":"查看"}}</view>
+      </view>
+      <view class='details-li-desc' hidden='{{!item.select}}'>
+        {{item.towns}}
+      </view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>重货价格</view>
+      <view class='details-li-info'>{{bean.price.oriPriceZ}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>轻货价格</view>
+      <view class='details-li-info'>{{bean.price.oriPriceQ}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>线路说明</view>
+      <view class='details-li-info'>{{bean.price.mark?bean.price.mark:"暂无"}}</view>
+    </view>
+    <view class='details-li-title'>公司信息</view>
+    <view class='details-li'>
+      <view class='details-li-text'>发布公司</view>
+      <view class='details-li-info'>{{bean.fromInfo.branchesName}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>联系人</view>
+      <view class='details-li-info'>{{bean.toInfo.linkMan}}</view>
+    </view>
+    <view class='details-li'>
+      <view class='details-li-text'>手机</view>
+      <view class='details-li-info' bindtap='call' data-mobile='{{bean.toInfo.mobile}}'>{{bean.toInfo.mobile}}</view>
+    </view>
+  </view>
+
+  <!-- <view class='more' bindtap='toLineList'>点击查看其它专线></view> -->
+</block>

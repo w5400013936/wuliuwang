@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布专线",
+  "usingComponents": {
+    "areaPicker": "/component/area/area"
+  }
+}

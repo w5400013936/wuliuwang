@@ -1,0 +1,114 @@
+// pages/add-line/add-line.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    transportTimeList:['小时','天'],
+    transportTime:'小时',
+    deliverList:['零担配货','整车配货'],
+    deliver:'',
+    invoice: true,
+    oneWay:true,
+  },
+  goAreaSelect:function(){
+    wx.navigateTo({
+      url: '/pages/area-select/area-select',
+    })
+  },
+  chooseTransportTime:function(){
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.transportTimeList,
+      success: function (e) {
+        that.setData({
+          transportTime: that.data.transportTimeList[e.tapIndex]
+        })
+      }
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  },
+
+  chooseDistribution:function(){
+    var that = this;
+    wx.showActionSheet({
+      itemList: that.data.deliverList,
+      success:function(e){
+        that.setData({
+          deliver: that.data.deliverList[e.tapIndex]
+        })
+      }
+    })
+  },
+
+  invoiceChange:function(){
+    this.setData({
+      invoice: !this.data.invoice
+    })
+  },
+  oneWayChange:function(){
+    this.setData({
+      oneWay: !this.data.oneWay
+    })
+  },
+  goTransportPrice:function(){
+    wx.navigateTo({
+      url: '/pages/transport-price/transport-price',
+    })
+  }
+})

@@ -1,0 +1,90 @@
+/* pages/area-select/area-select.wxss */
+.sideBar{
+  width: 183rpx;
+  height: 100%;
+  float: left;
+  border-right: 1rpx solid #ddd; 
+  overflow-y: auto;
+}
+.sideBar .province{
+  width: 183rpx;
+  height: 90rpx;
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #eee;
+}
+.sideBar .province.active{
+  color: #69c5cd;
+  background-color: #fff;
+}
+.main{
+  width: calc(100% - 184rpx);
+  height: calc(100% - 90rpx);
+  float: right;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.cell{
+  font-size: 26rpx;
+  color: #333333;
+}
+.cell-container{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ddd;
+  padding: 0 26rpx;
+  height: 83rpx;
+  line-height: 83rpx;
+}
+.cell-left{
+  flex: 1;
+}
+.cell .cell-img{
+  width: 31rpx;
+  height: 27rpx;
+  vertical-align: middle;
+  margin-right: 11rpx;
+}
+.cell-content{
+  display: none;
+  width: 100%;
+  border-bottom: 1rpx solid #ddd;
+}
+.cell-content.show{
+  display: block;
+}
+.cell-list-ul{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 26rpx;
+}
+
+/* .selectAll{
+  margin-top: 62rpx;
+  font-size: 22rpx;
+  color: #666666;
+  padding-left: 26rpx;
+}
+.selectAll-img{
+  width: 31rpx;
+  height: 27rpx;
+  vertical-align: middle;
+  margin-right: 11rpx;
+} */
+.submit-btn{ 
+   /* margin-top: 94rpx;  
+   width: 522rpx;   */
+  width:calc(100% - 184rpx);
+  line-height: 90rpx; 
+  text-align: center; 
+  background: #68c5cd; 
+  color: #fff; 
+  font-size: 21rpx;
+  border-radius: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  /* left: 0; */
+}

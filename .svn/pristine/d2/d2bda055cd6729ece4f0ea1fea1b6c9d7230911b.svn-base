@@ -1,0 +1,37 @@
+<!--pages/companyInfos/netInfo-detail/netInfo-detail.wxml-->
+<view class='details-list'>
+  <view class='details-li'>
+    <view class='details-li-text'>网点名称</view>
+    <view class='details-li-info'>福建家平物流有限公司</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>网点所在地</view>
+    <view class='details-li-info'>福建福州市长乐市</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>详细地址</view>
+    <view class='details-li-info'>福州长乐物流园</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>漆家平</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系电话</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>手机</view>
+    <view class='details-li-info'>15880021111</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>传真</view>
+    <view class='details-li-info'></view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>QQ</view>
+    <view class='details-li-info'></view>
+  </view>
+</view>
+
+<view class='more'>点击查看其它专线></view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "货源管理",
+  "usingComponents": {
+    "confirm": "/component/confirm/confirm"
+  }
+}

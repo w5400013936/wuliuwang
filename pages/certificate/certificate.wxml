@@ -1,0 +1,17 @@
+<!--pages/certificate/certificate.wxml-->
+<scroll-view>
+<view class='cell bgwhite'>
+  <view class='cell-left'>
+    <image src='/img/i6.png'></image>
+    营业执照
+  </view>
+</view>
+<view class='cell bgwhite'>
+  <view class='cell-left'>
+    <image src='/img/i6.png'></image>
+    营业执照
+  </view>
+</view>
+</scroll-view>
+
+<button class='bottom-btn'>上传图片</button>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "车源详细信息",
+  "usingComponents": {
+    "contact": "/component/contact/contact"
+  }
+}

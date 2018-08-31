@@ -1,0 +1,72 @@
+/* component/uploadBox/uploadBox.wxss */
+.upload-box{
+  width: 600rpx;
+  height: 730rpx;
+  background-color: #fff;
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  margin: auto;
+  padding: 30rpx;
+  z-index: 1001;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+}
+.upload-title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 22rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.upload-img{
+  width: 440rpx;
+  height: 440rpx;
+  display: block;
+  margin: 0 auto 20rpx auto;
+}
+.upload-input{
+  height: 50rpx;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+}
+.btn-box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+}
+.submit-btn,.cancel-btn{
+  display: inline-block;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-radius: 0;
+}
+.submit-btn{
+  color: #fff;
+  background-color: #69c5cd;
+}
+.cancel-btn{
+  color: #000;
+  background-color:#ddd;
+}
+.upload-shadow{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 1000;
+}

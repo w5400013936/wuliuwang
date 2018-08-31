@@ -1,0 +1,13 @@
+<!--pages/uploadPic/uploadPic.wxml-->
+<view class='title'>上传说明：为JPG或GIF格式，小于200K，大约“480×360像素”最佳</view>
+<view class='upload-cell bgwhite'>
+  <view class='upload-cell-left'>
+    图片名称:
+  </view>
+  <view class='upload-cell-right'>
+    <input ></input>
+  </view>
+</view>
+<view class='upload-box bgwhite'>
+  <image class='upload-img' src='/img/upload.png'></image>
+</view>

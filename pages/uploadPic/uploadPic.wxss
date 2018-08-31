@@ -1,0 +1,38 @@
+/* pages/uploadPic/uploadPic.wxss */
+view{
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  height: 83rpx;
+  color: #999999;
+  font-size: 20rpx;
+  padding: 0 26rpx;
+  line-height: 83rpx;
+}
+.upload-box{
+  height: 207rpx;
+  padding: 25rpx;
+}
+.upload-img{
+  width: 157rpx;
+  height: 157rpx;
+}
+.upload-cell{
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+  margin-bottom: 25rpx;
+  font-size: 29rpx;
+  color: #333333;
+}
+.upload-cell-left{
+  margin-right: 20rpx;
+}
+.upload-cell-right{
+  flex: 1;
+}
+.upload-cell-right input{
+  width: 100%；
+}

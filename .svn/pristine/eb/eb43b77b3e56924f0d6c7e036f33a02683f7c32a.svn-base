@@ -1,0 +1,60 @@
+<!--pages/companyInfos/line/line.wxml-->
+<view class='info-list'>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address flex'>
+        <view>福建-厦门-湖里区</view>
+        <image class='top-img' src='/img/right.png'></image>
+        <view>福建-厦门-湖里区</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address flex'>
+        <view>福建-厦门-湖里区</view>
+        <image class='top-img' src='/img/right.png'></image>
+        <view>福建-厦门-湖里区</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+  <view class='info-item'>
+    <view class='info-top'>
+      <view class='address flex'>
+        <view>福建-厦门-湖里区</view>
+        <image class='top-img' src='/img/right.png'></image>
+        <view>福建-厦门-湖里区</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        邓经理
+      </view>
+      <view>
+        <image class='ico' src='/img/phone.png'></image>
+        18066666666
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,102 @@
+/* pages/register/register.wxss */
+
+view {
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100%;
+  background-color: #fff;
+}
+
+.top-tips {
+  height: 131rpx;
+  padding: 70rpx 0 0 41rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.cell-list {
+  background-color: #fff;
+  border-top: 1rpx solid #ddd;
+  padding-left: 27rpx;
+}
+
+.main .cell-list:nth-of-type(4) {
+  border-bottom: 1rpx solid #ddd;
+}
+
+.cell {
+  height: 104rpx;
+  border-bottom: 1rpx solid #ddd;
+  padding-left: 13rpx;
+  padding-right: 20rpx;
+  display: flex;
+  align-items: center;
+  font-size: 29rpx;
+}
+
+.cell:last-child {
+  border-bottom: none;
+}
+
+.cell-left {
+  flex: 1;
+}
+
+.cell-input {
+  width: 100%;
+}
+
+.cell-ph {
+  font-size: 29rpx;
+}
+
+.cell-right-img {
+  width: 190rpx;
+  height: 75rpx;
+}
+
+.cell-right-btn {
+  width: 190rpx;
+  height: 75rpx;
+  text-align: center;
+  line-height: 75rpx;
+  color: #fff;
+  background-color:#68c5cd; 
+}
+
+.state {
+  padding: 22rpx 0 0 40rpx;
+  font-size: 20rpx;
+}
+
+.state-text {
+  color: #999;
+  vertical-align: middle;
+}
+
+.checkbox-img {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+
+.state-term {
+  color: #28a7e1;
+}
+
+.submit-btn {
+  margin-top: 127rpx;
+  width: 677rpx;
+  line-height: 97rpx;
+  text-align: center;
+  background: #dbdbdb;
+  color: #fff;
+  font-size: 37rpx;
+  border-radius: 0;
+}
+
+.submit-btn.on {
+  background: #68c5cd;
+}

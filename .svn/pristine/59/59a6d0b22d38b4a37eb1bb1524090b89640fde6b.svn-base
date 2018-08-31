@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<RepositoryCustomSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AutoRefresh>true</AutoRefresh>
+  <AutoRefreshRemotes>true</AutoRefreshRemotes>
+  <CommitTextLinks />
+  <DraftCommitMsg />
+  <IncomingSavedCount>0</IncomingSavedCount>
+  <LastCheckedRemotes>2018-07-03T16:28:24.0018141+08:00</LastCheckedRemotes>
+  <LastUsedView>FileStatus</LastUsedView>
+  <LogBranchFilterIndex>0</LogBranchFilterIndex>
+  <OutgoingSavedCount>0</OutgoingSavedCount>
+  <RemoteProjectLinks />
+  <SidebarExpandedItems>
+    <string>文件状态</string>
+    <string>分支</string>
+  </SidebarExpandedItems>
+  <SidebarWidth>210</SidebarWidth>
+  <SubtreeLinks />
+</RepositoryCustomSettings>

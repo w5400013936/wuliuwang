@@ -1,0 +1,15 @@
+<!--pages/changePwd/changePwd.wxml-->
+<view class='main'>
+  <view class='cell'>
+    <input type='text' placeholder='旧密码'></input>
+  </view>
+  <view class='cell'>
+    <input type='text' placeholder='新密码'></input>
+  </view>
+  <view class='cell'>
+    <input type='text' placeholder='确认密码'></input>
+  </view>
+  <button class='submit-btn on'>完成</button>
+</view>
+
+

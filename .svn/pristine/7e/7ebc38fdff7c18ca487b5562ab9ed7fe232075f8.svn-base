@@ -1,0 +1,24 @@
+<!--pages/feedback-list/feedback-list.wxml-->
+<view class='list' wx:for="{{rows}}" wx:key="{{index}}">
+  <view class='list-container' bindtap='showContent' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='{{index}}' style='{{item.listStyle}}'>
+    <view class='list-left'>
+      <view class='list-left-title'>{{item.title}}</view>
+      <view class='list-left-date'>{{item.time}}</view>
+    </view>
+    <view class='list-right'>
+      <image class="list-right-img {{item.show?'down':''}}" data-index='0' src='/img/arrow-right.png'></image>
+    </view>
+  </view>
+
+  <view class='list-btns'>
+    <view class='list-del'>删除</view>
+  </view>
+  
+  <view class="list-content {{item.show?'down':''}}">
+    <view class='list-title'>{{item.companyName}}</view>
+    <view class='list-message'>
+      {{item.mark}}
+    </view>
+    <view class='list-info'>{{item.realName}}：{{item.mobile}}</view>
+  </view>
+</view>

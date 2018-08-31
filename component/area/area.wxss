@@ -1,0 +1,7 @@
+/* component/area/area.wxss */
+.area-box{
+  display: inline-block;
+}
+.area-input{
+  width: 100%;
+}

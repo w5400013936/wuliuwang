@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "公司简介",
+  "usingComponents": {
+    "contact": "/component/contact/contact"
+  }
+}

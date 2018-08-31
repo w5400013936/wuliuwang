@@ -1,0 +1,54 @@
+<!--pages/companyInfos/sourceInfo-detail/sourceInfo-detail.wxml-->
+<view class='details-list'>
+  <view class='details-li-title'>货源详细信息</view>
+  <view class='details-li'>
+    <view class='details-li-text'>出发地</view>
+    <view class='details-li-info'>广西 - 梧州市 - 苍梧县</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>到达地</view>
+    <view class='details-li-info'>广东 - 韶关市 -南雄市</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物名称</view>
+    <view class='details-li-info'>水处理材料</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>货物类型</view>
+    <view class='details-li-info'>重货</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>重量</view>
+    <view class='details-li-info'>40 吨</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>体积</view>
+    <view class='details-li-info'>不详</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>运输类型</view>
+    <view class='details-li-info'>整车配货</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>信息有效期</view>
+    <view class='details-li-info'>2018-08-14</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系人</view>
+    <view class='details-li-info'>卢海波</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>联系电话</view>
+    <view class='details-li-info'>13923740533</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>发布时间</view>
+    <view class='details-li-info'>2018-08-13</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>说明备注</view>
+    <view class='details-li-info'>求车源</view>
+  </view>
+</view>
+
+<view class='more'>点击查看其它货源信息></view>

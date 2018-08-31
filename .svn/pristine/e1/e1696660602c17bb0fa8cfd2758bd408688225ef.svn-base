@@ -1,0 +1,113 @@
+<!--pages/companyInfos/order/order.wxml-->
+<view class='line-search'>
+  <view class='line-add flex'>
+    <view class='line-start'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="1" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>出发城市
+        </view>
+        <view class='line-con'>{{fromCityName}}</view>
+      </cityPicker>
+    </view>
+    <image class='line-img' src='/img/double-angle.png'></image>
+    <view class='line-end'>
+      <cityPicker multiArray="{{multiArray}}" multiIndex="{{multiIndex}}" typeX="2" bind:cityChange="cityChange">
+        <view class='line-top'>
+          <image class='icon' src='/img/f-address.png'></image>到达城市
+        </view>
+        <view class='line-con'>{{toCityName}}</view>
+      </cityPicker>
+    </view>
+  </view>
+</view>
+<form bindsubmit='xiaDan'>
+  <view class='order-box'>
+    <view class='order-title'>
+      <view class='rt'>基本信息</view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>货物名称：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物名称" value='' name="name"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li' bindtap='yunShuLeiXing'>
+      <view class='list-li-text'>
+        <text> </text>运输类型：</view>
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择运输类型" value='{{yunShuLeiXing}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li' bindtap='zhongHuo'>
+      <view class='list-li-text'>
+        <text> </text>货物类型：</view>
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择货物类型" value='{{goodsType}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>货物重量：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物重量" type='number' value='' name="weight" />
+      </view>
+      <view class='ico arrow-down' bindtap='weightSelect' bindtap='unitSelect'>{{unit}}
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text> </text>货物体积：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请输入货物体积" value='' name="tiJi" />
+      </view>
+      <view class='ico arrow-down' bindtap='weightSelect'>
+        立方米
+      </view>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <picker mode='date' start="{{startDate}}" end='{{endDate}}' value='{{startDate}}' bindchange='expiryDateChange'>
+        <view class='list-li-text'>
+          <text>*</text>信息有效期：</view>
+        <view class='list-li-input'>
+          <input class='input-text' disabled='{{true}}' placeholder="请选择有效期" value='{{limitTime}}' name="riQi"/>
+        </view>
+        <view class='ico arrow-down'>
+          <image src='/img/arrow-down.png' mode="aspectFill"></image>
+        </view>
+      </picker>
+      <view class='clear'></view>
+    </view>
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联 系 人 ：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请填写联系人姓名" value='' name="contact"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    <view class='list-li'>
+      <view class='list-li-text'>
+        <text>*</text>联系电话：</view>
+      <view class='list-li-input'>
+        <input class='input-text' placeholder="请填写联系人电话" value='' name="phone"/>
+      </view>
+      <view class='clear'></view>
+    </view>
+
+    <button class='submit-btn' form-type='submit'>立即下单</button>
+  </view>
+</form>

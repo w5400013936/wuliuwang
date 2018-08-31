@@ -1,0 +1,48 @@
+<!--pages/companyInfos/deviceInfo/deviceInfo-more.wxml-->
+<view class='details-list'>
+  <view class='details-li' style="height:140rpx;">
+    <view class='details-li-text'>
+      <image class='details-li-img' src='/img/source.png'></image>
+    </view>
+    <view class='details-li-info'>货车绑带38mm拉紧器集装箱封箱带托盘紧固带</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>被访问</view>
+    <view class='details-li-info'>1697</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>所属系列</view>
+    <view class='details-li-info'>其它物流设备 仓储安全设备</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>规格型号</view>
+    <view class='details-li-info'>不详</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>参考价格</view>
+    <view class='details-li-info'>0/不详</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>最小订单量</view>
+    <view class='details-li-info'>1</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>新旧程度</view>
+    <view class='details-li-info'>全新</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>数量</view>
+    <view class='details-li-info'>99999</view>
+  </view>
+  <view class='details-li'>
+    <view class='details-li-text'>发布日期</view>
+    <view class='details-li-info'>2017-10-13</view>
+  </view>
+  <view class='details-li-title'>详细介绍</view>
+  <view class='details-li'>
+      <view class='details-li-desc'>
+        此款棘轮拉紧器采用全钢材料和热处理工艺制作，净重390g  。钩子净重90g 。织带原材料全是AA级聚酯工业丝，每米带子70g  。不太了解此款产品的朋友，可以此推算产品质量，避免同行混淆视听，感谢关注。欢迎需求量大的朋友随时来我公司考察。
+      </view>
+  </view>
+</view>
+

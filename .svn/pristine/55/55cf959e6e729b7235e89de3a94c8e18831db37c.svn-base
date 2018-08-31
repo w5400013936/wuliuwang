@@ -1,0 +1,64 @@
+// component/cityPicker/cityPicker.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    multiArray: {
+      type: Array,
+      value: [
+        // ['福建省', '广东省'],
+        // ['福州市', '厦门市', '莆田市', '泉州市', '漳州市']
+      ]
+    },
+    multiIndex: {
+      type: Array,
+      value: [
+
+      ]
+    },
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    bindMultiPickerChange: function (e) {
+      this.setData({
+        multiIndex: e.detail.value
+      })
+    },
+    bindMultiPickerColumnChange: function (e) {
+      var data = {
+        multiArray: this.data.multiArray,
+        multiIndex: this.data.multiIndex
+      };
+      data.multiIndex[e.detail.column] = e.detail.value;
+      switch (e.detail.column) {
+        case 0:
+          switch (data.multiIndex[0]) {
+            case 0:
+              data.multiArray[1] = ['福州市', '厦门市', '莆田市', '泉州市', '漳州市'];
+              break;
+            case 1:
+              data.multiArray[1] = ['广州市', '佛山市'];
+              break;
+          }
+          data.multiIndex[1] = 0;
+          break;
+      }
+      this.setData(data);
+      var detail = {
+        city: data.multiArray[1][data.multiIndex[1]]
+      }
+      this.triggerEvent('cityChange', detail);
+    },
+  }
+})

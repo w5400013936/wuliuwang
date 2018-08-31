@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/line-details/line-details",
+    "pages/source-details/source-details",
+    "pages/enterprise/enterprise",
+    "pages/add-network/add-network",
+    "pages/add-line/add-line",
+    "pages/add-source/add-source",
+    "pages/line/line",
+    "pages/source/source",
+    "pages/menber-services/menber-services",
+    "pages/userInfo/userInfo",
+    "pages/companyInfo/companyInfo",
+    "pages/authentication/authentication",
+    "pages/companyLogo/companyLogo",
+    "pages/companyPic/companyPic",
+    "pages/uploadPic/uploadPic",
+    "pages/service/service",
+    "pages/certificate/certificate",
+    "pages/performance/performance",
+    "pages/setting/setting",
+    "pages/feedback/feedback",
+    "pages/network-manage/network-manage",
+    "pages/line-manage/line-manage",
+    "pages/source-manage/source-manage",
+    "pages/transport-price/transport-price",
+    "pages/area-select/area-select",
+    "pages/no-data/no-data",
+    "pages/feedback-list/feedback-list",
+    "pages/company/company",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/webView/webView"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4ab8d0",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#69c5cd",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "img/home-hover.png",
+        "iconPath": "img/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "img/source-hover.png",
+        "iconPath": "img/source.png",
+        "pagePath": "pages/source/source",
+        "text": "找货源"
+      },
+      {
+        "selectedIconPath": "img/line-hover.png",
+        "iconPath": "img/line.png",
+        "pagePath": "pages/line/line",
+        "text": "找专线"
+      },
+      {
+        "selectedIconPath": "img/my-hover.png",
+        "iconPath": "img/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

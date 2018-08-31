@@ -1,0 +1,35 @@
+/* pages/transport-price/transport-price.wxss */
+page{ padding-bottom: 50rpx;}
+.title-tips{ padding: 22rpx; font-size: 22rpx; color: #999;}
+.title-tips text{ color: #68c5cd;}
+.select-address{ border-bottom: solid 1px #ddd; padding: 0 26rpx;border-top: solid 1px #ddd;}
+.select-li{ border-top: solid 1px #ddd; padding: 25rpx 0; line-height: 44rpx; position: relative;}
+.select-li:first-child{ border-top: none;}
+.select-li .ico-img{ height: 44rpx; width: 44rpx;float: left;}
+.ico{ width: 22rpx;  position: absolute; right: 0; top: 32rpx;}
+.ico image{ width: 22rpx; height: 22rpx;}
+.input-text{ width:632rpx;  font-size: 26rpx; color: #999; line-height: 44rpx;  float: left;}
+.list{ padding: 0 26rpx;border-top: solid 1px #ddd;}
+.list-li{ position: relative; border-bottom: solid 1px #ddd; line-height: 90rpx;}
+.list .tips{ font-size: 26rpx; color: #fe0606; margin-top: 12rpx;}
+.list-li:last-child{ border-bottom: navajowhite;}
+.list-li-text{ font-size: 28rpx; color: #333; float: left;}
+.list-li-text text{ color:#ff0000; position: absolute; left: 0px;}
+.list-li-input{ display: inline-block; padding: 20rpx 0;line-height:30rpx; width:60%; float: left; margin-left:5rpx;}
+.list-li-input input{ line-height:30rpx;display: inline-block; width: 100%;}
+.list-li .ico{top:0rpx; font-size: 26rpx; color: #666; width: auto;}
+.list-li-text.textarea{display: inline-block; float: none;}
+.list-li textarea{ border: solid 1px #ddd; width: 90%; padding:20rpx 5%; height: 50prx; font-size: 26rpx; background: #eee;}
+.submit-btn{ margin-top: 50rpx; width: 667rpx; line-height: 90rpx; text-align: center; background: #68c5cd; color: #fff; font-size: 30rpx;border-radius: 0;}
+.open-btn{ width: 86rpx; height: 42rpx; background: #b5b5b5; border-radius: 30rpx; overflow: hidden; position: absolute; top: 24rpx; right: 0;}
+.open-btn .open-span{ background: #fff; width: 32rpx; height: 32rpx; border-radius: 50%; overflow: hidden; position: absolute; top: 5rpx; left: 8px;}
+.open-btn.active{ background: #68c5cd;}
+.open-btn.active .open-span{ left: auto; right: 8rpx;}
+
+.transport-title{
+  height: 92rpx;
+  font-size: 33rpx;
+  color: #666666;
+  line-height: 92rpx;
+  padding-left: 26rpx;
+}

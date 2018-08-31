@@ -1,0 +1,49 @@
+<!--pages/network-manage/network-manage.wxml--> 
+<view class='header'>
+  <view class='checkbox' bindtap='quanXuan'>
+    <image src='{{isAllCheck?"/img/selected.png":"/img/unselected.png"}}'></image>
+    全选
+  </view>
+  <view class='pageNav'>
+    <view bindtap='shangYiYe'>上一页</view>
+    <picker bindchange="bindPickerChange" value="{{page}}" range="{{pageArr}}" disabled='{{!enable}}'>
+      <view>{{page+1}}</view>
+    </picker>
+    <view bindtap='xiaYiYe'>下一页</view>
+  </view>
+  <view class='operation'>
+    <block wx:if="{{userInfo1.isMember}}">
+      <view class='operation-refresh' bindtap='shuaXinTap'>网点刷新</view>
+    </block>
+    <view class='operation-del' bindtap='delTap'>删除</view>
+  </view>
+</view>
+
+<scroll-view class='main' scroll-y="{{true}}">
+  <block wx:for="{{adapter}}" wx:key="{{index}}">
+    <view class='list' bindtap='checkTap' data-index='{{index}}'>
+      <view class='list-container' bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index='{{index}}' style='{{item.listStyle}}'>
+        <view class='checkbox list-checkbox'>
+          <image src='{{item.isCheck?"/img/selected.png":"/img/unselected.png"}}'></image>
+        </view>
+        <block wx:if="{{!item.shenhe}}">
+          <image class='list-ico' src='/img/warning.png' catchtap='warnTap'></image>
+        </block>
+        <view class='list-title'>{{item.pointName}}</view>
+        <view class='list-content'>
+          <view class='list-address'>{{item.Vinc}}-{{item.cityName}}-{{item.townName}}</view>
+          <view>{{item.address}}</view>
+        </view>
+        <view class='list-manager'>{{item.linkMan}}：{{item.mobile}}</view>
+        <view class='list-time'>刷新时间 {{item.shuaXinTime}}</view>
+      </view>
+      <view class='list-btns'>
+        <view class='list-edit' catchtap='bianJiTap' data-item='{{item}}'>编辑</view>
+        <view class='list-del' catchtap='shanChuTap' data-id='{{item.ID}}'>删除</view>
+      </view>
+    </view>
+  </block>
+
+</scroll-view>
+
+<button class='bottom-btn' bindtap='addNet'>添加网点</button>

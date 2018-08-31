@@ -1,0 +1,18 @@
+<!--pages/authentication/authentication.wxml-->
+<view class='cell-list bgwhite'>
+  <checkbox-group bindchange="checkboxChange">
+    <block wx:for="{{renZhengListRenZhengList}}" wx:key="{{index}}">
+      <view class='cell'>
+        <view class='cell-left'>
+          <checkbox color='#68c5cd' checked='{{item.isCheck}}' value='{{index}}'>{{item.renZheng}}</checkbox>
+        </view>
+      </view>
+    </block>
+  </checkbox-group>
+</view>
+<view class='seletAll'>
+  <checkbox-group bindchange="checkboxAll">
+    <checkbox color='#68c5cd' checked='{{isAll}}' value='{{isAll}}'>全选</checkbox>
+  </checkbox-group>
+</view>
+<view class='bottom-box' bindtap='tiJiaoTap'>提交</view>

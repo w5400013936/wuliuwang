@@ -1,0 +1,142 @@
+<!--pages/companyInfo/companyInfo.wxml-->
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>所在地区：</view>
+    <picker mode="multiSelector" bindchange="areaChange" bindcolumnchange="areaColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择所在区域" value='{{company.ToPlace}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>企业类型：</view>
+    <picker mode="multiSelector" bindchange="typeChange" bindcolumnchange="typeColumnChange" value="{{typeIndex}}" range="{{typeArray}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择企业类型" value='{{cateName}} {{scateName}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>企业性质：</view>
+    <picker bindchange="natureChange" value="{{natureIndex}}" range="{{natureList}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择企业性质" value='{{company.businessNature}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li' bindtap='modeSelect'>
+    <view class='list-li-text'>
+      <text>*</text>经营模式：</view>
+    <view class='list-li-input'>
+      <input class='input-text' disabled='{{true}}' placeholder="其他" value='{{company.businessType}}' />
+    </view>
+    <view class='ico arrow-down'>
+      <image src='/img/arrow-down.png' mode="aspectFill"></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>法人代表：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入法人代表名字" value='{{company.legalPerson}}' bindinput='faRenInput' />
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>员工人数：</view>
+    <picker bindchange="numberChange" value="{{numberIndex}}" range="{{numberList}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择员工人数" value='{{company.emplyStr}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>成立年份：</view>
+    <picker bindchange="yearChange" value="{{yearIndex}}" range="{{yearArray}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择年份" value='{{company.establishment}}' />
+      </view>
+      <view class='ico arrow-down'>
+        年
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>年营业额：</view>
+    <picker bindchange="turnoverChange" value="{{turnoverIndex}}" range="{{turnoverList}}">
+      <view class='list-li-input'>
+        <input class='input-text' disabled='{{true}}' placeholder="请选择年营业额" value='{{company.overStr}}' />
+      </view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-down.png' mode="aspectFill"></image>
+      </view>
+    </picker>
+    <view class='clear'></view>
+  </view>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>主营产品：</view>
+    <view class='list-li-input'>
+      <input class='input-text' placeholder="请输入主营产品" value='{{company.mainProducts}}' bindinput='zhuYinInput' />
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<view class='list bgwhite'>
+  <view class='list-li'>
+    <view class='list-li-text'>
+      <text>*</text>公司简介：</view>
+    <view class='clear'></view>
+    <view class='list-li-textarea'>
+      <textarea class='textarea-text' placeholder="请输入公司简介" value='{{company.intro}}' bindinput='jianJieTap'></textarea>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<view class='list bgwhite' bindtap='renZhengTap'>
+  <view class='list-li'>
+    <view class='list-li-text'>管理认证</view>
+    <view class='ico arrow-down'>
+      {{certSplit.length}}项认证
+      <image src='/img/arrow-right.png' mode="aspectFill"></image>
+    </view>
+    <view class='clear'></view>
+  </view>
+</view>
+
+<button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="xiuGaiTap">修改</button>

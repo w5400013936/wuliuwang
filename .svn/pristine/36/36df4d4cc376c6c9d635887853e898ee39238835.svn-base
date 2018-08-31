@@ -1,0 +1,5 @@
+/* pages/companyInfos/netInfo-detail/netInfo-detail.wxss */
+.details-list{  margin: 0; position: 0; border-top:solid 1px #efefef;}
+.details-li{ line-height: 92rpx; border-bottom:solid 1px #ddd; padding: 0 20rpx; min-height: 92rpx;background: #fff;}
+.details-li-text{ width: 25%; float: left; font-size: 30rpx; color: #999; display: flex;}
+.details-li-info{ font-size: 30rpx; color: #333; line-height: 36rpx; padding: 28rpx 0;}

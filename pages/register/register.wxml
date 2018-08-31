@@ -1,0 +1,59 @@
+<!--pages/register/register.wxml-->
+<view class='main'>
+  <form bindsubmit="formSubmit">
+    <view class='top-tips'>以下信息为必填项请认真填写，方便客服联系您</view>
+    <view class='cell-list'>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input class='cell-input' placeholder='用户名（4-20个字符以字母开头）' placeholder-class='cell-ph' name="userName"></input>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input type='password' class='cell-input' placeholder='密码（8-20个字符包含字母,数字,特殊符号）' placeholder-class='cell-ph' name="password01"></input>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input type='password' class='cell-input' placeholder='再次输入密码' placeholder-class='cell-ph' name="password02"></input>
+        </view>
+      </view>
+    </view>
+    <view class='cell-list'>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input class='cell-input' placeholder='联系人' placeholder-class='cell-ph' name="lianXiRen"></input>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input type='number' class='cell-input' placeholder='手机号码' placeholder-class='cell-ph' name="phone" bindinput='inputPhone' value='{{phone}}' maxlength='11'></input>
+        </view>
+      </view>
+    </view>
+    <view class='cell-list'>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input class='cell-input' placeholder='公司名称' placeholder-class='cell-ph' name="company"></input>
+        </view>
+      </view>
+      <view class='cell'>
+        <view class='cell-left'>
+          <input type='number' class='cell-input' placeholder='验证码' placeholder-class='cell-ph' name="code"></input>
+        </view>
+        <view class='cell-right'>
+          <!-- <image class='cell-right-img' src='/img/validate.png'></image> -->
+          <view class='cell-right-btn' bindtap='smsTap'>{{sms}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='state'>
+      <text class='state-text'>网站声明：</text>
+      <image class='checkbox-img' src='{{checked?"/img/selected.png":"/img/unselected.png"}}' bindtap='checkTap'></image>
+      <text class='state-term' bindtap='xieYiTap'>《6-china.com的服务条款》</text>
+    </view>
+
+    <button type="submit" class='submit-btn {{on?"on":""}}' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" formType="submit">完成</button>
+  </form>
+</view>

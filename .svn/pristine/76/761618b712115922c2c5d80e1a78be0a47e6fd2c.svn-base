@@ -1,0 +1,148 @@
+<!--pages/area-select/area-select.wxml-->
+<view class='sideBar'>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province active'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+  <view class='province'>福建</view>
+</view>
+<view class='main'>
+  <view class='cell-list'>
+
+    <view class='cell'>
+      <view class='cell-container' data-index="0" bindtap='showCounty'>
+        <view class='cell-left'>福州市</view>
+        <view class='cell-right'>
+          <image class='cell-img' src='/img/selected.png'></image>
+          全选
+        </view>
+      </view>
+      <view class='cell-content {{countyShow[0]?"show":""}}'>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class='cell'>
+      <view class='cell-container' data-index="1" bindtap='showCounty'>
+        <view class='cell-left'>厦门市</view>
+        <view class='cell-right'>
+          <image class='cell-img' src='/img/selected.png'></image>
+          全选
+        </view>
+      </view>
+      <view class='cell-content {{countyShow[1]?"show":""}}'>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+        <view class='cell-list-ul'>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+          <view class='cell-list-li'>
+            <image class='cell-img' src='/img/selected.png'></image>
+            鼓楼区
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    
+  </view>
+
+  <!-- <view class='selectAll'>
+    <image class='selectAll-img' src='/img/selected.png'></image>
+    全选
+  </view> -->
+  <button type="submit" class='submit-btn' size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="primary">提交 </button>
+</view>

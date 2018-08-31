@@ -1,0 +1,22 @@
+<!--pages/companyInfos/line/line.wxml-->
+<view class='info-list'>
+  <view class='info-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toLineDetail' data-bean='{{item}}'>
+    <view class='info-top'>
+      <view class='address flex'>
+        <view>{{item.provin}}-{{item.city}}</view>
+        <image class='top-img' src='/img/right.png'></image>
+        <view>{{item.toProvin}}-{{item.toCity}}</view>
+      </view>
+    </view>
+    <view class='info-bottom'>
+      <view>
+        <image class='ico' src='/img/name.png'></image>
+        {{item.linkMan}}
+      </view>
+      <view catchtap='call' data-phone='{{item.mobile}}'>
+        <image class='ico' src='/img/phone.png'></image>
+        {{item.phone}}
+      </view>
+    </view>
+  </view>
+</view>

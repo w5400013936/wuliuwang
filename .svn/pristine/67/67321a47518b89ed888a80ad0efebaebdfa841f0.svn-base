@@ -1,0 +1,15 @@
+<!--pages/setting/setting.wxml-->
+<view class='list bgwhite'>
+  <navigator url='/pages/feedback/feedback'>
+    <view class='list-li'>
+      <view class='list-li-text'>意见反馈</view>
+      <view class='ico arrow-down'>
+        <image src='/img/arrow-right.png' mode="aspectFill"></image>
+      </view>
+      <view class='clear'></view>
+    </view>
+  </navigator>
+</view>
+<view class='list bgwhite'>
+  <view class='list-con' bindtap='exitTap'>安全退出</view>
+</view>
